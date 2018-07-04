@@ -1,0 +1,116 @@
+{% extends 'sqyc_bi/base_in_index.html' %}
+{% load staticfiles %}
+
+<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+
+
+{% block middle_head_right_up %}
+        <!--条件侧栏上部-->
+                <div class="middle_head_right_up">
+
+                    <form action="/order_driver_num/1/" class="form_pro" method="get" >
+
+                        序号: <input type="text" value="" >  &nbsp
+                        有无拉新: <input type="text"  value="{{ recmd_status }}" name='recmd_status'>   &nbsp
+                        日 期: <input type="date" value="{{ t_d }}" name="t_date">   &nbsp
+
+                        <select name="pro_status" id="" >
+                            <option value="完单">{{ pro_status }}</option>
+                            <option value="接单">接单</option>
+                            <option value="完单">完单</option>
+                        </select>  &nbsp
+
+                        <input type="submit" value="查询"  name="sub_buton">
+                        <input type="submit" value="下载所有数据" name="sub_buton">
+{#                        <a href="">下载数据</a>#}
+
+                    </form>
+
+                </div>
+{% endblock middle_head_right_up %}
+
+
+
+{#  图表区域   #}
+{% block middle_head_right %}
+    <div class="middle_head_right">
+        <table border="1" >
+                  <tr class="s_tr1">
+                        <th>序号</th>
+                        <th>日期</th>
+                        <th>订单状态</th>
+                        <th>有无拉新</th>
+                        <th>一单数量</th>
+                        <th>二单数量</th>
+                    </tr>
+
+
+
+                 {% for order in order_list %}
+
+                    <tr class='s_tr2'>
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.create_date }}</td>
+                        <td>{{ order.order_status }}</td>
+                        <td>{{ order.recmd_status }}</td>
+                        <td>{{ order.one_num }}</td>
+                        <td>{{ order.two_num }}</td>
+
+                    </tr>
+                {% endfor %}
+         </table>
+    </div>
+
+{% endblock %}
+
+
+{% block middle_down %}
+
+    <div class="pagenation">
+        {% if order_list.has_previous %}
+{#            当前页数-1#}
+            <a href="/order_driver_num/{{order_list.number|add:-1}}/?recmd_status={{ recmd_status }}&pro_status={{ pro_status }}">上一页</a>
+        {% endif %}
+
+         {% for pindex in pages %}
+{#             若页码跟当前页内容的页数一样#}
+             {% if pindex == order_list.number %}
+                <a href="/order_driver_num/{{ pindex }}/?recmd_status={{ recmd_status }}&pro_status={{ pro_status }}"  class="active"> {{ pindex }} </a>
+             {% else %}
+                 <a href="/order_driver_num/{{ pindex }}/?recmd_status={{ recmd_status }}&pro_status={{ pro_status }}"  class=""> {{ pindex }} </a>
+             {% endif %}
+
+        {% endfor %}
+
+    {% if order_list.has_next %}
+        <a href="/order_driver_num/{{ order_list.number|add:1 }}/?recmd_status={{ recmd_status }}&pro_status={{ pro_status }}"> 下一页 </a>
+    {% endif %}
+
+    </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

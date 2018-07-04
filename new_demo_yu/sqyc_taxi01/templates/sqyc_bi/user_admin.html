@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户帐号管理</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="/user_account/">
+            {% csrf_token %}
+            管理分公司帐号：
+            <br>
+            <br>
+
+            用户: <input type="text", name="uname"> <br>
+            <br>
+
+            密码: <input type="password" name="passwd"> <br>
+
+            <br>
+            <br>
+            管理员暗号：<input type="password" name="adminpasswd"> <br>
+
+            <br>
+            <input type="submit" value="提交"> <br>
+
+        </form>
+
+    </div>
+</body>
+</html>

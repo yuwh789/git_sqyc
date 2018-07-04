@@ -1,0 +1,176 @@
+{% load staticfiles %}
+
+{#内部导航首页#}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据组内部平台</title>
+
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+{#<style>#}
+{# #}
+{##}
+{#/*style over*/#}
+{#</style>#}
+
+<script src="{% static 'js/jquery-1.12.4.min.js'%}"></script>
+
+<script>
+
+    $(function(){
+        var $a1 = $(".level1");
+        $(".level1").click(
+            function(){
+                $(this).next().slideToggle();
+            }
+        )
+    })
+
+    // $(function(){
+    //     var $div = $(".level1")
+    //     alert("获取为:"+ $div)
+    // })
+
+</script>
+
+</head>
+<body>
+    <!--导航1-->
+    <div  class="s_head">
+        <div class="s_head_title"> <span>首约Taxi数据组内部平台 </span> </div>
+
+    </div>
+
+    <!--侧边栏1-->
+    <div class="middle_head">
+
+        <div class="middle_head_left">
+                <li>
+                    <a href="#" class="level1"> 分公司数据查询 </a>
+                    <ul class="current">
+                        <li> <a href="/company_day/" class="cnt1">公司日报数据</a> </li>
+                        <li> <a href="/other/test/" class="cnt1">公司订单数据</a> </li>
+                        <!--<li>司机详情数据</li>-->
+                    </ul>
+
+                </li>
+
+                <li>
+                    <a href="#" class="level1"> 司机信息查询 </a>
+                    <ul class="current">
+                            <li> <a href="/other/test/" class="cnt1">接单司机数量</a> </li>
+                            <li> <a href="/order_driver_num/1/" class="cnt1">完单司机数量</a> </li>
+                            <!--<li>司机详情数据</li>-->
+                    </ul>
+                </li>
+                <li><a href="#" class="level1"> 乘客信息查询 </a>
+                     <ul class="current">
+                            <li> <a href="/other/test/" class="cnt1">新增完单乘客信息</a> </li>
+                            <li> <a href="/other/test/" class="cnt1">下单乘客信息</a> </li>
+                            <li> <a href="/pas/exper/" class="cnt1">乘客体验信息</a> </li>
+                    </ul>
+                </li>
+                <li><a href="#" class="level1"> 下载数据库文件 </a>
+                    <ul class="current">
+                            <li> <a href="/other/test/" class="cnt1">未接单司机电话</a> </li>
+                            <li> <a href="/other/test/" class="cnt1">未完单乘客电话</a> </li>
+                            <!--<li>司机详情数据</li>-->
+                    </ul>
+
+                </li>
+                <li><a href="#" class="level1"> 订单数据 </a>
+                     <ul class="current">
+                            <li> <a href="/other/test/" class="cnt1">订单明细</a> </li>
+                            <li> <a href="/other/test/" class="cnt1">拉新订单</a> </li>
+                            <!--<li>司机详情数据</li>-->
+                    </ul>
+                </li>
+                <li><a href="#"  class="level1"> 其它问题 </a>
+                    <ul class="current">
+                            <li> <a href="/other/test/" class="cnt1">待定</a> </li>
+
+                    </ul>
+                </li>
+        </div>
+
+
+    {% block middle_head_right_up %}
+        <!--条件侧栏上部-->
+                <div class="middle_head_right_up">
+
+                    <form action="" class="form_pro" method="get" >
+                        司机姓名: <input type="text" value=""  name = ''>  &nbsp
+                        司机电话: <input type="text"  value="" name=''>   &nbsp
+                        日 期: <input type="date" value="">   &nbsp
+
+                        <select name="pro_status" id="" >
+                            <option value="pro1">问题1</option>
+                            <option value="pro2">占比</option>
+                            <option value="pro3">环比</option>
+                        </select>  &nbsp
+
+                        <input type="submit" value="查询">
+                        <!--<button type="submit">查询</button>-->
+                    </form>
+
+                </div>
+    {% endblock middle_head_right_up %}
+
+
+
+
+    {% block middle_head_right %}
+        <div class="middle_head_right">
+
+            <table border="1">
+                <tr class="s_tr1">
+                    <th>日期</th>
+                    <th>订单状态</th>
+                    <th>有无拉新</th>
+                    <th>一单数量</th>
+                    <th>二单数量</th>
+                </tr>
+
+                <tr class='s_tr2'>
+                    <td>2018年5月14日 19:44:23</td>
+                    <td>完单</td>
+                    <td>有</td>
+                    <td>706</td>
+                    <td>432</td>
+                </tr>
+            </table>
+
+
+{#        欢迎来到首约TAXI 数据组内部平台: <br>#}
+{#            <br>#}
+{#        请在侧边导航栏，选择相应的功能 ，<br>#}
+{#            <br>#}
+{#        如有问题， 请联系数据组， 谢谢！#}
+{##}
+{#        </div>#}
+    {% endblock middle_head_right %}
+
+    {% block middle_down %}
+{#                 <div class="pagenation">#}
+{#                    <a href="#"><上一页</a>#}
+{#                    <a href="#" class="active">1</a>#}
+{#                    <a href="#">2</a>#}
+{#                    <a href="#">3</a>#}
+{#                    <a href="#">4</a>#}
+{#                    <a href="#">5</a>#}
+{#                    <a href="#">下一页></a>#}
+{#                </div>#}
+    {% endblock middle_down%}
+
+
+
+    </div>
+
+</body>
+
+</html>

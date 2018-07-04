@@ -1,0 +1,98 @@
+{% extends 'sqyc_bi/base_in_index.html' %}
+{% load staticfiles %}
+
+<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+<script>
+    $(function () {
+        alert("test")
+       })
+
+</script>
+
+{% block middle_head_right_up %}
+        <!--条件侧栏上部-->
+
+                <div class="middle_head_right_up">
+
+                    <form action="/city_total/1/" class="form_pro" method="get" >
+
+                        城市id: <input type="text" value="{{ city_id }}"  name = 'para1'>  &nbsp
+
+                        开始日期: <input type="date" value="{{ t_d1 }}" name="t_d1">   &nbsp
+
+                        结束日期: <input type="date" value="{{ t_d2 }}" name="t_d2">   &nbsp
+
+                        <input type="submit" value="查看数据" name="sub_buton" class="down_btn1"  id="btn1">  &nbsp
+                        <input type="submit" value="下载数据" name="sub_buton" class="down_btn2">
+                    </form>
+
+                </div>
+
+{% endblock middle_head_right_up %}
+
+
+
+{#  图表区域   #}
+{% block middle_head_right %}
+    <div class="middle_head_right">
+        <table border="1" >
+                  <tr class="s_tr1">
+                        <th>公司id</th>
+                        <th>公司名称</th>
+                        <th>司机数量</th>
+                        <th>完单数量</th>
+
+                        <th>完单司机数</th>
+                        <th>登录司机数</th>
+                    </tr>
+
+            <div class="table_t">
+
+            </div>
+
+                 {% for order in order_list %}
+
+                    <tr class='s_tr2'>
+                        <td>{{ order.taxi_company_id }}</td>
+                        <td>{{ order.taxi_company_name }}</td>
+                        <td>{{ order.driver_cnt }}</td>
+                        <td>{{ order.com_order_cnt }}</td>
+
+                        <td>{{ order.com_driver_cnt }}</td>
+                        <td>{{ order.online_driver_cnt }}</td>
+
+                    </tr>
+                {% endfor %}
+         </table>
+    </div>
+
+{% endblock %}
+
+
+{% block middle_down %}
+
+    <div class="pagenation">
+        {% if order_list.has_previous %}
+{#            当前页数-1#}
+            <a href="/city_total/{{order_list.number|add:-1}}/?para1={{ city_id }}&t_d1={{ t_d1 }}&t_d2={{ t_d2 }}">上一页</a>
+        {% endif %}
+
+         {% for pindex in pages %}
+{#             若页码跟当前页内容的页数一样#}
+             {% if pindex == order_list.number %}
+                <a href="/city_total/{{ pindex }}/?para1={{ city_id }}&t_d1={{ t_d1 }}&t_d2={{ t_d2 }}"  class="active"> {{ pindex }} </a>
+             {% else %}
+                 <a href="/city_total/{{ pindex }}/?para1={{ city_id }}&t_d1={{ t_d1 }}&t_d2={{ t_d2 }}"  class=""> {{ pindex }} </a>
+             {% endif %}
+
+        {% endfor %}
+
+    {% if order_list.has_next %}
+        <a href="/city_total/{{ order_list.number|add:1 }}/?para1={{ city_id }}&t_d1={{ t_d1 }}&t_d2={{ t_d2 }}"> 下一页 </a>
+    {% endif %}
+
+    </div>
+
+
+{% endblock %}
+
