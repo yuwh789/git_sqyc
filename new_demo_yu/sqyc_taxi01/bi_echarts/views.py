@@ -25,7 +25,7 @@ def Order_map_data(request):
     cur = connection.cursor()
     # sql = "select * from order_lat_long where  city_id={}".format()
 
-    sql = "SELECT * from order_lat_long ".format(t_d1,t_d2,t_city)
+    sql = "SELECT * from order_lat_long('%s' , '%s' , '%s') ".format(t_d1,t_d2,t_city)
 
     cur.execute(sql)
     res = cur.fetchall()

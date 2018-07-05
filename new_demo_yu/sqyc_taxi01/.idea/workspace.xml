@@ -73,11 +73,11 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bi_echarts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+            <state relative-caret-position="283">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#26#61#0" expanded="true" />
-                <marker date="1530786673656" expanded="true" signature="670:698" ph="SELECT * fro... order_lat_long" />
+                <marker date="1530788230147" expanded="true" signature="670:718" ph="SELECT * fro... order_lat_long" />
               </folding>
             </state>
           </provider>
@@ -991,11 +991,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bi_echarts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+        <state relative-caret-position="283">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#26#61#0" expanded="true" />
-            <marker date="1530786673656" expanded="true" signature="670:698" ph="SELECT * fro... order_lat_long" />
+            <marker date="1530788230147" expanded="true" signature="670:718" ph="SELECT * fro... order_lat_long" />
           </folding>
         </state>
       </provider>
