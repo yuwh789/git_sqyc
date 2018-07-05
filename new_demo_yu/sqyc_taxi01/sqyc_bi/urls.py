@@ -34,6 +34,6 @@ urlpatterns = [
 
     url(r"^auto_list/$", views.Auto_list) ,
 
-    url(r"^special_com_total/$", views.Special_com_total) ,
+    # url(r"^special_com_total/$", views.Special_com_total) ,
 
 ]

@@ -25,7 +25,7 @@ def Order_map_data(request):
     cur = connection.cursor()
     # sql = "select * from order_lat_long where  city_id={}".format()
 
-    sql = "select booking_current_point,num  from order_lat_long where  city_id='{}' and create_date BETWEEN '{}' and '{}' ".format(t_city,t_d1,t_d2)
+    sql = "SELECT * from order_lat_long ".format(t_d1,t_d2,t_city)
 
     cur.execute(sql)
     res = cur.fetchall()

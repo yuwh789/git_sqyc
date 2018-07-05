@@ -220,7 +220,7 @@ def Company_day_total(request, page_index):
 
 
     cur = connection.cursor()
-    if company_name == "大众" or company_name == "天鹅":
+    if (company_name == "大众" or company_name == "天鹅") and sub_buton =="下载数据":
         cur = connection.cursor()
         sql = "SELECT * from  t_special_company_day('%s','%s','%s')"  %(t_d1, t_d2, company_name)
     else:
