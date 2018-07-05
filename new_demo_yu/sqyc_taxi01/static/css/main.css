@@ -126,18 +126,16 @@ text-indent: 30px;
 .form_pro select {width: 100px; height: 26px; }
 
 .pagenation{
-position: absolute;
-left:800px;
-top:660px;
-}
-
-
-.pagenation{
-    height:32px;
+    position: absolute;
+    left:800px;
+    top:660px;
+      height:32px;
     text-align:center;
     font-size:0;
     margin:30px auto;
 }
+
+
 
 .pagenation a{
 /*{#    display:inline-block;#}*/
@@ -146,9 +144,33 @@ background-color:#f8f6f7;
 font-size:12px;
 padding:7px 10px;
 color:#666;
-margin:5px
+margin:5px;
 }
 
 .pagenation .active{ color:red}
 
+
 .dis_none{ display: None}
+
+.middle_head_right .li_list{
+    height:20px;
+    margin-top: 20px  ;
+}
+
+.middle_head_right  .li_list   a {
+        color: black;
+        text-align:center;
+        border:1px solid #d2d2d2;
+        background-color:#f8f6f7;
+        font-size:16px;
+        padding:5px 20px;
+        line-height: 20px;
+    }
+
+.middle_head_right .li_list a:hover{color: red}
+
+
+
+
+
+

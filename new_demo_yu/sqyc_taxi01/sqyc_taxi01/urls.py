@@ -20,5 +20,6 @@ from sqyc_bi import  views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('sqyc_bi.urls') ) ,
+    url(r'^chart/', include( 'bi_echarts.urls')  ) ,
 
 ]

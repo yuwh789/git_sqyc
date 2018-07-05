@@ -31,4 +31,9 @@ urlpatterns = [
     url(r'^company_test/$', views.company_test),
     url(r"^city_total/$",views.t_s_company_first), # 城市各分公司数据 初始化测试
     url(r"city_total/(\d+)/$", views.t_s_company)  ,
+
+    url(r"^auto_list/$", views.Auto_list) ,
+
+    url(r"^special_com_total/$", views.Special_com_total) ,
+
 ]

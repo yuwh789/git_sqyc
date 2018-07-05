@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sqyc_bi' , #  注册项目
-    'django_crontab', 
+    'django_crontab',
+    'bi_echarts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -78,16 +79,32 @@ WSGI_APPLICATION = 'sqyc_taxi01.wsgi.application'
 
 
 DATABASES = {
-     'default': {
-         #'ENGINE': 'django.db.backends.sqlite3',
-         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'NAME': "taxidb",
-         'USER': 'taxiuser',
-         'PASSWORD': 'taxiuser',
-         'HOST':'localhost',
-         'PORT':5432
-     }
- }
+    'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "sqyc_db",
+        'USER': 'root',
+        'PASSWORD': 'root123456',
+        'HOST':'localhost',
+        'PORT':3306
+    }
+}
+
+
+
+
+#
+# DATABASES = {
+#      'default': {
+#          #'ENGINE': 'django.db.backends.sqlite3',
+#          'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#          'NAME': "taxidb",
+#          'USER': 'taxiuser',
+#          'PASSWORD': 'taxiuser',
+#          'HOST':'localhost',
+#          'PORT':5432
+#      }
+#  }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

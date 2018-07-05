@@ -178,7 +178,10 @@ def Company_day(request,page_index):
 
     sub_buton = request.GET.get('sub_buton')
 
+
     if sub_buton == '下载所有数据':
+
+
         company_list = t_company_day_data.objects.filter(city_id=city_id,
                                                          taxi_company_name__regex=company_name, t_date=t_d)
 
@@ -215,34 +218,42 @@ def Company_day_total(request, page_index):
     company_name = request.GET.get('para2')
     sub_buton = request.GET.get('sub_buton')
 
-    # conn = pymysql.connect (host='localhost', port=3306, user=' ',password=' ',
-    #                        database = ' ', charset=' ')
 
-    # cur = conn.cursor()
     cur = connection.cursor()
-    sql = "select * from fuc_company_total('%s','%s', '%s','%s')" % (company_name, t_d1, t_d2, city_id)
-    # sql = "call fuc_company_total('%s','%s', '%s','%s')" %(company_name,t_d1, t_d2,city_id)
+    if company_name == "大众" or company_name == "天鹅":
+        cur = connection.cursor()
+        sql = "SELECT * from  t_special_company_day('%s','%s','%s')"  %(t_d1, t_d2, company_name)
+    else:
+        sql = "select * from fuc_company_total('%s','%s', '%s','%s')" % (company_name, t_d1, t_d2, city_id)
+        # sql = "call fuc_company_total('%s','%s', '%s','%s')" %(company_name,t_d1, t_d2,city_id)
+
+
     cur.execute(sql)
     res = cur.fetchall()
+    colName = [col[0] for col in cur.description]
+    order_list = [dict(zip(colName, row)) for row in res]
 
-    order_list = []
-    for i in res:
-        dic = {}
-        dic['taxi_company_name'] = i[0]
-        dic['id_number'] = i[1]
-        dic['plate_number'] = i[2]
-        dic['driver_name'] = i[3]
-
-        dic['sum_online_minute'] = i[4]
-        dic['sum_com_cnt'] = i[5]
-        dic['online_day'] = i[6]
-        order_list.append(dic)
+    # order_list = []
+    # for i in res:
+    #     dic = {}
+    #     dic['taxi_company_name'] = i[0]
+    #     dic['id_number'] = i[1]
+    #     dic['plate_number'] = i[2]
+    #     dic['driver_name'] = i[3]
+    #
+    #     dic['sum_online_minute'] = i[4]
+    #     dic['sum_com_cnt'] = i[5]
+    #     dic['online_day'] = i[6]
+    #     order_list.append(dic)
 
 
     if sub_buton =="下载数据":
-        order_list = Down_files_dic(request, order_list, taxi_company_name='公司名称',id_number= '证件号',
-                                    plate_number = "车牌号", driver_name = '司机姓名', sum_online_minute ='在线分钟',  sum_com_cnt ='完单数'
-                                    , online_day ='在线天数' )
+        order_list = Down_files_dic2(request, order_list, colName)
+        return order_list
+        #
+        # order_list = Down_files_dic(request, order_list, taxi_company_name='公司名称',id_number= '证件号',
+        #                             plate_number = "车牌号", driver_name = '司机姓名', sum_online_minute ='在线分钟',  sum_com_cnt ='完单数'
+        #                             , online_day ='在线天数' )
         return order_list
     else:
         order_list , pages = Rtn_pages(order_list, page_index)
@@ -304,6 +315,20 @@ def t_s_company(request,page_index):
                                                              'city_id':city_id, 't_d1':t_d1, 't_d2':t_d2})
 
     pass
+
+
+
+def Auto_list(request):
+    return render(request, 'sqyc_bi/auto_index.html')
+
+
+# def Special_com_total(request):
+#     cur = connection.curson()
+#     sql = "SELECT * from  t_special_company_day('2018-06-25','2018-07-01','大众') "
+#
+#
+
+
 
 @login_required
 def Other_test(request):
