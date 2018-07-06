@@ -14,10 +14,11 @@
 		ul,li{list-style: none;margin:0;padding:0;float:left;}
 		html{height:100%}
 		body{height:100%;margin:0px;padding:0px;font-family:"微软雅黑";}
-		#container{height:600px;width:100%;}
+		#container{height:90%;width:100%;}
 		#r-result{width:100%;}
     </style>
 </head>
+
 <body>
 	<div id="container"></div>
 	<div id="r-result">
@@ -28,8 +29,8 @@
         <form action="/chart/map/" class="form_pro" method="get">
 
             city_id: <input type="text" value="{{ t_city }}"  name = "t_city"> &nbsp
-            开始:<input type="datetime-local"   value="{{ t_d1 }}"  name="t_d1"> &nbsp
-            结束:<input type="datetime-local"   value="{{ t_d2 }}"  name="t_d2">
+            开始:<input type="datetime"   value="{{ t_d1 }}"  name="t_d1"> &nbsp
+            结束:<input type="datetime"   value="{{ t_d2 }}"  name="t_d2">
             <input type="submit" value="提交" name="sub_buton" class="down_btn">
 
             <select name="ck" id="">
@@ -48,12 +49,15 @@
     {% if t_city == '44' %}
         var point = new BMap.Point(116.418261, 39.921984);  // beijing
         map.centerAndZoom(point, 15);
-    {% else %}
+    {% elif t_city == '94' %}
         var point = new BMap.Point(126.640496,45.766991);   // haerbin
         map.centerAndZoom(point, 15);
+    {%  else  %}
+          var point =  new BMap.Point(113.66, 34.75);
+          map.centerAndZoom(point, 6);
     {% endif %}
 
-    map.centerAndZoom(point, 15);             // 初始化地图，设置中心点坐标和地图级别
+    // map.centerAndZoom(point, 15);             // 初始化地图，设置中心点坐标和地图级别
     map.enableScrollWheelZoom(); // 允许滚轮缩放
 
     var points = {{ order_list|safe }};   //
