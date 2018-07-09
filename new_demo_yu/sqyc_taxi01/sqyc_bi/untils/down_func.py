@@ -56,8 +56,8 @@ def Down_files_dic(request, order_list, **kwargs ):
     return response
 
 
-def Down_files_dic2(request, order_list, kwargs ):
-    # Create the HttpResponse object with the appropriate CSV header.
+def Down_files_dic2(request, order_list, colname ):
+    #  改写， 直接由列表名自行解析判断
 
     response = HttpResponse(content_type='text/csv')
 
@@ -69,10 +69,10 @@ def Down_files_dic2(request, order_list, kwargs ):
     writer.writerow([the_name])
        # todo
 
-    writer.writerow( kwargs )
+    writer.writerow( colname )
 
     for i in order_list:
         # writer.writerow([i.create_date, i.recmd_status, i.order_status ])  # 这里的i.create属性
-        writer.writerow(  [ i[j] for j in kwargs ] )
+        writer.writerow(  [ i[j] for j in colname ] )
 
     return response

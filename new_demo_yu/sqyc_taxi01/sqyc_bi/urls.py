@@ -5,7 +5,6 @@ from sqyc_bi import  views
 urlpatterns = [
     url(r'^$', views.Index) ,
     url(r'^inner_index/$', views.Login_check ) ,
-    url(r'^csv/$', views.Csv_data ) , # download something
 
     url(r'^sqmap/$',views.Sqmap ),
     url(r'^connect/$',views.Connect ) ,
@@ -34,6 +33,8 @@ urlpatterns = [
 
     url(r"^auto_list/$", views.Auto_list) ,
 
+    url(r'^handle_sql/$', views.Handle_sql) ,
+    url(r'^handle_sqlt/$', views.Handle_sqlt)
     # url(r"^special_com_total/$", views.Special_com_total) ,
 
 ]

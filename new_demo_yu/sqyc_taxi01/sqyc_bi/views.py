@@ -91,28 +91,6 @@ def Login_check(request):
 
 
 @login_required
-def Csv_data(request):
-    # Create the HttpResponse object with the appropriate CSV header.
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename="download_files.csv"'
-
-    writer = csv.writer(response)
-    # 取出城市代码， 依据命名格式。
-    the_name = request.session['user_name'].split("_")[-1]
-    writer.writerow([the_name])
-    data_list = sqyc_table.objects.all()[0:30]
-
-    writer.writerow(['city_id',  'driver_id', 'driver_phone' ])
-    for i in data_list:
-        writer.writerow( [i.city_id,  i.driver_id, i.driver_phone]  )
-
-    return response
-
-
-
-
-
-@login_required
 def Wd_driver_num(request,page_index):
     ''' 返回接单员数量信息，日期， 订单状态， 有无拉新；  一单，二单'''
 
@@ -230,8 +208,9 @@ def Company_day_total(request, page_index):
 
     cur.execute(sql)
     res = cur.fetchall()
+    # 处理方式二， 形成字典列表
     colName = [col[0] for col in cur.description]
-    order_list = [dict(zip(colName, row)) for row in res]
+    order_list = [dict(zip(colName, row)) for row in res]  # 将字典及数据用列表推导式定 === 列表推导式
 
     # order_list = []
     # for i in res:
@@ -322,11 +301,26 @@ def Auto_list(request):
     return render(request, 'sqyc_bi/auto_index.html')
 
 
-# def Special_com_total(request):
-#     cur = connection.curson()
-#     sql = "SELECT * from  t_special_company_day('2018-06-25','2018-07-01','大众') "
-#
-#
+
+def Handle_sql(request):
+    return render(request, 'bi_echarts/Handle_sql.html')
+
+    pass
+
+def Handle_sqlt(request):
+    sub_buton = request.GET.get('sub_buton')
+    para1 = request.GET.get('para1')
+
+    cur = connection.cursor()
+
+    sql = para1.strip().replace(r"\n","")
+    cur.execute(sql)
+    res = cur.fetchall()
+
+    colName = [col[0] for col in cur.description]
+    order_list = [dict(zip(colName, row)) for row in res]
+    order_list = Down_files_dic2( request, order_list, colName)
+    return  order_list
 
 
 
