@@ -35,7 +35,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sqyc_bi/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
+            <state relative-caret-position="918">
               <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="22" />
               <folding />
             </state>
@@ -45,25 +45,51 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sqyc_bi/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
+            <state relative-caret-position="7938">
               <caret line="309" column="7" lean-forward="false" selection-start-line="309" selection-start-column="7" selection-end-line="309" selection-end-column="7" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1531125839960" expanded="true" signature="6543:6595" ph="SELECT * fro... t_special_company_day" />
-                <marker date="1531125839960" expanded="true" signature="6651:6704" ph="select * fro... fuc_company_total" />
-                <marker date="1531125839960" expanded="true" signature="8741:8788" ph="select * fro... fuc_city_total" />
+                <marker date="1531126500266" expanded="true" signature="6543:6595" ph="SELECT * fro... t_special_company_day" />
+                <marker date="1531126500266" expanded="true" signature="6651:6704" ph="select * fro... fuc_company_total" />
+                <marker date="1531126500266" expanded="true" signature="8741:8788" ph="select * fro... fuc_city_total" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Handle_sql.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Handle_sql.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/bi_echarts/Handle_sql.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="18" column="70" lean-forward="false" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="r2_rck.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sqyc_bi/r2_rck.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6939">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
-                <element signature="e#385#418#0#HTML" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
+                <marker date="1531301695427" expanded="true" signature="269:481" ph="select remar... risk_refuse_log" />
+                <marker date="1531301695427" expanded="true" signature="642:1080" ph="SELECT t1.* city_id" />
+                <marker date="1531301695427" expanded="true" signature="661:894" ph="SELECT t1.ci... risk_order" />
+                <marker date="1531301695427" expanded="true" signature="909:1043" ph="SELECT DISTI... risk_order" />
+                <marker date="1531301695427" expanded="true" signature="1157:1660" ph="SELECT a1.ci... city_id" />
+                <marker date="1531301695427" expanded="true" signature="1222:1465" ph="SELECT t1.ci... risk_order" />
+                <marker date="1531301695427" expanded="true" signature="1485:1608" ph="SELECT t2.dr... risk_order" />
+                <marker date="1531301695427" expanded="true" signature="2137:2204" ph="SELECT * fro... car_biz_driver_recommend" />
+                <marker date="1531301695427" expanded="true" signature="2355:2605" ph="select city_... risk_order" />
+                <marker date="1531301695427" expanded="true" signature="4048:4570" ph="SELECT t1.pa... pay_card_no" />
+                <marker date="1531301695427" expanded="true" signature="4141:4290" ph="SELECT pay_c... risk_order" />
+                <marker date="1531301695427" expanded="true" signature="4798:5838" ph="SELECT t1.* order_id" />
+                <marker date="1531301695427" expanded="true" signature="5052:5377" ph="select order... order_info" />
+                <marker date="1531301695427" expanded="true" signature="5393:5482" ph="SELECT order... order_settle_detail" />
+                <marker date="1531301695427" expanded="true" signature="5536:5764" ph="SELECT order... order_driver_event" />
+                <marker date="1531301695427" expanded="true" signature="5881:5917" ph="SELECT * fro... diff_time_point" />
               </folding>
             </state>
           </provider>
@@ -72,8 +98,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sqyc_taxi01/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="105" column="23" lean-forward="false" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="23" />
+            <state relative-caret-position="1566">
+              <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -86,8 +112,8 @@
       <list>
         <option value="CSS File" />
         <option value="Stylus File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -134,6 +160,7 @@
         <option value="$PROJECT_DIR$/sqyc_bi/views.py" />
         <option value="$PROJECT_DIR$/sqyc_bi/urls.py" />
         <option value="$PROJECT_DIR$/templates/bi_echarts/Handle_sql.html" />
+        <option value="$PROJECT_DIR$/sqyc_bi/r2_rck.py" />
       </list>
     </option>
   </component>
@@ -144,10 +171,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1758" />
-    <option name="height" value="919" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1760" />
+    <option name="height" value="927" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -164,6 +191,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -200,32 +229,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sqyc_bi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sqyc_taxi01" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sqyc_taxi01" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="bi_echarts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -524,20 +533,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1758" height="919" extended-state="6" />
+    <frame x="64" y="-11" width="1760" height="927" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16491841" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16491841" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998747" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998747" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -591,7 +600,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/sqyc_bi/sq_index_new2.html" />
     <entry file="file://$PROJECT_DIR$/sqyc_bi/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -610,9 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#117#169#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -634,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -685,13 +689,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sqyc_bi/static/css/rr.styl" />
-    <entry file="file://$PROJECT_DIR$/static/css/main1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main1.css" />
     <entry file="file://$PROJECT_DIR$/templates/sqyc_bi/upload_pic.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -748,13 +746,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/main1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main1.css" />
     <entry file="file://$PROJECT_DIR$/sqyc_bi/migrations/0005_t_company_day_data_t_experience.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -766,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -774,7 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,7 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,7 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,7 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270">
           <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,30 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3564">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <marker date="1530771747333" expanded="true" signature="1550:1723" ph="SELECT t1.*,... fuc_company_day" />
-            <marker date="1530771747333" expanded="true" signature="2552:2590" ph="SELECT * fro... drjd_ylx_num" />
-            <marker date="1530771747333" expanded="true" signature="2633:2671" ph="SELECT * fro... drjd_nlx_num" />
-            <marker date="1530771747333" expanded="true" signature="3096:3134" ph="SELECT * fro... drwd_ylx_num" />
-            <marker date="1530771747333" expanded="true" signature="3177:3215" ph="SELECT * fro... drwd_nlx_num" />
-            <marker date="1530771747333" expanded="true" signature="4889:4992" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="5026:5129" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="5167:5270" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="5304:5407" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="7360:7463" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="7498:7601" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="7636:7739" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="7774:7877" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="9706:9809" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="9843:9946" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="9984:10087" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="10121:10224" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="12097:12200" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="12235:12338" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="12373:12476" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="12511:12614" ph="SELECT * fro... t_driver_order_num" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -873,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2268">
           <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -881,15 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sqyc_taxi01/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="105" column="23" lean-forward="false" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,9 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#484#490#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -907,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,7 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="77" column="19" lean-forward="true" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -931,30 +875,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="30" />
-          <folding>
-            <element signature="e#26#61#0" expanded="true" />
-            <marker date="1531116513366" expanded="true" signature="675:720" ph="SELECT * fro... order_lat_long" />
-            <marker date="1531116513366" expanded="true" signature="789:839" ph="SELECT * fro... order_lat_long_test" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqyc_taxi01/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sqyc_bi/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
+        <state relative-caret-position="7938">
           <caret line="309" column="7" lean-forward="false" selection-start-line="309" selection-start-column="7" selection-end-line="309" selection-end-column="7" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1531125839960" expanded="true" signature="6543:6595" ph="SELECT * fro... t_special_company_day" />
-            <marker date="1531125839960" expanded="true" signature="6651:6704" ph="select * fro... fuc_company_total" />
-            <marker date="1531125839960" expanded="true" signature="8741:8788" ph="select * fro... fuc_city_total" />
+            <marker date="1531126500266" expanded="true" signature="6543:6595" ph="SELECT * fro... t_special_company_day" />
+            <marker date="1531126500266" expanded="true" signature="6651:6704" ph="select * fro... fuc_company_total" />
+            <marker date="1531126500266" expanded="true" signature="8741:8788" ph="select * fro... fuc_city_total" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sqyc_bi/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
+        <state relative-caret-position="918">
           <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="22" />
           <folding />
         </state>
@@ -962,10 +909,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/bi_echarts/Handle_sql.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="486">
+          <caret line="18" column="70" lean-forward="false" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqyc_bi/r2_rck.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6939">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#385#418#0#HTML" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1531301695427" expanded="true" signature="269:481" ph="select remar... risk_refuse_log" />
+            <marker date="1531301695427" expanded="true" signature="642:1080" ph="SELECT t1.* city_id" />
+            <marker date="1531301695427" expanded="true" signature="661:894" ph="SELECT t1.ci... risk_order" />
+            <marker date="1531301695427" expanded="true" signature="909:1043" ph="SELECT DISTI... risk_order" />
+            <marker date="1531301695427" expanded="true" signature="1157:1660" ph="SELECT a1.ci... city_id" />
+            <marker date="1531301695427" expanded="true" signature="1222:1465" ph="SELECT t1.ci... risk_order" />
+            <marker date="1531301695427" expanded="true" signature="1485:1608" ph="SELECT t2.dr... risk_order" />
+            <marker date="1531301695427" expanded="true" signature="2137:2204" ph="SELECT * fro... car_biz_driver_recommend" />
+            <marker date="1531301695427" expanded="true" signature="2355:2605" ph="select city_... risk_order" />
+            <marker date="1531301695427" expanded="true" signature="4048:4570" ph="SELECT t1.pa... pay_card_no" />
+            <marker date="1531301695427" expanded="true" signature="4141:4290" ph="SELECT pay_c... risk_order" />
+            <marker date="1531301695427" expanded="true" signature="4798:5838" ph="SELECT t1.* order_id" />
+            <marker date="1531301695427" expanded="true" signature="5052:5377" ph="select order... order_info" />
+            <marker date="1531301695427" expanded="true" signature="5393:5482" ph="SELECT order... order_settle_detail" />
+            <marker date="1531301695427" expanded="true" signature="5536:5764" ph="SELECT order... order_driver_event" />
+            <marker date="1531301695427" expanded="true" signature="5881:5917" ph="SELECT * fro... diff_time_point" />
           </folding>
         </state>
       </provider>
