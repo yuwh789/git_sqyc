@@ -82,13 +82,13 @@ WSGI_APPLICATION = 'sqyc_taxi01.wsgi.application'
 DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # mysql; postgresql_psycopg2
 
-        'NAME': "sqyc_db",   # mysql: sqyc_db, pg: taxidb
+        'NAME': "taxidb",   # mysql: sqyc_db, pg: taxidb
         'USER': 'taxiuser',
         'PASSWORD': 'taxiuser',
         'HOST':'localhost',
-        'PORT':3306,     # mysql:3306 ,  pg: 5432
+        'PORT':5432,     # mysql:3306 ,  pg: 5432
     }
 }
 
