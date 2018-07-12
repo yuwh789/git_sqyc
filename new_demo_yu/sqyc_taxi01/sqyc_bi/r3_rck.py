@@ -279,14 +279,18 @@ if __name__ == '__main__':
     # 保存数据
     print("开始保存所有文件,请稍候...")
     
+    df_drInfo['t_date'] = t_d
     psy.data_s(df_drInfo, 't_risk_driver_info' )  # 1 司机信息表
     
+    passenger_info['t_date'] = t_d
     psy.data_s(passenger_info, 't_risk_passenger_info') # 2  乘客信息表
 
-    psy.data_s(fk_s_d, 't_risk_seven_order') # 3 风控7日
+    # psy.data_s(fk_s_d, 't_risk_seven_order') # 3 风控7日
 
+    func_new['t_date'] = t_d
     psy.data_s(func_new, 't_risk_online_order')  # 4 线上订单表
 
+    ret_table['t_date'] = t_d
     psy.data_s(ret_table, 't_risk_result')  # 5 风控结果表
     
     t2 = time.time()
