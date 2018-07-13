@@ -35,8 +35,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bi_echarts/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="162">
+              <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -47,38 +47,41 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sqyc_bi/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="227" column="62" lean-forward="false" selection-start-line="227" selection-start-column="62" selection-end-line="227" selection-end-column="62" />
+            <state relative-caret-position="6291">
+              <caret line="248" column="0" lean-forward="false" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1530841727705" expanded="true" signature="7167:7219" ph="SELECT * fro... t_special_company_day" />
-                <marker date="1530841727705" expanded="true" signature="7275:7328" ph="select * fro... fuc_company_total" />
-                <marker date="1530841727705" expanded="true" signature="9318:9365" ph="select * fro... fuc_city_total" />
-                <marker date="1530841727705" expanded="true" signature="10681:10749" ph="SELECT * fro... t_special_company_day" />
+                <marker date="1531470491527" expanded="true" signature="10799:10850" ph="..." />
+                <marker date="1531470491527" expanded="true" signature="10855:10946" ph="..." />
+                <marker date="1531470491527" expanded="true" signature="10974:11426" ph="..." />
+                <marker date="1531470491527" expanded="true" signature="11154:11312" ph="..." />
+                <marker date="1531470491527" expanded="true" signature="11465:11515" ph="..." />
+                <marker date="1531470491527" expanded="true" signature="11555:11617" ph="..." />
+                <marker date="1531470491527" expanded="true" signature="11664:11724" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bi_echarts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+            <state relative-caret-position="405">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#26#61#0" expanded="true" />
-                <marker date="1530842304271" expanded="true" signature="675:720" ph="SELECT * fro... order_lat_long" />
-                <marker date="1530842304271" expanded="true" signature="789:839" ph="SELECT * fro... order_lat_long_test" />
+                <marker date="1531116513366" expanded="true" signature="675:720" ph="SELECT * fro... order_lat_long" />
+                <marker date="1531116513366" expanded="true" signature="789:839" ph="SELECT * fro... order_lat_long_test" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order_hot_map.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order_hot_map.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/bi_echarts/order_hot_map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="43" column="10" lean-forward="true" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+            <state relative-caret-position="394">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,7 +90,7 @@
       <file leaf-file-name="base_in_index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sqyc_bi/base_in_index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
+            <state relative-caret-position="3132">
               <caret line="116" column="26" lean-forward="false" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
               <folding />
             </state>
@@ -158,10 +161,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1758" />
-    <option name="height" value="919" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1760" />
+    <option name="height" value="927" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -534,20 +537,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1758" height="919" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-11" width="1760" height="927" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12179487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.122960374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998747" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998747" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -652,7 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -703,13 +704,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sqyc_bi/static/css/rr.styl" />
-    <entry file="file://$PROJECT_DIR$/static/css/main1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main1.css" />
     <entry file="file://$PROJECT_DIR$/templates/sqyc_bi/upload_pic.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -766,13 +761,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/main1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main1.css" />
     <entry file="file://$PROJECT_DIR$/sqyc_bi/migrations/0005_t_company_day_data_t_experience.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -784,7 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,7 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,7 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -809,7 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="64" column="56" lean-forward="false" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,7 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,7 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="39" column="44" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,7 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,7 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -882,13 +862,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270">
           <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/sqyc_bi/base_in_index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
+        <state relative-caret-position="3132">
           <caret line="116" column="26" lean-forward="false" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
           <folding />
         </state>
@@ -906,37 +885,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3564">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <marker date="1530771747333" expanded="true" signature="1550:1723" ph="SELECT t1.*,... fuc_company_day" />
-            <marker date="1530771747333" expanded="true" signature="2552:2590" ph="SELECT * fro... drjd_ylx_num" />
-            <marker date="1530771747333" expanded="true" signature="2633:2671" ph="SELECT * fro... drjd_nlx_num" />
-            <marker date="1530771747333" expanded="true" signature="3096:3134" ph="SELECT * fro... drwd_ylx_num" />
-            <marker date="1530771747333" expanded="true" signature="3177:3215" ph="SELECT * fro... drwd_nlx_num" />
-            <marker date="1530771747333" expanded="true" signature="4889:4992" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="5026:5129" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="5167:5270" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="5304:5407" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="7360:7463" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="7498:7601" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="7636:7739" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="7774:7877" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="9706:9809" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="9843:9946" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="9984:10087" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="10121:10224" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="12097:12200" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="12235:12338" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="12373:12476" ph="SELECT * fro... t_driver_order_num" />
-            <marker date="1530771747333" expanded="true" signature="12511:12614" ph="SELECT * fro... t_driver_order_num" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bi_echarts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="162">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -945,35 +900,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sqyc_bi/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="227" column="62" lean-forward="false" selection-start-line="227" selection-start-column="62" selection-end-line="227" selection-end-column="62" />
+        <state relative-caret-position="6291">
+          <caret line="248" column="0" lean-forward="false" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1530841727705" expanded="true" signature="7167:7219" ph="SELECT * fro... t_special_company_day" />
-            <marker date="1530841727705" expanded="true" signature="7275:7328" ph="select * fro... fuc_company_total" />
-            <marker date="1530841727705" expanded="true" signature="9318:9365" ph="select * fro... fuc_city_total" />
-            <marker date="1530841727705" expanded="true" signature="10681:10749" ph="SELECT * fro... t_special_company_day" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bi_echarts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding>
-            <element signature="e#26#61#0" expanded="true" />
-            <marker date="1530842304271" expanded="true" signature="675:720" ph="SELECT * fro... order_lat_long" />
-            <marker date="1530842304271" expanded="true" signature="789:839" ph="SELECT * fro... order_lat_long_test" />
+            <marker date="1531470491527" expanded="true" signature="10799:10850" ph="..." />
+            <marker date="1531470491527" expanded="true" signature="10855:10946" ph="..." />
+            <marker date="1531470491527" expanded="true" signature="10974:11426" ph="..." />
+            <marker date="1531470491527" expanded="true" signature="11154:11312" ph="..." />
+            <marker date="1531470491527" expanded="true" signature="11465:11515" ph="..." />
+            <marker date="1531470491527" expanded="true" signature="11555:11617" ph="..." />
+            <marker date="1531470491527" expanded="true" signature="11664:11724" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/bi_echarts/order_hot_map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="43" column="10" lean-forward="true" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+        <state relative-caret-position="394">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bi_echarts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#61#0" expanded="true" />
+            <marker date="1531116513366" expanded="true" signature="675:720" ph="SELECT * fro... order_lat_long" />
+            <marker date="1531116513366" expanded="true" signature="789:839" ph="SELECT * fro... order_lat_long_test" />
+          </folding>
         </state>
       </provider>
     </entry>
