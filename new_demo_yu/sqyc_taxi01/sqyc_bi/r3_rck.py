@@ -23,17 +23,17 @@ def Df_drInfo(t_d,psy):
     # 处理司机异常
    
     # 当日司机完单总量
-    sql_num_total = " SELECT t1.*  from (SELECT t1.city_id, t1.driver_id,  COUNT(*) 完单总量  	from mysql.risk_order t1 where t1.city_id is not \
+    sql_num_total = " SELECT t1.*  from (SELECT t1.city_id, t1.driver_id,  COUNT(*) 完单总量 from mysql.risk_order t1 where t1.city_id is not \
     null  and t1.pay_card_no is not null  and t1.fact_start_date < '{}'::date + INTERVAL '1 day' \
-    GROUP BY 1 ,2   HAVING COUNT(*)>2  ) t1 join  (	SELECT DISTINCT driver_id from mysql.risk_order t2 \
-    where  fact_start_date >=  '{}' and   fact_start_date < '{}'::date + INTERVAL '1 day' ) t2 on  t2.driver_id = t1.driver_id  ".format(t_d, t_d,t_d)
+    GROUP BY 1 ,2   HAVING COUNT(*)>2  ) t1 join  (SELECT DISTINCT driver_id from mysql.risk_order t2 \
+    where  fact_start_date >=  '{}' and  fact_start_date < '{}'::date + INTERVAL '1 day' ) t2 on  t2.driver_id = t1.driver_id  ".format(t_d, t_d,t_d)
     
     
     # 当日司机支付账号多次握手订单   create_time
     sql_num_pay = " SELECT a1.city_id, a1.driver_id, SUM(a1.num) 多次握手订单  \
     FROM (SELECT t1.city_id, t1.driver_id, t1.pay_card_no, COUNT(*) num from mysql.risk_order t1 where t1.city_id is not null  and t1.pay_card_no is not null \
     and   t1.fact_start_date   <= '{}'::date + INTERVAL '1 day'	GROUP BY 1 ,2,3 HAVING COUNT(*)>2	) a1 JOIN  \
-    ( SELECT  t2.driver_id  from mysql.risk_order  t2  where  fact_start_date >='{}' and  fact_start_date < '{}'::date + INTERVAL '1 day' ) a2  on a1.driver_id = a2.driver_id  GROUP BY 1 ,2".format(t_d,t_d,t_d)
+    ( SELECT distinct  t2.driver_id  from mysql.risk_order  t2  where  fact_start_date >='{}' and  fact_start_date < '{}'::date + INTERVAL '1 day' ) a2  on a1.driver_id = a2.driver_id  GROUP BY 1 ,2".format(t_d,t_d,t_d)
     
     
     print('--- 司机信息指标 ---')
@@ -92,9 +92,9 @@ def Passenger_info(t_d,psy):
     # 乘客异常 15% , 乘客完单数和接单司机比例70,if 完单数<=2 则 0 else  比例*50, 去掉0.7
     # create_time  ---> fact_start_date
     print("--- 乘客异常数据 ---")
-    sql_ck_num = sql = "SELECT t1.pay_card_no, COUNT(*)  乘客完单数 , COUNT(DISTINCT t1.driver_id)   对接司机数  from  \
+    sql_ck_num = "SELECT t1.pay_card_no, COUNT(*)  乘客完单数 , COUNT(DISTINCT t1.driver_id)   对接司机数  from  \
     ( SELECT pay_card_no,driver_id,booking_user_id from  mysql.risk_order  where   fact_start_date <  '{}'::date + INTERVAL '1 day' and pay_card_no is not null ) t1  join  \
-    (SELECT fact_start_date, booking_user_id  from  mysql.risk_order   where   pay_card_no is not null  and (fact_start_date  >='{}'  and fact_start_date< '{}'::date + INTERVAL '1 day' )  )   t2   \
+    (SELECT distinct  booking_user_id  from  mysql.risk_order   where   pay_card_no is not null  and (fact_start_date  >='{}'  and fact_start_date< '{}'::date + INTERVAL '1 day' )  )   t2   \
     on t1.booking_user_id = t2.booking_user_id  GROUP BY 1   HAVING COUNT(*) >2 ".format(t_d,t_d,t_d)
     df_ck_num = psy.data_r(sql_ck_num)
     # 乘客异常
@@ -109,7 +109,7 @@ def Order_online(t_d,psy,fk_s_d):
     sql1 = "SELECT t1.* ,a2.driver_coordinate,a2.grab_order_time,( extract(epoch FROM t1.fact_start_date) - extract(epoch FROM a2.grab_order_time ) )  as 接驾秒 , ( extract(epoch FROM t1.fact_end_date) - extract(epoch FROM t1.fact_start_date) )/60 as 行驶分钟 \
     from (	select  order_id,driver_id,  city_id,service_end_date,driver_name,booking_user_id,rider_user_phone,  \
     fact_pay_amount ,fact_start_point,fact_end_point,dis_count_amount,fact_start_date,fact_end_date  from  mysql.order_info  where  ( service_end_date >= '{}'   \
-    and  service_end_date < '{}'::date  + INTERVAL '1 day') 	) t1 left join 	( SELECT order_id from mysql.order_settle_detail where pay_status=1 and online_pay_status=1 ) t2   \
+    and  service_end_date < '{}'::date  + INTERVAL '1 day')) t1  join ( SELECT order_id from mysql.order_settle_detail where pay_status=1 and online_pay_status=1 ) t2   \
     on  t1.order_id = t2.order_id  left join  (  SELECT order_id,  driver_id, driver_coordinate, MIN( grab_order_time ) grab_order_time   from  mysql.order_driver_event  \
     where grab_order_time  >= '{}'  and  grab_order_time < '{}'::date  + INTERVAL '1 day' 	GROUP BY 1,2,3 	) a2  \
     on t1.order_id = a2.order_id and t1.driver_id = a2.driver_id ".format(t_d,t_d, t_d, t_d)
@@ -138,7 +138,6 @@ def Order_online(t_d,psy,fk_s_d):
                       how = 'left',left_on=['order_id'],right_on=['order_no'] ) # 握手频次
     ret_xs = ret_xs.drop('order_no',axis=1)
 
-
     # 总额--总额中位数--金额异常
     ret_xs['线上总额'] = ret_xs['fact_pay_amount'] + ret_xs['dis_count_amount']
     df_onDay_med = ret_xs.groupby('city_id',as_index=False).agg({'线上总额':np.median } )
@@ -147,8 +146,9 @@ def Order_online(t_d,psy,fk_s_d):
 
     # 异常指标计算
     ret_xs['接驾异常'] = ret_xs.apply( exc_j, args=(take_driver_num, ) , axis=1  )
-    ret_xs['服务异常'] =ret_xs.apply( exc_fw, args=(service_num,) , axis =1 )
-    ret_xs['两单间隔异常'] = ret_xs:.apply(exc_ldjg , args =(order_interval_num , ) ,axis =1 )
+    ret_xs['服务异常'] =ret_xs.apply( exc_fw, args=(service_num,) , axis =1) 
+    ret_xs[['间隔分钟','间隔里程']] = ret_xs[['间隔分钟','间隔里程']].astype(float)
+    ret_xs['两单间隔异常'] = ret_xs.apply(exc_ldjg , args =(order_interval_num , ) ,axis =1 )
     ret_xs['多次握手异常'] = ret_xs.apply(exc_dcws, axis =1)
     
     #根据金额调整评分金额大于中位数：10倍+0.2， 2倍-0.4，大于中位数0.2，小于中位数则0 func_money
@@ -246,58 +246,61 @@ if __name__ == '__main__':
     t_d = Date_list().timedlta(1)
     t_d = datetime.datetime.strftime(t_d, '%Y-%m-%d')
     t1= time.time()
+	
     
         
     # 司机--乘客异常分析
-    df_fkDr = Risk_record( t_d, psy )  # 风控司机记录
-    df_drInfo = Df_drInfo(t_d, psy)    # 司机信息表，司机异常计算
+    df_fkDr = Risk_record( t_d, psy )  # 1风控司机记录
+    t101= time.time()
     
-    #df_drInfo.to_excel(writer,'司机信息表') # 1司机信息表保存
+    df_drInfo = Df_drInfo(t_d, psy)    # 2司机信息表，司机异常计算
+    t102= time.time()
 
+    df_lx = Df_lx(t_d, psy)      # 3司机拉新
+    t103= time.time()
     
-    df_lx = Df_lx(t_d, psy)      # 司机拉新
-    passenger_info= Passenger_info(t_d, psy)     # 乘客异常
+    passenger_info= Passenger_info(t_d, psy)     # 4乘客异常
+    t104= time.time()
     
-    #passenger_info.to_excel(writer,'乘客信息表')# 2乘客信息表保存
-
+ 
+    
     # 订单异常分析
-    fk_s_d = Fk_seven_data(t_d,psy )    # 风控七日订单数据
-    psy.data_s(fk_s_d, 't_risk_seven_order')
-    #fk_s_d.to_excel(writer,'风控订单7天') # 3风控订单7日表保存
+    fk_s_d = Fk_seven_data(t_d,psy )    # 5风控七日订单数据
+    t105= time.time()
+    
+
     
     order_online = Order_online(t_d, psy ,fk_s_d) # 线上订单数据
+    t106= time.time()
+
     online_order_handle = Online_order_handle(order_online,df_drInfo,passenger_info,df_lx)  # 线上订单整合
+
     func_new = Func_new(online_order_handle)  # 评分调整
-    
-    #func_new.to_excel(writer,'当日线上完单')# 4当日线上完单保存
-    
-    ret_table = Ret_table(func_new,df_fkDr)  # 结果表生成
-    
-    #ret_table.to_excel(writer,'结果表')  # 5结果表保存
+        
+
+    ret_table = Ret_table(func_new,df_fkDr)  # 6结果表生成
+    print("t101--%.2f; t102--%.2f; t103--%.2f;  t104--%.2f; t105--%.2f; "   %( (t102-t101) , (t103-t102),(t104-t103),(t105-t104),(t106-t105))  )
     
     # 保存数据
     print("开始保存所有文件,请稍候...")
-    
+    df_drInfo['t_date'] = t_d 
     psy.data_s(df_drInfo, 't_risk_driver_info' )  # 1 司机信息表
     
-    psy.data_s(passenger_info, 't_risk_passenger_info') # 2  乘客信息表
-
+    passenger_info['t_date'] = t_d
+    psy.data_s(passenger_info, 't_risk_passenger_info') # 2   乘客信息表
+    
+    # psy.data_s(fk_s_d, 't_risk_seven_order')  3.0   七天风控
+    func_new['t_date'] = t_d
     psy.data_s(func_new, 't_risk_online_order')  # 3 线上订单表
 
+    ret_table['t_date'] = t_d
     psy.data_s(ret_table, 't_risk_result')  # 4  风控结果表
     
     t2 = time.time()
     
     
-    #print("正在发送邮件, 请稍候...")
-    #to_address_list =  "wangjinhong@01zhuanche.com,luyinghong@01zhuanche.com,likangnan@01zhuanche.com,yuweihong@01zhuanche.com,huangsiwei@01zhuanche.com,xudan@01zhuanche.com"
     
-    # mail_mimemuprt( "风控" , path , to_address_list )   
-    #mail_mimemuprt("风控", path,to_address_list )    
-    
-    
-    print("")
-    print("fk--->: %.2f s" %(t2-t1))
+    print("fk--->: %.2f!" %(t2-t1))
 
 
 #over =input("over!")

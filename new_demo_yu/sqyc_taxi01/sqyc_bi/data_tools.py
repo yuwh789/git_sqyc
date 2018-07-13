@@ -46,7 +46,7 @@ class Psyco_handle(object):
             self.df = pd.read_sql(insql, self.engine)
         except Exception as e:
             print("连接数据库异常", e)
-
+            return e 
         return self.df
 
 
