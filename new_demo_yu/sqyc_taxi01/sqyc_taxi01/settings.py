@@ -79,21 +79,35 @@ WSGI_APPLICATION = 'sqyc_taxi01.wsgi.application'
 
 
 
-
-
-
-
 DATABASES = {
-      'default': {
-          #'ENGINE': 'django.db.backends.sqlite3',
-          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-          'NAME': "taxidb",
-          'USER': 'taxiuser',
-          'PASSWORD': 'taxiuser',
-          'HOST':'localhost',
-          'PORT':5432
-      }
-  }
+    'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # mysql; postgresql_psycopg2
+
+        'NAME': "taxidb",   # mysql: sqyc_db, pg: taxidb
+        'USER': 'taxiuser',
+        'PASSWORD': 'taxiuser',
+        'HOST':'localhost',
+        'PORT':5432,     # mysql:3306 ,  pg: 5432
+    }
+}
+
+
+
+#
+# DATABASES = {
+#       'default': {
+#           #'ENGINE': 'django.db.backends.sqlite3',
+#           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#           'NAME': "taxidb",
+#           'USER': 'taxiuser',
+#           'PASSWORD': 'taxiuser',
+#           'HOST':'localhost',
+#           'PORT':5432
+#       }
+#   }
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

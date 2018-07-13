@@ -1,0 +1,27 @@
+{% extends 'sqyc_bi/base_in_company_day.html' %}
+
+{% block middle_head_right_up %}
+        <!--条件侧栏上部-->
+        <div class="middle_head_right_up">
+            SQL代码解析窗口（请规范输入语句,系统将自动解析并返回数据结果,返回csv格式）：
+        </div>
+{% endblock middle_head_right_up %}
+
+
+
+{% block middle_head_right %}
+
+    <div class="middle_head_right">
+
+        <form action="/handle_sqlt/">
+            <textarea style="width:800px;height:150px;" value="hello" name="para1">  </textarea>
+             &nbsp &nbsp &nbsp &nbsp
+             <input type="submit" value="查询"  name="sub_buton">  &nbsp
+        </form>
+
+    </div>
+
+
+
+
+{% endblock middle_head_right %}

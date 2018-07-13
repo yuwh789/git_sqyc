@@ -46,7 +46,7 @@ class Psyco_handle(object):
             self.df = pd.read_sql(insql, self.engine)
         except Exception as e:
             print("连接数据库异常", e)
-
+            return e 
         return self.df
 
 
@@ -80,3 +80,115 @@ class Date_list(object):
 
     def timedlta(self,inday):
         return datetime.datetime.now() - datetime.timedelta(days=int(inday))
+
+
+
+
+
+   
+# 经度1，纬度1，经度2，纬度2 （十进制度数） lon1, lat1, lon2, lat2
+def Distance(df): 
+        # 将十进制度数转化为弧度
+        # math.degrees(x):为弧度转换为角度
+        # math.radians(x):为角度转换为弧度
+        if df['fact_end_point'] is not None and df['fact_start_point'] is not None:
+            lat1 = float( df['fact_start_point'].split(',')[1] ) # A维度
+            lon1 = float( df['fact_start_point'].split(',')[0] ) # A经度
+            lat2 =  float( df['fact_end_point'].split(',')[1] )  # B维度
+            lon2 =  float( df['fact_end_point'].split(',')[0] )  # B经度
+            lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+            # haversine公式
+            dlon = lon2 - lon1
+            dlat = lat2 - lat1
+            a = sin( dlat /2 ) **2 + cos(lat1) * cos(lat2) * sin( dlon /2 ) **2
+            c = 2 * asin( sqrt(a) )
+            r = 6371 # 地球平均半径，单位为公里
+            return c * r*1000
+        else :
+            return None
+
+# 经纬度处理002        
+def Distance2(df): 
+    if df['driver_coordinate'] is not None and df['fact_start_point'] is not None :
+        lat1 = float( df['fact_start_point'].split(',')[1] ) # A维度
+        lon1 = float( df['fact_start_point'].split(',')[0] ) # A经度
+        lat2 =  float( df['driver_coordinate'].split(',')[1] )  # B维度
+        lon2 =  float( df['driver_coordinate'].split(',')[0] )  # B经度
+        lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+        # haversine公式
+        dlon = lon2 - lon1
+        dlat = lat2 - lat1
+        a = sin( dlat /2 ) **2 + cos(lat1) * cos(lat2) * sin( dlon /2 ) **2
+        c = 2 * asin( sqrt(a) )
+        r = 6371 # 地球平均半径，单位为公里
+        return c * r*1000
+    else :
+        return None
+    
+
+
+    # 接驾异常
+def exc_j(df,x): 
+        if df['接驾秒']<120 or df['接驾里程']<100:
+            return 1*x
+        else:
+            return 0
+
+# 服务异常
+def exc_fw(df,x): 
+        if df['行驶分钟']<2 or df['服务里程']<1000:
+            return 1*x
+        else:
+            return 0 
+
+
+
+# 两单间隔异常        
+def exc_ldjg(df,x): 
+    if df['间隔里程'] != '' and  df['间隔里程'] !='/' :
+        if df['间隔分钟'] <2 or df['间隔里程'] < 100:
+            return 1*x 
+        else:
+            return 0
+    else:
+        return 0
+
+
+# 风控多次握手
+def exc_dcws(df ): # 多次握手异常
+    if df['max_num'] >=7:
+        return 1 
+    elif df['max_num'] >= 6:
+        return 0.7 
+    elif df['max_num'] >=5:
+        return 0.6 
+    elif df['max_num'] >=4:
+        return 0.5 
+    elif df['max_num'] >=3:
+        return 0.4
+    elif df['max_num'] >=2:
+        return 0.1 
+    else:
+        return 0
+
+
+
+#风控中位数评分
+def  func_money(df):
+    if df['线上总额'] >= df['线上总额中位数'] *10: 
+        return 0.2
+    elif  df['线上总额'] >= df['线上总额中位数'] *2:
+        return -0.4
+    elif df['线上总额'] >= df['线上总额中位数'] :
+        return -0.2
+    elif df['线上总额'] < df['线上总额中位数'] :
+        return 0 
+
+
+
+# 根据拉新指标，调整评分, 多次握手异常为0
+def ret_newScore(df):
+    if (( df['status']==3.0) | ( df['status']==4.0 )) and df['多次握手异常']==0 :
+        return  max( (df['风险评分'] - 0.5), 0)
+    else:
+        return df['风险评分']
