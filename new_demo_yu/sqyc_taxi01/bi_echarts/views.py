@@ -4,14 +4,16 @@ from django.http import  HttpResponse
 from django.db import  connection
 # Create your views here.
 from sqyc_bi.untils.decorators import *
+from bi_echarts import  models
 
+from django.shortcuts import redirect
 # from django.contrib.auth.decorators import login_required
 
 
-@login_required
-def demo_bi_echarts(request):
-
-    return  render(request, 'bi_echarts/order_hot_map.html')
+# @login_required
+# def demo_bi_echarts(request):
+#
+#     return  render(request, 'bi_echarts/order_hot_map.html')
 
 
 
@@ -24,12 +26,11 @@ def Order_map_data(request):
 
     cur = connection.cursor()
     # sql = "select * from order_lat_long where  city_id={}".format()
-
+    # Pg数据库存储过程用法， 与mysql略有差异
     sql = "SELECT * from order_lat_long('{}','{}' ,'{}') ".format(t_d1, t_d2, t_city)
 
     if check == "ck2":
         sql = "SELECT * from order_lat_long_test('{}','{}' ,'{}') ".format(t_d1, t_d2, t_city)
-
 
     cur.execute(sql)
     res = cur.fetchall()
@@ -43,9 +44,22 @@ def Order_map_data(request):
         dic['count'] = i[1]
         order_list.append(dic)
 
-
     return  render(request, 'bi_echarts/order_hot_map.html',  {'order_list':order_list ,
                                                                't_city':t_city,
                                                                't_d1':t_d1,
                                                                't_d2':t_d2} )
 
+
+# @login_required
+def Func_add(request):
+    if request.method == 'GET':
+        return render(request, 'bi_echarts/func_add.html', )
+    elif request.method == 'POST':
+        func_model = models.func_comment()
+        func_model.title = request.POST.get('para1')
+        func_model.func_name = request.POST.get('para2')
+        func_model.comment = request.POST.get('para3')
+        func_model.save()
+        return redirect('/handle_sqlt/')
+
+    pass

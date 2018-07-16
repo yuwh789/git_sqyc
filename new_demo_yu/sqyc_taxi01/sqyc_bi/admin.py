@@ -18,12 +18,10 @@ class sqyc_tableAdmin(admin.ModelAdmin):
 
 class user_accountAdmin(admin.ModelAdmin):
     list_per_page =  20  # 页码
-
     list_display = ['user_name','password','phone']
-
     list_filter = ['user_name']
-
     search_fields = ['phone']
+
 
 class t_driver_order_numAdmin(admin.ModelAdmin):
     list_per_page = 20

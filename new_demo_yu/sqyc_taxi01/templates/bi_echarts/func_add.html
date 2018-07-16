@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户帐号管理</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="/chart/func_add/">
+            {% csrf_token %}
+            新增函数项目：
+            <br>
+            <br>
+
+            标题: <input type="text" name="para1"> <br>
+            <br>
+
+            函数: <input type="text" name="para2"> <br>
+
+            <br>
+            <br>
+            备注：<textarea style="width:800px;height:150px;" value="comment" name="para3">  </textarea>
+            <br>
+
+            <input type="submit" value="提交"> <br>
+
+        </form>
+
+    </div>
+</body>
+</html>

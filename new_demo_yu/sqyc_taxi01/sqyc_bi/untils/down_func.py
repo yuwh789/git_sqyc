@@ -58,15 +58,14 @@ def Down_files_dic(request, order_list, **kwargs ):
 
 def Down_files_dic2(request, order_list, colname ):
     #  改写， 直接由列表名自行解析判断
-
     response = HttpResponse(content_type='text/csv')
-
     response['Content-Disposition'] = 'attachment; filename="downloads.csv"'
+
 
     writer = csv.writer(response)
     # 取出城市代码, 写入csv文件。
-    the_name = request.session['user_name'].split("_")[-1]
-    writer.writerow([the_name])
+    the_user_name = request.session['user_name'].split("_")[-1]
+    writer.writerow([the_user_name])
        # todo
 
     writer.writerow( colname )
