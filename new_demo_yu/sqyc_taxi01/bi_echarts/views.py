@@ -22,10 +22,10 @@ def Order_map_data(request):
     if request.method == "GET":
         return render(request, 'bi_echarts/order_hot_map.html')
     elif request.method == "POST":
-        t_city = request.GET.get("t_city")
-        t_d1 = request.GET.get("t_d1")
-        t_d2 = request.GET.get("t_d2")
-        check = request.GET.get("ck")
+        t_city = request.POST.get("t_city")
+        t_d1 = request.POST.get("t_d1")
+        t_d2 = request.POST.get("t_d2")
+        check = request.POST.get("ck")
 
         cur = connection.cursor()
         # Pg数据库存储过程用法， 与mysql略有差异
