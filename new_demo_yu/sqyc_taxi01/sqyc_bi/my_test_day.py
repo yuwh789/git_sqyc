@@ -6,6 +6,7 @@ import numpy as np
 import time
 import datetime
 from math import *
+from sqyc_bi.r3_rck import *
 
 
 # def Test_files():
@@ -352,6 +353,19 @@ def Run_hb_tb():
     Driver_jd_hb_tb(t_d)
     Driver_wd_hb_tb(t_d)
     
+def Run_risk():
+    take_driver_num = 0.2  # 订单异常之 接驾异常参数  
+    service_num = 0.2  # 订单异常之 服务常参数  
+    order_interval_num = 0.2  # 订单异常之 两单间隔参数
+    driver_exception_value = 0.35   # 司机异常系数
+    args_value = 0.5    # 订单异常数值一级
+    passenger_value = 0.15 
+
+
+    Run_risk_info()
+
+
+
 if __name__ == "__main__":
     Run_driver_num()
     Run_hb_tb()

@@ -8,6 +8,8 @@ from sqyc_bi.my_test_day import *
 def demo1():
 	run_company_day()
 	#est_cany_day('2018-05-01','94','天鹅')
+	time.time(3)
+        Run_risk()
 
 def R_driver_num():
 	Run_driver_num()

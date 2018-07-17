@@ -132,7 +132,7 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static'), ] # 设置静态文件物�
 STATIC_ROOT = "var/www/sqyc/c_static/"
 
 CRONJOBS = [
-    ('00 08 * * *', 'sqyc_bi.tests.demo1'),
+    ('50 08 * * *', 'sqyc_bi.tests.demo1'),
     ('08 11 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
 ]
 
