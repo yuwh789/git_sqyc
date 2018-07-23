@@ -67,7 +67,7 @@ def  Order_driver_num(t_cityId,t_date):
     # jd1
     mer_jd = pd.merge(df_sql_jd_ylx, df_sql_jd_nlx, how = 'outer', on=['recmd_status'] )  
     mer_jd.rename(columns = {'num_x':'有', 'num_y':'无'}, inplace = True )
-    mer_jd_t =  mer_jd.set_index(['recmd_status']).T.astype(int) 
+    mer_jd_t =  mer_jd.set_index(['recmd_status']).T.astype(float) 
     mer_jd_t['order_status'] = '接单'
     
     #  wd
@@ -79,7 +79,7 @@ def  Order_driver_num(t_cityId,t_date):
     #  wd1
     mer_wd = pd.merge(df_sql_wd_ylx, df_sql_wd_nlx, how = 'outer', on=['recmd_status'] )  
     mer_wd.rename(columns = {'num_x':'有', 'num_y':'无'}, inplace = True )
-    mer_wd_t =  mer_wd.set_index(['recmd_status']).T.astype(int)
+    mer_wd_t =  mer_wd.set_index(['recmd_status']).T.astype(float)
     mer_wd_t['order_status'] = '完单'
     
     
@@ -210,10 +210,8 @@ def Driver_jd_hb_tb(t_d1):
     
     psy.data_s(res_b2, 't_driver_num_hb_tb')   # 调用入库方法  环比
     
-
-    #print("********** over! %s日接单数据已成功入库  **********" %t_d1)
     
-    #print("")
+    print("driver_num_over---%s" %t_d1 )
    
 
 
@@ -260,7 +258,6 @@ def Driver_wd_hb_tb(t_d1):
 
     
     #res_hb.to_sql("t_driver_num_hb_tb", engine, index=False , if_exists='append')
-    #print("--- over! %s日完单环比数据处理成功! ---" %t_d1)
 
 
 
@@ -316,10 +313,7 @@ def Driver_wd_hb_tb(t_d1):
     psy.data_s(res_b2, 't_driver_num_hb_tb')   # 调用入库方法  环比
     # res_b.to_sql("t_driver_num_hb_tb", engine, index=False , if_exists='append')
 
-    # res_b2.to_sql("t_driver_num_hb_tb", engine, index=False , if_exists='append')
     
-    #print("********** over! %s日完单数据已处理  **********" %t_d1)
-
    
     
 def run_company_day():

@@ -129,11 +129,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static'), ] # 设置静态文件物理目录
 
-STATIC_ROOT = "var/www/sqyc/c_static/"
+STATIC_ROOT = "/var/www/sqyc/c_static2/"
 
 CRONJOBS = [
     ('50 08 * * *', 'sqyc_bi.tests.demo1'),
-    ('08 11 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
+    ('30 14 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
 ]
 
 
