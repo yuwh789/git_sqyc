@@ -312,6 +312,7 @@ def Handle_sqlt(request):
 
         cur = connection.cursor()
         sql = para1.strip().replace(r"\n"," ")
+        sql = "select * from  %s" %sql
         cur.execute(sql)
         res = cur.fetchall()
 
