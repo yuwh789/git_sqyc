@@ -92,7 +92,7 @@ def Login_check(request):
 
 @login_required
 def Wd_driver_num(request,page_index):
-    ''' 返回接单员数量信息，日期， 订单状态， 有无拉新；  一单，二单'''
+    ''' 返回接单员数量信息,日期, 订单状态, 有无拉新；  一单,二单  '''
 
     recmd_status = request.GET.get('recmd_status')
     pro_status = request.GET.get('pro_status')
@@ -104,17 +104,14 @@ def Wd_driver_num(request,page_index):
         order_list = Down_files(request, order_list, create_date ='日期', order_status='订单状态', one_num='一单' )
         return  order_list
     else:
-        order_list = t_driver_order_num.objects.filter( order_status=pro_status)
+        order_list = t_driver_order_num.objects.filter( order_status=pro_status).order_by('-create_date')
 
     # 1进行分页
     paginator = Paginator(order_list,20)
-
     # 2获取第n页内容
     order_list = paginator.page(int(page_index))
-
     # 3获取页码列表
     pages = paginator.page_range
-
     # 4.1获取总页数
     num_pages = paginator.num_pages
     current_num = int(page_index)
@@ -136,8 +133,7 @@ def Wd_driver_num(request,page_index):
     return  render(request, 'sqyc_bi/base_in_order_num.html', {'order_list':order_list,
                                                                'pages':pages ,
                                                                'recmd_status':recmd_status,
-                                                               'pro_status':pro_status,
-                                                               })
+                                                               'pro_status':pro_status, })
 
 
 @login_required
@@ -316,6 +312,7 @@ def Handle_sqlt(request):
 
         cur = connection.cursor()
         sql = para1.strip().replace(r"\n"," ")
+        sql = "select * from  %s" %sql
         cur.execute(sql)
         res = cur.fetchall()
 

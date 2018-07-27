@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=YTdQyV7Y4038pgnIDBmuolYBw5sRgZaa"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script
+    <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
     <script src="{% static 'js/jquery-1.12.4.min.js'%}"></script>
 
     <title>order热力图功能</title>
@@ -25,18 +25,20 @@
 		<input type="button"  onclick="openHeatmap();" value="显示热力图"/>
         <input type="button"  onclick="closeHeatmap();" value="关闭热力图"/>
 
+        <form action="/chart/map/" class="form_pro" method="post">
+            {% csrf_token %}
 
-        <form action="/chart/map/" class="form_pro" method="get">
-
-            city_id: <input type="text" value="{{ t_city }}"  name = "t_city"> &nbsp
-            开始:<input type="datetime"   value="{{ t_d1 }}"  name="t_d1"> &nbsp
-            结束:<input type="datetime"   value="{{ t_d2 }}"  name="t_d2">
+            city_id: <input type="text" value="{{ t_city }}"  name = "t_city">
+            &nbsp;
+            开始: <input type="datetime"   value="{{ t_d1 }}"  name="t_d1">
+            &nbsp;
+            结束: <input type="datetime"   value="{{ t_d2 }}"  name="t_d2">
+            &nbsp;
             <input type="submit" value="提交" name="sub_buton" class="down_btn">
 
             <select name="ck" id="">
                 <option value="ck1">默认库</option>
                 <option value="ck2">测试库</option>
-
             </select>
 
         </form>

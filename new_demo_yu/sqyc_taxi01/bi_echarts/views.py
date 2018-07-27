@@ -19,35 +19,33 @@ from django.shortcuts import redirect
 
 @login_required
 def Order_map_data(request):
-    t_city = request.GET.get("t_city")
-    t_d1 = request.GET.get("t_d1")
-    t_d2 = request.GET.get("t_d2")
-    check = request.GET.get("ck")
+    if request.method == "GET":
+        return render(request, 'bi_echarts/order_hot_map.html')
+    elif request.method == "POST":
+        t_city = request.POST.get("t_city")
+        t_d1 = request.POST.get("t_d1")
+        t_d2 = request.POST.get("t_d2")
+        check = request.POST.get("ck")
 
-    cur = connection.cursor()
-    # sql = "select * from order_lat_long where  city_id={}".format()
-    # Pg数据库存储过程用法， 与mysql略有差异
-    sql = "SELECT * from order_lat_long('{}','{}' ,'{}') ".format(t_d1, t_d2, t_city)
+        cur = connection.cursor()
+        # Pg数据库存储过程用法， 与mysql略有差异
+        sql = "SELECT * from order_lat_long('{}','{}' ,'{}') ".format(t_d1, t_d2, t_city)
+        # 测试库判断
+        if check == "ck2":
+            sql = "SELECT * from order_lat_long_test('{}','{}' ,'{}') ".format(t_d1, t_d2, t_city)
+        cur.execute(sql)
+        res = cur.fetchall()
 
-    if check == "ck2":
-        sql = "SELECT * from order_lat_long_test('{}','{}' ,'{}') ".format(t_d1, t_d2, t_city)
-
-    cur.execute(sql)
-    res = cur.fetchall()
-
-    order_list = []
-    for i in res:
-        '''i tuple'''
-        dic = {}
-        dic['lng'] = i[0].split(",")[0]
-        dic['lat'] = i[0].split(",")[-1]
-        dic['count'] = i[1]
-        order_list.append(dic)
-
-    return  render(request, 'bi_echarts/order_hot_map.html',  {'order_list':order_list ,
-                                                               't_city':t_city,
-                                                               't_d1':t_d1,
-                                                               't_d2':t_d2} )
+        order_list = []
+        for i in res:
+            '''i tuple'''
+            dic = {}
+            dic['lng'] = i[0].split(",")[0]
+            dic['lat'] = i[0].split(",")[-1]
+            dic['count'] = i[1]
+            order_list.append(dic)
+        return  render(request, 'bi_echarts/order_hot_map.html',
+                       {'order_list':order_list, 't_city':t_city, 't_d1':t_d1, 't_d2':t_d2})
 
 
 # @login_required
