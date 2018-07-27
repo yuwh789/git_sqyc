@@ -1,6 +1,6 @@
 import pandas as pd
 #测试开启
-from data_tools import *
+from sqyc_bi.data_tools import *
 from sqlalchemy import create_engine
 import numpy as np
 import time
