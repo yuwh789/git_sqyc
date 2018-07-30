@@ -74,16 +74,16 @@ def Login_check(request):
         request.session['is_login'] = True
         request.session['user_name'] = username
         # request.session['user_id'] = the_data.id
+        privileges = user_account.objects.get(user_name = username, password = get_hash(pwd) )
+        request.session['privileges'] = privileges.comment
 
-        if username in ['nihao', 'sqyc_admin']:
-            privileges = 'normal'
-        else :
-            privileges = 'hid'
-
-        return render(request, 'sqyc_bi/base_in_index.html', {"privileges":privileges })
+        # if username in ['nihao', 'sqyc_admin']:
+        #     privileges = 'normal'
+        # else :
+        #     privileges = 'hid'
+        return render(request, 'sqyc_bi/base_in_index.html', {"privileges":privileges.comment })
 
     else:
-
         # the_data = 'haha%s' %the_data
         # return HttpResponse(the_data)
         return HttpResponse("账户或者密码错误！")
@@ -150,6 +150,9 @@ def Company_day(request,page_index):
     company_name = request.GET.get('para2')
     t_d = request.GET.get('t_d')
 
+    if request.session['user_name'].split("_")[0] == 'sqtaxi':
+        city_id = request.session['user_name'].split("_")[-1]
+
     sub_buton = request.GET.get('sub_buton')
 
     if sub_buton == '下载所有数据':
@@ -180,12 +183,14 @@ def Company_day_total_first(request):
 
 
 @login_required
-#  sq_yunying , sq_sj  ,  taxi_beijing_44,  taxi_haerbin_94
+#  sq_yunying , sq_sj  ,  sqtaxi_beijing_44,  sqtaxi_haerbin_94,
 def Company_day_total(request, page_index):
     '''公司汇总数据 公司， 证件  车牌 在线分钟 完单量 在线天数'''
     t_d1 = request.GET.get('t_d1')
     t_d2 = request.GET.get('t_d2')
     city_id = request.GET.get('para1')
+    if request.session['user_name'].split("_")[0] == 'sqtaxi':
+        city_id = request.session['user_name'].split("_")[-1]
     company_name = request.GET.get('para2')
     sub_buton = request.GET.get('sub_buton')
 
@@ -249,6 +254,8 @@ def t_s_company(request,page_index):
     # 阶段汇总数据:  单位名称  司机数 上线司机数	未上线司机数	上线率 完单数	完单司机数 , todo
 
     city_id = request.GET.get('para1')
+    if request.session['user_name'].split("_")[0] == 'sqtaxi':
+        city_id = request.session['user_name'].split("_")[-1]
     t_d1 = request.GET.get('t_d1')
     t_d2 = request.GET.get('t_d2')
     sub_buton = request.GET.get('sub_buton')
@@ -258,7 +265,7 @@ def t_s_company(request,page_index):
     cur.execute(sql)
     res = cur.fetchall()
 
-    # 处理方式1
+    # 处理方式1 普通字典形式;  方式2 列表推导式 cur.description 方法
     order_list = []
     for i in res:
         dic ={}

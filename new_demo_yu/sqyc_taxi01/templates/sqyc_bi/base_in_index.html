@@ -40,7 +40,6 @@
                         success:function(data){
                             console.log(data.age)
 
-
                         },
                         error:function(data){
                             alert('sorry, 服务器超时，请重试！');
@@ -68,16 +67,26 @@
     <div class="middle_head">
 
         <div class="middle_head_left">
-                <li>
-                    <a href="#" class="level1"> 分公司数据查询 </a>
-                    <ul class="current">
-                        <li> <a href="/company_day/" class="cnt1">公司日报数据</a> </li>
-                        <li> <a href="/company_day_total/" class="cnt1">公司汇总数据</a> </li>
-                        <li> <a href="/city_total/" class="cnt1">各分公司透视</a> </li>
-                        <!--<li>司机详情数据</li>-->
-                    </ul>
-                </li>
 
+
+            {% if  '分公司数据查询'  in  request.session.privileges %}
+            <li>
+                                <a href="#" class="level1"> 分公司数据查询 </a>
+                                <ul class="current">
+                                    <li> <a href="/company_day/" class="cnt1">公司日报数据</a> </li>
+                                    <li> <a href="/company_day_total/" class="cnt1">公司汇总数据</a> </li>
+                                    <li> <a href="/city_total/" class="cnt1">各分公司透视</a> </li>
+                                    <!--<li>司机详情数据</li>-->
+                                </ul>
+                            </li>
+            {% else %}
+                <div class="dis_none"> none </div>
+            {% endif %}
+
+
+
+
+            {% if   '司机信息查询' in request.session.privileges %}
                 <li>
                     <a href="#" class="level1"> 司机信息查询 </a>
                     <ul class="current">
@@ -86,33 +95,57 @@
                             <!--<li>司机详情数据</li>-->
                     </ul>
                 </li>
-                <li><a href="#" class="level1"> 乘客信息查询 </a>
-                     <ul class="current">
-                            <li> <a href="/other/test/" class="cnt1">新增完单乘客信息</a> </li>
-                            <li> <a href="/other/test/" class="cnt1">下单乘客信息</a> </li>
-                            <li> <a href="/pas/exper/" class="cnt1">乘客体验信息</a> </li>
-                    </ul>
-                </li>
-                <li><a href="#" class="level1"> 下载数据库文件 </a>
-                    <ul class="current">
-                            <li> <a href="/auto_list/" class="cnt1">自动化数据列表</a> </li>
-                            <li> <a href="/handle_sqlt/" class="cnt1">SQL 解析窗口</a> </li>
-                            <!--<li>司机详情数据</li>-->
-                    </ul>
 
-                </li>
+            {% else %}
+                <div class="dis_none"> none </div>
+            {% endif %}
+
+
+
+            {% if   '乘客信息查询' in request.session.privileges %}
+            <li><a href="#" class="level1"> 乘客信息查询 </a>
+                                 <ul class="current">
+                                        <li> <a href="/other/test/" class="cnt1">新增完单乘客信息</a> </li>
+                                        <li> <a href="/other/test/" class="cnt1">下单乘客信息</a> </li>
+                                        <li> <a href="/pas/exper/" class="cnt1">乘客体验信息</a> </li>
+                                </ul>
+                            </li>
+            {% else %}
+                <div class="dis_none"> none </div>
+            {% endif %}
+
+
+
+            {% if   '下载数据库文件' in request.session.privileges %}
+            <li><a href="#" class="level1"> 下载数据库文件 </a>
+                                <ul class="current">
+                                        <li> <a href="/auto_list/" class="cnt1">自动化数据列表</a> </li>
+                                        <li> <a href="/handle_sqlt/" class="cnt1">SQL 解析窗口</a> </li>
+                                        <!--<li>司机详情数据</li>-->
+                                </ul>
+
+                            </li>
+            {% else %}
+                <div class="dis_none"> none </div>
+            {% endif %}
+
+
+
+            {% if   '订单数据' in request.session.privileges %}
                 <li><a href="#" class="level1"> 订单数据 </a>
-                     <ul class="current">
-                            <li> <a href="/other/test/" class="cnt1">订单明细</a> </li>
-                            <li> <a href="/other/test/" class="cnt1">拉新订单</a> </li>
-                            <!--<li>司机详情数据</li>-->
-                    </ul>
+                             <ul class="current">
+                                    <li> <a href="/other/test/" class="cnt1">订单明细</a> </li>
+                                    <li> <a href="/other/test/" class="cnt1">拉新订单</a> </li>
+                                    <!--<li>司机详情数据</li>-->
+                            </ul>
                 </li>
-                {% if   privileges == 'hid' %}
+            {% else %}
+                <div class="dis_none"> none </div>
+            {% endif %}
 
-                    <div class="dis_none"> none </div>
 
-                {% else %}
+
+                {% if   '其它问题' in request.session.privileges %}
                     <li><a href="#"  class="level1"> 其它问题 </a>
                         <ul class="current">
                             <li> <a href="/chart/show_map/" class="cnt1">订单分布地图</a> </li>
@@ -120,7 +153,8 @@
 
                         </ul>
                     </li>
-
+                {% else %}
+                    <div class="dis_none"> none </div>
                 {% endif %}
 
         </div>
