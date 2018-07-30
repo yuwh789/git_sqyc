@@ -29,7 +29,7 @@ def Down_files(request, order_list, **kwargs ):
     return response
 
 
-def Down_files_dic(request, order_list, **kwargs ):
+def Down_files_dic2(request, order_list, **kwargs ):
     # Create the HttpResponse object with the appropriate CSV header.
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="download_files.csv"'
@@ -56,7 +56,7 @@ def Down_files_dic(request, order_list, **kwargs ):
     return response
 
 
-def Down_files_dic2(request, order_list, colname ):
+def Down_files_dic(request, order_list, colname ):
     #  改写， 直接由列表名自行解析判断
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="downloads.csv"'
