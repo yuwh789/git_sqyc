@@ -152,7 +152,6 @@ CRONJOBS = [
     ('30 12 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
     ('00 13 * * *', 'sqyc_bi.tests.demo3' ) ,
 
-
 ]
 
 

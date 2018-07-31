@@ -64,8 +64,6 @@ def Login_check(request):
     pwd = request.POST.get('pwd')
 
     # 2 检查核对
-    # login_model = user_account()  # user_account 模型类
-    # the_data = login_model.objects.filter(user_name=username, password=pwd)
     the_data = user_account.objects.filter(user_name= username, password = get_hash(pwd) )
     # return JsonResponse( {'res':the_data} )
 
@@ -73,9 +71,14 @@ def Login_check(request):
         # 3 返回授权页面
         request.session['is_login'] = True
         request.session['user_name'] = username
-        # request.session['user_id'] = the_data.id
         privileges = user_account.objects.get(user_name = username, password = get_hash(pwd) )
         request.session['privileges'] = privileges.comment
+
+        # REC : name ,comment, -- date
+        rec_model = t_rec_table()
+        rec_model.the_name = username
+        rec_model.comment = 'login'
+        rec_model.save()
 
         # if username in ['nihao', 'sqyc_admin']:
         #     privileges = 'normal'
@@ -204,7 +207,6 @@ def Company_day_total(request, page_index):
         sql = "select * from fuc_company_total('%s','%s', '%s','%s')" % (company_name, t_d1, t_d2, city_id)
         # sql = "call fuc_company_total('%s','%s', '%s','%s')" %(company_name,t_d1, t_d2,city_id)
 
-
     cur.execute(sql)
     res = cur.fetchall()
     # 处理方式2， 列表推导式
@@ -218,12 +220,10 @@ def Company_day_total(request, page_index):
     #     dic['id_number'] = i[1]
     #     dic['plate_number'] = i[2]
     #     dic['driver_name'] = i[3]
-    #
     #     dic['sum_online_minute'] = i[4]
     #     dic['sum_com_cnt'] = i[5]
     #     dic['online_day'] = i[6]
     #     order_list.append(dic)
-
 
     if sub_buton =="下载数据":
         order_list = Down_files_dic2(request, order_list, colName)
@@ -242,7 +242,6 @@ def Company_day_total(request, page_index):
                                                                't_d1': t_d1,
                                                                't_d2': t_d2 ,
                                                                'city_id': city_id } )
-
 
 @login_required
 def t_s_company_first(request):
@@ -273,7 +272,6 @@ def t_s_company(request,page_index):
         dic['taxi_company_name'] = i[1]
         dic['driver_cnt'] = i[2]
         dic['com_order_cnt'] = i[3]
-
         dic['com_driver_cnt'] = i[4]
         dic['online_driver_cnt'] = i[5]
 
@@ -288,7 +286,6 @@ def t_s_company(request,page_index):
                                     com_driver_cnt='完单司机数',
                                     online_driver_cnt='登录司机数')
         return order_list
-
     else:
         order_list , pages = Rtn_pages(order_list, page_index)
     return render(request, 'sqyc_bi/fun_city_total.html', {'order_list':order_list, 'ages':pages, 'city_id':city_id, 't_d1':t_d1,'t_d2':t_d2})
@@ -312,13 +309,19 @@ def Handle_sqlt(request):
     if request.method == 'GET':
         order_list = models.func_comment.objects.all()
         return render(request, 'bi_echarts/Handle_sql.html', {'order_list': order_list})
-        # return render(request, 'bi_echarts/Handle_sql.html')
     elif request.method == 'POST':
         sub_buton = request.POST.get('sub_buton')
         para1 = request.POST.get('para1')
 
         cur = connection.cursor()
         sql = para1.strip().replace(r"\n"," ")
+
+        #  REC,  thename-- sql-- date-- other
+        rec_model = t_rec_table()
+        rec_model.the_name = request.session.get('user_name')
+        rec_model.comment = sql
+        rec_model.save()
+
         sql = "select * from  %s" %sql
         cur.execute(sql)
         res = cur.fetchall()
@@ -347,7 +350,6 @@ def company_test(request):
         dic['taxi_company_name'] = i[0]
         dic['driver_cnt'] = i[1]
         dic['com_order_cnt'] = i[2]
-
         order_list.append(dic)
 
     return JsonResponse( {"name":"yusir","age":20, "address":"beijing"} )
