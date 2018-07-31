@@ -88,13 +88,13 @@ str = 'Yuyx'
 DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.db.backends.mysql',  # mysql; postgresql_psycopg2
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # mysql; postgresql_psycopg2
 
-        'NAME': "sqyc_db",   # mysql: sqyc_db, pg: taxidb
+        'NAME': "taxidb",   # mysql: sqyc_db, pg: taxidb
         'USER': 'taxiuser',
         'PASSWORD': 'taxiuser',
         'HOST':'localhost',
-        'PORT':3306,     # mysql:3306 ,  pg: 5432
+        'PORT':5432,     # mysql:3306 ,  pg: 5432
     }
 }
 
@@ -148,10 +148,13 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static'), ] # 设置静态文件物�
 STATIC_ROOT = "/var/www/sqyc/c_static2/"
 
 CRONJOBS = [
-    ('35 08 * * *', 'sqyc_bi.tests.demo1'),
+    ('30 08 * * *', 'sqyc_bi.tests.demo1'),
     ('30 12 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
+    ('00 13 * * *', 'sqyc_bi.tests.demo3' ) ,
+
 
 ]
+
 
 
 

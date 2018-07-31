@@ -258,6 +258,7 @@ def Run_risk_info():
     df_drInfo = Df_drInfo(t_d, psy)    # 2司机信息表，司机异常计算
     t102= time.time()
 
+
     df_lx = Df_lx(t_d, psy)      # 3司机拉新
     t103= time.time()
     
@@ -305,8 +306,8 @@ def Run_risk_info():
     func_new.to_excel(writer,'当日线上订单')
     ret_table.to_excel(writer, '结果表')
     writer.save()
-    to_address_list = "yuweihong@01zhuanche.com"
-    mail_mimemuprt('风控',path, to_address_list)
+    to_address_list = ["likangnan@01zhuanche.com","yuweihong@01zhuanche.com","luyinghong@01zhuanche.com","wangjinhong@01zhuanche.com","huangsiwei@01zhuanche.com","xudan@01zhuanche.com","zhangzhenhong@01zhuanche.com"]
+    mail_mimemuprt('风控数据',path, to_address_list)
 
 if __name__ == '__main__':
     # t_d = '2018-02-28'

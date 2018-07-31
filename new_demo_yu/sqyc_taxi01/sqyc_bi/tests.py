@@ -14,20 +14,17 @@ def demo1():
 
 
 def R_driver_num():
-    #Run_driver_num()
-    #print("run_driver_num")
-    # time.sleep(2)
-    # Run_hb_tb()
-    # print("run_hb_tb")
+    Run_driver_num()
+    print("run_driver_num")
+    time.sleep(2)
+    Run_hb_tb()
+    print("run_hb_tb")
 
-    time.sleep(3)
-    print("run_risk")
+
+def demo3():
+    #print('test_ mail _')
+    #mail_mimemuprt('test_data', '/home/ywh/doc/haha.txt', ['yuweihong@01zhuanche.com',])
     Run_risk()
-
-def sender():
-    print('test_ mail _')
-    mail_mimemuprt('test_data', '/home/ywh/doc/haha.txt', ['yuweihong@01zhuanche.com',])
-
 
 if __name__=="__main__":
     print("start")

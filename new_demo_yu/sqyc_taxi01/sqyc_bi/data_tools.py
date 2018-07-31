@@ -234,6 +234,6 @@ def mail_mimemuprt( t_d_text, att_path,to_address_list ):
 
     # 发送
     msg.send()
-    print('ok~')
+    print('send success!')
 
 
