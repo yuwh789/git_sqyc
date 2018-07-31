@@ -31,7 +31,7 @@ class UserManager(models.Model):
 
 # Create your models here.
 class sqyc_table(models.Model):
-    # 城市id
+    #城市id
     city_id = models.IntegerField()
     # 城市name
     city_name = models.CharField(max_length=20)
@@ -47,8 +47,6 @@ class sqyc_table(models.Model):
     # 司机所属公司
     company_name = models.CharField(max_length=100)
 
-    # 更新时间
-    #update_date = models.DateField()
 
     pass
 
@@ -80,8 +78,13 @@ class t_driver_order_num(models.Model):
 
 
 
-class t_experience(models.Model):
-    '''乘客体验'''
+class t_rec_table(models.Model):
+    '''rec'''
+    the_name = models.CharField(max_length=100)
+    comment = models.CharField(max_length=200)
+    other = models.CharField(max_length=200)
+    update_date = models.DateTimeField(auto_now_add=True)
+
     pass
 
 
