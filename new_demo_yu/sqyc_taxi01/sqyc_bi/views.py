@@ -14,7 +14,11 @@ from django.core.paginator import Paginator
 import  pymysql
 
 from django.db import  connection
-
+from sqyc_bi.data_tools import  *
+import datetime
+from threading import *
+from multiprocessing import Process
+import time
 
 def Index(request):
     #return  HttpResponse('欢迎来到首约科技事业部BI报表')
@@ -304,7 +308,7 @@ def Handle_sql(request):
 
 
 @login_required
-def Handle_sqlt(request):
+def Handle_sqlt_ttt(request):
     from bi_echarts import  models
     if request.method == 'GET':
         order_list = models.func_comment.objects.all()
@@ -322,14 +326,25 @@ def Handle_sqlt(request):
         rec_model.comment = sql
         rec_model.save()
 
-        sql = "select * from  %s" %sql
-        cur.execute(sql)
-        res = cur.fetchall()
+        psy = Psyco_handle()
+        df1 = psy.data_r(sql)
+        t_d = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        path = r'/home/dev/virtualenv_files/t_demo1/result{}.xlsx'.format(t_d)
+        df1.to_excel(path)
 
-        colName = [col[0] for col in cur.description]
-        order_list = [dict(zip(colName, row)) for row in res]
-        order_list = Down_files_dic2( request, order_list, colName)
-        return  order_list
+        to_address_list = [ "yuweihong@01zhuanche.com"]
+        mail_mimemuprt('风控数据',path, to_address_list)
+        return HttpResponse("ok!") 
+
+
+        #sql = "select * from  %s" %sql
+        #cur.execute(sql)
+        #res = cur.fetchall()
+
+        #colName = [col[0] for col in cur.description]
+        #order_list = [dict(zip(colName, row)) for row in res]
+        #order_list = Down_files_dic2( request, order_list, colName)
+        #return  order_list
 
 
 @login_required
@@ -385,7 +400,50 @@ def Else_check(request):
     return   HttpResponse("本功能待开发， 敬请期待 ！！")
 
 
+def Handle_sql002(request):
+    return HttpResponse("您的需求已加入任务, 请稍后查收邮件,谢谢!(根据网络, 数据量, 服务器压力等因素,可能会几分钟不等)")
 
+    
+@login_required
+def Handle_sqlt(request):
+    from bi_echarts import  models
+    if request.method == 'GET':
+        order_list = models.func_comment.objects.all()
+        return render(request, 'bi_echarts/Handle_sql.html', {'order_list': order_list})
+    elif request.method == 'POST':
+        sub_buton = request.POST.get('sub_buton')
+        para1 = request.POST.get('para1')
+        to_add = request.POST.get('recevi_person')
+
+        cur = connection.cursor()
+        sql = para1.strip().replace(r"\n"," ")
+
+        #  REC,  thename-- sql-- date-- other
+        rec_model = t_rec_table()
+        rec_model.the_name = request.session.get('user_name')
+        rec_model.comment = sql
+        rec_model.save()
+
+        #to_add_list=['yuweihong@01zhuanche.com', ]
+        #to_add_list = to_add_list.append(to_add)
+        pro = Process(target=mail_mimemuprt_n, args=(sql,to_add,) ) # 发邮件的那个函数接口
+        pro.start()
+        time.sleep(1)
+        return HttpResponse("<h3>您的需求已添加任务,请稍后查收邮件!</h3> <h4>(网络状况,服务器运行状态会影响任务进度,请知悉!)</h4>")
+
+
+def  mail_mimemuprt_n(sql, to_add):
+    psy = Psyco_handle()
+    df1 = psy.data_r(sql)
+    t_d = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    path = r'/home/dev/virtualenv_files/t_demo1/result{}.xlsx'.format(t_d)
+    df1.to_excel(path)
+    
+    to_add_list = ['yuweihong@01zhuanche.com',]
+    to_add_list.append(to_add)
+    mail_mimemuprt('需求数据整理',path, to_add_list)      
+
+    
 
 
 
