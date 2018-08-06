@@ -3,7 +3,7 @@
 {% block middle_head_right_up %}
         <!--条件侧栏上部-->
         <div class="middle_head_right_up">
-            SQL代码解析窗口（请规范输入语句,系统将自动解析并返回数据结果,返回csv格式）：
+            &nbsp;SQL代码解析窗口（请规范输入语句,系统将自动解析并返回数据结果,返回csv格式）：
         </div>
 {% endblock middle_head_right_up %}
 
@@ -16,9 +16,16 @@
         <form method="post" action="/handle_sqlt/">
 
             {% csrf_token %}
-            <textarea style="width:800px;height:150px;" value="hello" name="para1">  </textarea>
-             &nbsp &nbsp &nbsp &nbsp
-             <input type="submit" value="查询"  name="sub_buton">  &nbsp
+            解析语句：<br>
+            &nbsp;<textarea style="width:600px;height:60px;" value="hello" name="para1">  </textarea>
+
+            <br>
+            <br>
+            收件人地址：<br>
+            &nbsp;<input style="width: 600px; height: 40px" type="text", value="", name="recevi_person">
+            <br>
+            <br>
+            &nbsp;<input style="width:80px; height:40px" type="submit" value="发送邮件"  name="sub_buton">
 
         </form>
 

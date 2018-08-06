@@ -88,13 +88,13 @@ str = 'Yuyx'
 DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # mysql; postgresql_psycopg2
+        'ENGINE': 'django.db.backends.mysql',  # mysql; postgresql_psycopg2
 
-        'NAME': "taxidb",   # mysql: sqyc_db, pg: taxidb
+        'NAME': "sqyc_db",   # mysql: sqyc_db, pg: taxidb
         'USER': 'taxiuser',
         'PASSWORD': 'taxiuser',
         'HOST':'localhost',
-        'PORT':5432,     # mysql:3306 ,  pg: 5432
+        'PORT':3306,     # mysql:3306 ,  pg: 5432
     }
 }
 

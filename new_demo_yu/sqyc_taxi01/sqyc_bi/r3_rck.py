@@ -347,7 +347,7 @@ if __name__ == '__main__':
         
         passenger_info= Passenger_info(t_d, psy)     # 4乘客异常
         t104= time.time()
-        
+
      
         
         # 订单异常分析
