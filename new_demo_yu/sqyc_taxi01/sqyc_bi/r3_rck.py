@@ -258,6 +258,7 @@ def Run_risk_info():
     df_drInfo = Df_drInfo(t_d, psy)    # 2司机信息表，司机异常计算
     t102= time.time()
 
+
     df_lx = Df_lx(t_d, psy)      # 3司机拉新
     t103= time.time()
     
@@ -283,6 +284,9 @@ def Run_risk_info():
     
     # 保存数据
     print("开始保存所有文件,请稍候...")
+    path = r'/home/dev/virtualenv_files/t_demo1/风控数据{}.xlsx'.format(t_d)
+    writer = pd.ExcelWriter(path)
+
     df_drInfo['t_date'] = t_d 
     psy.data_s(df_drInfo, 't_risk_driver_info' )  # 1 司机信息表
     
@@ -297,13 +301,13 @@ def Run_risk_info():
     psy.data_s(ret_table, 't_risk_result')  # 4  风控结果表
     
     t2 = time.time()
-    
-    
-    
     print("fk--->: %.2f!" %(t2-t1))
 
-
-
+    func_new.to_excel(writer,'当日线上订单')
+    ret_table.to_excel(writer, '结果表')
+    writer.save()
+    to_address_list = ["likangnan@01zhuanche.com","yuweihong@01zhuanche.com","luyinghong@01zhuanche.com","wangjinhong@01zhuanche.com","huangsiwei@01zhuanche.com","xudan@01zhuanche.com","zhangzhenhong@01zhuanche.com"]
+    mail_mimemuprt('风控数据',path, to_address_list)
 
 if __name__ == '__main__':
     # t_d = '2018-02-28'

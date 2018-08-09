@@ -14,7 +14,11 @@ from django.core.paginator import Paginator
 import  pymysql
 
 from django.db import  connection
-
+from sqyc_bi.data_tools import  *
+import datetime
+from threading import *
+from multiprocessing import Process
+import time
 
 def Index(request):
     #return  HttpResponse('欢迎来到首约科技事业部BI报表')
@@ -64,8 +68,6 @@ def Login_check(request):
     pwd = request.POST.get('pwd')
 
     # 2 检查核对
-    # login_model = user_account()  # user_account 模型类
-    # the_data = login_model.objects.filter(user_name=username, password=pwd)
     the_data = user_account.objects.filter(user_name= username, password = get_hash(pwd) )
     # return JsonResponse( {'res':the_data} )
 
@@ -73,17 +75,22 @@ def Login_check(request):
         # 3 返回授权页面
         request.session['is_login'] = True
         request.session['user_name'] = username
-        # request.session['user_id'] = the_data.id
+        privileges = user_account.objects.get(user_name = username, password = get_hash(pwd) )
+        request.session['privileges'] = privileges.comment
 
-        if username in ['nihao', 'sqyc_admin']:
-            privileges = 'normal'
-        else :
-            privileges = 'hid'
+        # REC : name ,comment, -- date
+        rec_model = t_rec_table()
+        rec_model.the_name = username
+        rec_model.comment = 'login'
+        rec_model.save()
 
-        return render(request, 'sqyc_bi/base_in_index.html', {"privileges":privileges })
+        # if username in ['nihao', 'sqyc_admin']:
+        #     privileges = 'normal'
+        # else :
+        #     privileges = 'hid'
+        return render(request, 'sqyc_bi/base_in_index.html', {"privileges":privileges.comment })
 
     else:
-
         # the_data = 'haha%s' %the_data
         # return HttpResponse(the_data)
         return HttpResponse("账户或者密码错误！")
@@ -150,6 +157,9 @@ def Company_day(request,page_index):
     company_name = request.GET.get('para2')
     t_d = request.GET.get('t_d')
 
+    if request.session['user_name'].split("_")[0] == 'sqtaxi':
+        city_id = request.session['user_name'].split("_")[-1]
+
     sub_buton = request.GET.get('sub_buton')
 
     if sub_buton == '下载所有数据':
@@ -180,12 +190,14 @@ def Company_day_total_first(request):
 
 
 @login_required
-#  sq_yunying , sq_sj  ,  taxi_beijing_44,  taxi_haerbin_94
+#  sq_yunying , sq_sj  ,  sqtaxi_beijing_44,  sqtaxi_haerbin_94,
 def Company_day_total(request, page_index):
     '''公司汇总数据 公司， 证件  车牌 在线分钟 完单量 在线天数'''
     t_d1 = request.GET.get('t_d1')
     t_d2 = request.GET.get('t_d2')
     city_id = request.GET.get('para1')
+    if request.session['user_name'].split("_")[0] == 'sqtaxi':
+        city_id = request.session['user_name'].split("_")[-1]
     company_name = request.GET.get('para2')
     sub_buton = request.GET.get('sub_buton')
 
@@ -198,7 +210,6 @@ def Company_day_total(request, page_index):
     else:
         sql = "select * from fuc_company_total('%s','%s', '%s','%s')" % (company_name, t_d1, t_d2, city_id)
         # sql = "call fuc_company_total('%s','%s', '%s','%s')" %(company_name,t_d1, t_d2,city_id)
-
 
     cur.execute(sql)
     res = cur.fetchall()
@@ -213,12 +224,10 @@ def Company_day_total(request, page_index):
     #     dic['id_number'] = i[1]
     #     dic['plate_number'] = i[2]
     #     dic['driver_name'] = i[3]
-    #
     #     dic['sum_online_minute'] = i[4]
     #     dic['sum_com_cnt'] = i[5]
     #     dic['online_day'] = i[6]
     #     order_list.append(dic)
-
 
     if sub_buton =="下载数据":
         order_list = Down_files_dic2(request, order_list, colName)
@@ -238,7 +247,6 @@ def Company_day_total(request, page_index):
                                                                't_d2': t_d2 ,
                                                                'city_id': city_id } )
 
-
 @login_required
 def t_s_company_first(request):
     '''test 初始化测试'''
@@ -249,6 +257,8 @@ def t_s_company(request,page_index):
     # 阶段汇总数据:  单位名称  司机数 上线司机数	未上线司机数	上线率 完单数	完单司机数 , todo
 
     city_id = request.GET.get('para1')
+    if request.session['user_name'].split("_")[0] == 'sqtaxi':
+        city_id = request.session['user_name'].split("_")[-1]
     t_d1 = request.GET.get('t_d1')
     t_d2 = request.GET.get('t_d2')
     sub_buton = request.GET.get('sub_buton')
@@ -258,7 +268,7 @@ def t_s_company(request,page_index):
     cur.execute(sql)
     res = cur.fetchall()
 
-    # 处理方式1
+    # 处理方式1 普通字典形式;  方式2 列表推导式 cur.description 方法
     order_list = []
     for i in res:
         dic ={}
@@ -266,7 +276,6 @@ def t_s_company(request,page_index):
         dic['taxi_company_name'] = i[1]
         dic['driver_cnt'] = i[2]
         dic['com_order_cnt'] = i[3]
-
         dic['com_driver_cnt'] = i[4]
         dic['online_driver_cnt'] = i[5]
 
@@ -281,7 +290,6 @@ def t_s_company(request,page_index):
                                     com_driver_cnt='完单司机数',
                                     online_driver_cnt='登录司机数')
         return order_list
-
     else:
         order_list , pages = Rtn_pages(order_list, page_index)
     return render(request, 'sqyc_bi/fun_city_total.html', {'order_list':order_list, 'ages':pages, 'city_id':city_id, 't_d1':t_d1,'t_d2':t_d2})
@@ -300,26 +308,43 @@ def Handle_sql(request):
 
 
 @login_required
-def Handle_sqlt(request):
+def Handle_sqlt_ttt(request):
     from bi_echarts import  models
     if request.method == 'GET':
         order_list = models.func_comment.objects.all()
         return render(request, 'bi_echarts/Handle_sql.html', {'order_list': order_list})
-        # return render(request, 'bi_echarts/Handle_sql.html')
     elif request.method == 'POST':
         sub_buton = request.POST.get('sub_buton')
         para1 = request.POST.get('para1')
 
         cur = connection.cursor()
         sql = para1.strip().replace(r"\n"," ")
-        sql = "select * from  %s" %sql
-        cur.execute(sql)
-        res = cur.fetchall()
 
-        colName = [col[0] for col in cur.description]
-        order_list = [dict(zip(colName, row)) for row in res]
-        order_list = Down_files_dic2( request, order_list, colName)
-        return  order_list
+        #  REC,  thename-- sql-- date-- other
+        rec_model = t_rec_table()
+        rec_model.the_name = request.session.get('user_name')
+        rec_model.comment = sql
+        rec_model.save()
+
+        psy = Psyco_handle()
+        df1 = psy.data_r(sql)
+        t_d = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        path = r'/home/dev/virtualenv_files/t_demo1/result{}.xlsx'.format(t_d)
+        df1.to_excel(path)
+
+        to_address_list = [ "yuweihong@01zhuanche.com"]
+        mail_mimemuprt('风控数据',path, to_address_list)
+        return HttpResponse("ok!") 
+
+
+        #sql = "select * from  %s" %sql
+        #cur.execute(sql)
+        #res = cur.fetchall()
+
+        #colName = [col[0] for col in cur.description]
+        #order_list = [dict(zip(colName, row)) for row in res]
+        #order_list = Down_files_dic2( request, order_list, colName)
+        #return  order_list
 
 
 @login_required
@@ -340,7 +365,6 @@ def company_test(request):
         dic['taxi_company_name'] = i[0]
         dic['driver_cnt'] = i[1]
         dic['com_order_cnt'] = i[2]
-
         order_list.append(dic)
 
     return JsonResponse( {"name":"yusir","age":20, "address":"beijing"} )
@@ -376,7 +400,50 @@ def Else_check(request):
     return   HttpResponse("本功能待开发， 敬请期待 ！！")
 
 
+def Handle_sql002(request):
+    return HttpResponse("您的需求已加入任务, 请稍后查收邮件,谢谢!(根据网络, 数据量, 服务器压力等因素,可能会几分钟不等)")
 
+    
+@login_required
+def Handle_sqlt(request):
+    from bi_echarts import  models
+    if request.method == 'GET':
+        order_list = models.func_comment.objects.all()
+        return render(request, 'bi_echarts/Handle_sql.html', {'order_list': order_list})
+    elif request.method == 'POST':
+        sub_buton = request.POST.get('sub_buton')
+        para1 = request.POST.get('para1')
+        to_add = request.POST.get('recevi_person')
+
+        cur = connection.cursor()
+        sql = para1.strip().replace(r"\n"," ")
+
+        #  REC,  thename-- sql-- date-- other
+        rec_model = t_rec_table()
+        rec_model.the_name = request.session.get('user_name')
+        rec_model.comment = sql
+        rec_model.save()
+
+        #to_add_list=['yuweihong@01zhuanche.com', ]
+        #to_add_list = to_add_list.append(to_add)
+        pro = Process(target=mail_mimemuprt_n, args=(sql,to_add,) ) # 发邮件的那个函数接口
+        pro.start()
+        time.sleep(1)
+        return HttpResponse("<h3>您的需求已添加任务,请稍后查收邮件!</h3> <h4>(网络状况,服务器运行状态会影响任务进度,请知悉!)</h4>")
+
+
+def  mail_mimemuprt_n(sql, to_add):
+    psy = Psyco_handle()
+    df1 = psy.data_r(sql)
+    t_d = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    path = r'/home/dev/virtualenv_files/t_demo1/result{}.xlsx'.format(t_d)
+    df1.to_excel(path)
+    
+    to_add_list = ['yuweihong@01zhuanche.com',]
+    to_add_list.append(to_add)
+    mail_mimemuprt('需求数据整理',path, to_add_list)      
+
+    
 
 
 

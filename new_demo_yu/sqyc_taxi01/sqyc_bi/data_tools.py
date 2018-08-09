@@ -3,9 +3,17 @@ from math import *
 import numpy as np
 import pymysql
 import time
+import  re
 import datetime
 # import matplotlib.pyplot as plt
 from sqlalchemy import create_engine
+
+import smtplib  ,time # 邮件使用库
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.header import Header  # 给对象进行编码
+from email.mime.application import MIMEApplication # MIME程序类型,适用多种类型:如文本,图片,xlsx, MP3音频等
+from django.conf import settings
 
 
 class Psyco_handle(object):
@@ -46,7 +54,7 @@ class Psyco_handle(object):
             self.df = pd.read_sql(insql, self.engine)
         except Exception as e:
             print("连接数据库异常", e)
-            return e 
+            return e
         return self.df
 
 
@@ -85,9 +93,9 @@ class Date_list(object):
 
 
 
-   
+
 # 经度1，纬度1，经度2，纬度2 （十进制度数） lon1, lat1, lon2, lat2
-def Distance(df): 
+def Distance(df):
         # 将十进制度数转化为弧度
         # math.degrees(x):为弧度转换为角度
         # math.radians(x):为角度转换为弧度
@@ -107,8 +115,8 @@ def Distance(df):
         else :
             return None
 
-# 经纬度处理002        
-def Distance2(df): 
+# 经纬度处理002
+def Distance2(df):
     if df['driver_coordinate'] is not None and df['fact_start_point'] is not None :
         lat1 = float( df['fact_start_point'].split(',')[1] ) # A维度
         lon1 = float( df['fact_start_point'].split(',')[0] ) # A经度
@@ -124,30 +132,30 @@ def Distance2(df):
         return c * r*1000
     else :
         return None
-    
 
 
-    # 接驾异常
-def exc_j(df,x): 
+
+# 接驾异常
+def exc_j(df,x):
         if df['接驾秒']<120 or df['接驾里程']<100:
             return 1*x
         else:
             return 0
 
 # 服务异常
-def exc_fw(df,x): 
+def exc_fw(df,x):
         if df['行驶分钟']<2 or df['服务里程']<1000:
             return 1*x
         else:
-            return 0 
+            return 0
 
 
 
-# 两单间隔异常        
-def exc_ldjg(df,x): 
+# 两单间隔异常
+def exc_ldjg(df,x):
     if df['间隔里程'] != '' and  df['间隔里程'] !='/' :
         if df['间隔分钟'] <2 or df['间隔里程'] < 100:
-            return 1*x 
+            return 1*x
         else:
             return 0
     else:
@@ -157,17 +165,17 @@ def exc_ldjg(df,x):
 # 风控多次握手
 def exc_dcws(df ): # 多次握手异常
     if df['max_num'] >=7:
-        return 1 
+        return 1
     elif df['max_num'] >= 6:
-        return 0.7 
+        return 0.7
     elif df['max_num'] >=5:
-        return 0.6 
+        return 0.6
     elif df['max_num'] >=4:
-        return 0.5 
+        return 0.5
     elif df['max_num'] >=3:
         return 0.4
     elif df['max_num'] >=2:
-        return 0.1 
+        return 0.1
     else:
         return 0
 
@@ -175,14 +183,14 @@ def exc_dcws(df ): # 多次握手异常
 
 #风控中位数评分
 def  func_money(df):
-    if df['线上总额'] >= df['线上总额中位数'] *10: 
+    if df['线上总额'] >= df['线上总额中位数'] *10:
         return 0.2
     elif  df['线上总额'] >= df['线上总额中位数'] *2:
         return -0.4
     elif df['线上总额'] >= df['线上总额中位数'] :
         return -0.2
     elif df['线上总额'] < df['线上总额中位数'] :
-        return 0 
+        return 0
 
 
 
@@ -192,3 +200,40 @@ def ret_newScore(df):
         return  max( (df['风险评分'] - 0.5), 0)
     else:
         return df['风险评分']
+
+
+def add_file(att_path):
+    #  将对象仅限编码
+    from email.header import Header  # 给对象进行编码
+    from email.mime.application import MIMEApplication  #
+    with open(att_path,'rb') as f:
+        msg_application= MIMEApplication(f.read())
+    files_name = Header(att_path.split('/')[-1], 'utf-8').encode()  # no header alreadly ok?
+    msg_application.add_header('Content-Disposition', 'attachment', filename= files_name)
+    return  msg_application
+    pass
+
+
+def mail_mimemuprt( t_d_text, att_path,to_address_list ):
+    from django.conf import settings
+    from django.core.mail import EmailMultiAlternatives
+    from django.core import  mail
+
+    from_email = settings.EMAIL_HOST_USER
+    # subject 主题 content 内容 to_addr 是一个列表，发送给哪些人
+    content = '致好：\n   附件为：%s ， 请查收， 谢谢！' %(t_d_text)
+
+    # 发送信息，  发送参数
+    msg = mail.EmailMessage(t_d_text, content, from_email, to_address_list )
+    #msg.content_subtype = "html"
+    #msg.encoding = 'utf-8'
+
+    # 添加附件（可选）
+    att_path = add_file(att_path)
+    msg.attach( att_path )  # att_path为：txt附件
+
+    # 发送
+    msg.send()
+    print('send success!')
+
+
