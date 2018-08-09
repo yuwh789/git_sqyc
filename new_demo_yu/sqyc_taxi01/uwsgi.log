@@ -1,0 +1,1122 @@
+*** Starting uWSGI 2.0.17 (64bit) on [Mon Jul 30 15:21:31 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x949d80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x949d80 pid: 112252 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 112252)
+spawned uWSGI worker 1 (pid: 112256, cores: 2)
+spawned uWSGI worker 2 (pid: 112257, cores: 2)
+spawned uWSGI worker 3 (pid: 112258, cores: 2)
+spawned uWSGI worker 4 (pid: 112260, cores: 2)
+[pid: 112258|app: 0|req: 1/1] 172.16.10.49 () {46 vars in 879 bytes} [Mon Jul 30 15:21:36 2018] GET /handle_sqlt/ => generated 5666 bytes in 64 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 1/2] 172.16.10.49 () {46 vars in 887 bytes} [Mon Jul 30 15:21:40 2018] GET /handle_sqlt/ => generated 5666 bytes in 59 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 2/3] 172.16.10.49 () {42 vars in 775 bytes} [Mon Jul 30 15:21:45 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 3/4] 172.16.10.49 () {52 vars in 1021 bytes} [Mon Jul 30 15:21:52 2018] POST /inner_index/ => generated 3918 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 4/5] 172.16.10.49 () {44 vars in 850 bytes} [Mon Jul 30 15:21:54 2018] GET /handle_sqlt/ => generated 3994 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 2/6] 172.16.10.49 () {52 vars in 1035 bytes} [Mon Jul 30 15:21:59 2018] POST /handle_sqlt/ => generated 2515 bytes in 1526 msecs (HTTP/1.1 200) 4 headers in 145 bytes (192 switches on core 1)
+[pid: 112260|app: 0|req: 5/7] 172.16.10.49 () {42 vars in 775 bytes} [Mon Jul 30 15:23:03 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112258|app: 0|req: 3/8] 172.16.10.49 () {52 vars in 1021 bytes} [Mon Jul 30 15:23:09 2018] POST /inner_index/ => generated 5590 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 6/9] 172.16.10.49 () {44 vars in 864 bytes} [Mon Jul 30 15:23:19 2018] GET /order_driver_num/1/ => generated 5855 bytes in 76 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 7/10] 172.16.10.49 () {44 vars in 1064 bytes} [Mon Jul 30 15:23:20 2018] GET /order_driver_num/1/?t_date=&city_input=%E5%8C%97%E4%BA%AC&pro_status=%E5%AE%8C%E5%8D%95&sub_buton=%E6%9F%A5%E8%AF%A2 => generated 16626 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 8/11] 172.16.10.49 () {44 vars in 1063 bytes} [Mon Jul 30 15:23:24 2018] GET /order_driver_num/2/?recmd_status=None&pro_status=%E5%AE%8C%E5%8D%95 => generated 16734 bytes in 35 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 9/12] 172.16.10.49 () {44 vars in 903 bytes} [Mon Jul 30 15:23:39 2018] GET /other/test/ => generated 24 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112258|app: 0|req: 4/13] 172.16.10.49 () {44 vars in 903 bytes} [Mon Jul 30 15:23:43 2018] GET /other/test/ => generated 24 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 10/14] 172.16.10.49 () {44 vars in 911 bytes} [Mon Jul 30 15:23:52 2018] GET /chart/show_map/ => generated 3733 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 11/15] 172.16.10.49 () {52 vars in 1034 bytes} [Mon Jul 30 15:24:07 2018] POST /chart/map/ => generated 113346 bytes in 230 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112258|app: 0|req: 5/16] 172.16.10.49 () {44 vars in 911 bytes} [Mon Jul 30 15:35:48 2018] GET /chart/show_map/ => generated 3733 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 12/17] 172.16.10.49 () {44 vars in 1063 bytes} [Mon Jul 30 15:35:49 2018] GET /order_driver_num/2/?recmd_status=None&pro_status=%E5%AE%8C%E5%8D%95 => generated 16734 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 13/18] 172.16.10.49 () {44 vars in 905 bytes} [Mon Jul 30 15:35:54 2018] GET /company_day/ => generated 5481 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 14/19] 172.16.10.49 () {44 vars in 862 bytes} [Mon Jul 30 15:35:59 2018] GET /company_day_total/ => generated 5428 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 15/20] 172.16.10.49 () {44 vars in 1097 bytes} [Mon Jul 30 15:36:12 2018] GET /company_day_total/1/?para1=94&para2=%E5%A4%A7%E4%BC%97&t_d1=2018-07-27&t_d2=2018-07-29&sub_buton=%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE => generated 15201 bytes in 1005 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 16/21] 172.16.10.49 () {44 vars in 1212 bytes} [Mon Jul 30 15:36:15 2018] GET /company_day_total/1/?para1=94&para2=%E5%A4%A7%E4%BC%97&t_d1=2018-07-27&t_d2=2018-07-29&sub_buton=%E4%B8%8B%E8%BD%BD%E6%95%B0%E6%8D%AE => generated 109000 bytes in 448 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1046 switches on core 1)
+[pid: 112260|app: 0|req: 17/22] 172.16.10.49 () {40 vars in 688 bytes} [Mon Jul 30 15:54:50 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 18/23] 172.16.10.49 () {52 vars in 985 bytes} [Mon Jul 30 15:54:56 2018] POST /inner_index/ => generated 5590 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 19/24] 172.16.10.49 () {44 vars in 864 bytes} [Mon Jul 30 15:55:00 2018] GET /company_day/ => generated 5481 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 20/25] 172.16.10.49 () {44 vars in 1023 bytes} [Mon Jul 30 15:55:10 2018] GET /company_day/1/?para1=94&para2=%E5%A4%A7%E4%BC%97&t_d=2018-07-27&sub_buton=%E6%9F%A5%E8%AF%A2 => generated 18259 bytes in 1201 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 21/26] 172.16.10.49 () {44 vars in 1175 bytes} [Mon Jul 30 15:55:18 2018] GET /company_day/1/?para1=94&para2=%E5%A4%A7%E4%BC%97&t_d=2018-07-27&sub_buton=%E4%B8%8B%E8%BD%BD%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE => generated 143680 bytes in 405 msecs (HTTP/1.1 200) 4 headers in 166 bytes (1158 switches on core 0)
+[pid: 112260|app: 0|req: 22/27] 172.16.10.49 () {44 vars in 942 bytes} [Mon Jul 30 15:56:05 2018] GET /city_total/ => generated 5382 bytes in 60 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 23/28] 172.16.10.49 () {44 vars in 1042 bytes} [Mon Jul 30 15:56:18 2018] GET /city_total/1/?para1=123&t_d1=2018-07-23&t_d2=2018-07-27&sub_buton=%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE => generated 12207 bytes in 10483 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 24/29] 172.16.10.49 () {44 vars in 1042 bytes} [Mon Jul 30 15:56:40 2018] GET /city_total/1/?para1=123&t_d1=2018-07-23&t_d2=2018-07-27&sub_buton=%E4%B8%8B%E8%BD%BD%E6%95%B0%E6%8D%AE => generated 2334 bytes in 11251 msecs (HTTP/1.1 200) 4 headers in 150 bytes (50 switches on core 1)
+[pid: 112258|app: 0|req: 6/30] 172.16.10.49 () {44 vars in 1042 bytes} [Mon Jul 30 15:57:26 2018] GET /city_total/1/?para1=123&t_d1=2018-05-01&t_d2=2018-05-03&sub_buton=%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE => generated 12214 bytes in 26910 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 25/31] 172.16.10.49 () {44 vars in 1042 bytes} [Mon Jul 30 15:57:26 2018] GET /city_total/1/?para1=123&t_d1=2018-05-01&t_d2=2018-05-03&sub_buton=%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE => generated 12214 bytes in 27274 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 26/32] 172.16.10.49 () {44 vars in 1039 bytes} [Mon Jul 30 15:58:14 2018] GET /city_total/2/?para1=123&t_d1=2018-05-01&t_d2=2018-05-03 => generated 12303 bytes in 12374 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 27/33] 172.16.10.49 () {44 vars in 913 bytes} [Mon Jul 30 17:11:14 2018] GET /chart/show_map/ => generated 3733 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 29/34] 172.16.10.49 () {44 vars in 1039 bytes} [Mon Jul 30 17:11:15 2018] GET /city_total/2/?para1=123&t_d1=2018-05-01&t_d2=2018-05-03 => generated 12303 bytes in 25601 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 29/35] 172.16.10.49 () {44 vars in 1039 bytes} [Mon Jul 30 17:11:17 2018] GET /city_total/2/?para1=123&t_d1=2018-05-01&t_d2=2018-05-03 => generated 12303 bytes in 25745 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 30/36] 172.16.10.49 () {40 vars in 688 bytes} [Mon Jul 30 18:45:07 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 31/37] 172.16.10.49 () {52 vars in 985 bytes} [Mon Jul 30 18:45:18 2018] POST /inner_index/ => generated 5590 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 32/38] 172.16.10.49 () {42 vars in 789 bytes} [Mon Jul 30 18:45:24 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 7/39] 172.16.10.49 () {52 vars in 1029 bytes} [Mon Jul 30 18:45:30 2018] POST /inner_index/ => generated 27 bytes in 9 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 33/40] 172.16.10.49 () {42 vars in 789 bytes} [Mon Jul 30 18:45:33 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 34/41] 172.16.10.49 () {42 vars in 799 bytes} [Mon Jul 30 18:45:39 2018] GET /admin => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 144 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 8/42] 172.16.10.49 () {42 vars in 801 bytes} [Mon Jul 30 18:45:39 2018] GET /admin/ => generated 0 bytes in 30 msecs (HTTP/1.1 302) 7 headers in 277 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 35/43] 172.16.10.49 () {42 vars in 838 bytes} [Mon Jul 30 18:45:40 2018] GET /admin/login/?next=/admin/ => generated 1917 bytes in 86 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 36/44] 172.16.10.49 () {52 vars in 1081 bytes} [Mon Jul 30 18:45:44 2018] POST /admin/login/?next=/admin/ => generated 0 bytes in 58 msecs (HTTP/1.1 302) 9 headers in 511 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 9/45] 172.16.10.49 () {46 vars in 896 bytes} [Mon Jul 30 18:45:44 2018] GET /admin/ => generated 8048 bytes in 96 msecs (HTTP/1.1 200) 6 headers in 214 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 37/46] 172.16.10.49 () {44 vars in 888 bytes} [Mon Jul 30 18:45:48 2018] GET /admin/sqyc_bi/user_account/ => generated 6344 bytes in 63 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 38/47] 172.16.10.49 () {42 vars in 775 bytes} [Mon Jul 30 18:45:48 2018] GET /admin/jsi18n/ => generated 6776 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 39/48] 172.16.10.49 () {42 vars in 789 bytes} [Mon Jul 30 18:45:54 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 40/49] 172.16.10.49 () {52 vars in 1029 bytes} [Mon Jul 30 18:46:01 2018] POST /inner_index/ => generated 27 bytes in 9 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 41/50] 172.16.10.49 () {52 vars in 1029 bytes} [Mon Jul 30 18:46:07 2018] POST /inner_index/ => generated 3918 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 42/51] 172.16.10.49 () {44 vars in 864 bytes} [Mon Jul 30 18:46:15 2018] GET /handle_sqlt/ => generated 3994 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 43/52] 172.16.10.49 () {44 vars in 860 bytes} [Mon Jul 30 18:46:18 2018] GET /auto_list/ => generated 3244 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 44/53] 172.16.10.49 () {44 vars in 862 bytes} [Mon Jul 30 18:46:20 2018] GET /handle_sqlt/ => generated 3994 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112257|app: 0|req: 1/54] 172.16.10.49 () {52 vars in 1043 bytes} [Mon Jul 30 18:47:03 2018] POST /handle_sqlt/ => generated 2515 bytes in 1486 msecs (HTTP/1.1 200) 4 headers in 145 bytes (192 switches on core 0)
+[pid: 112260|app: 0|req: 45/55] 172.16.10.49 () {44 vars in 870 bytes} [Mon Jul 30 18:49:26 2018] GET /chart/func_add/ => generated 751 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 46/56] 172.16.10.49 () {52 vars in 1052 bytes} [Mon Jul 30 18:49:39 2018] POST /chart/func_add/ => generated 0 bytes in 8 msecs (HTTP/1.1 302) 3 headers in 138 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 10/57] 172.16.10.49 () {46 vars in 898 bytes} [Mon Jul 30 18:49:39 2018] GET /handle_sqlt/ => generated 4096 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 47/58] 172.16.10.49 () {52 vars in 1043 bytes} [Mon Jul 30 18:49:45 2018] POST /handle_sqlt/ => generated 3200626 bytes in 1468 msecs (HTTP/1.1 200) 4 headers in 145 bytes (59017 switches on core 0)
+[pid: 112260|app: 0|req: 48/59] 172.16.10.49 () {52 vars in 1043 bytes} [Mon Jul 30 18:50:15 2018] POST /handle_sqlt/ => generated 2515 bytes in 1454 msecs (HTTP/1.1 200) 4 headers in 145 bytes (192 switches on core 1)
+[pid: 112260|app: 0|req: 49/60] 172.16.10.49 () {44 vars in 860 bytes} [Mon Jul 30 18:50:36 2018] GET /auto_list/ => generated 3244 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 50/61] 172.16.10.49 () {44 vars in 858 bytes} [Mon Jul 30 18:50:38 2018] GET /auto_list/ => generated 3244 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 51/62] 172.16.10.49 () {44 vars in 858 bytes} [Mon Jul 30 18:50:38 2018] GET /auto_list/ => generated 3244 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112257|app: 0|req: 2/63] 172.16.10.49 () {44 vars in 858 bytes} [Mon Jul 30 18:50:39 2018] GET /auto_list/ => generated 3244 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 52/64] 172.16.10.49 () {44 vars in 862 bytes} [Mon Jul 30 18:50:40 2018] GET /handle_sqlt/ => generated 4096 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 53/65] 172.16.10.49 () {42 vars in 789 bytes} [Mon Jul 30 18:51:13 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 54/66] 172.16.10.49 () {44 vars in 856 bytes} [Mon Jul 30 18:51:21 2018] GET /admin/ => generated 8048 bytes in 47 msecs (HTTP/1.1 200) 6 headers in 214 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 55/67] 172.16.10.49 () {46 vars in 943 bytes} [Mon Jul 30 18:51:24 2018] GET /admin/sqyc_bi/user_account/ => generated 6344 bytes in 58 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 56/68] 172.16.10.49 () {42 vars in 775 bytes} [Mon Jul 30 18:51:24 2018] GET /admin/jsi18n/ => generated 6776 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 57/69] 172.16.10.49 () {44 vars in 854 bytes} [Mon Jul 30 18:51:33 2018] GET /user_account/ => generated 728 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 58/70] 172.16.10.49 () {52 vars in 1046 bytes} [Mon Jul 30 18:51:53 2018] POST /user_account/ => generated 11 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 11/71] 172.16.10.49 () {42 vars in 789 bytes} [Mon Jul 30 18:51:58 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 59/72] 172.16.10.49 () {52 vars in 1029 bytes} [Mon Jul 30 18:52:06 2018] POST /inner_index/ => generated 3476 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 60/73] 172.16.10.49 () {42 vars in 789 bytes} [Mon Jul 30 18:53:38 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 12/74] 172.16.10.49 () {52 vars in 1029 bytes} [Mon Jul 30 18:53:43 2018] POST /inner_index/ => generated 5590 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 61/75] 172.16.10.49 () {44 vars in 870 bytes} [Mon Jul 30 19:08:10 2018] GET /chart/show_map/ => generated 3733 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 62/76] 172.16.10.49 () {52 vars in 1042 bytes} [Mon Jul 30 19:08:31 2018] POST /chart/map/ => generated 58271 bytes in 157 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 13/77] 172.16.10.49 () {42 vars in 789 bytes} [Mon Jul 30 19:14:49 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 63/78] 172.16.10.49 () {52 vars in 1029 bytes} [Mon Jul 30 19:14:58 2018] POST /inner_index/ => generated 5590 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 112258|app: 0|req: 14/79] 172.16.10.49 () {44 vars in 862 bytes} [Mon Jul 30 19:15:06 2018] GET /city_total/ => generated 5382 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 64/80] 172.16.10.49 () {44 vars in 859 bytes} [Mon Jul 30 19:15:09 2018] GET /auto_list/ => generated 4916 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 65/81] 172.16.10.49 () {44 vars in 858 bytes} [Mon Jul 30 19:15:10 2018] GET /auto_list/ => generated 4916 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 66/82] 172.16.10.49 () {44 vars in 862 bytes} [Mon Jul 30 19:17:14 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 15/83] 172.16.10.49 () {44 vars in 860 bytes} [Mon Jul 30 19:18:10 2018] GET /auto_list/ => generated 4916 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112258|app: 0|req: 16/84] 172.16.10.49 () {44 vars in 870 bytes} [Mon Jul 30 19:40:04 2018] GET /chart/func_add/ => generated 751 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 67/85] 172.16.10.49 () {44 vars in 862 bytes} [Mon Jul 30 19:40:07 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112258|app: 0|req: 17/86] 172.16.10.49 () {44 vars in 860 bytes} [Mon Jul 30 19:40:17 2018] GET /auto_list/ => generated 4916 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 68/87] 172.16.10.49 () {44 vars in 860 bytes} [Mon Jul 30 19:41:33 2018] GET /other/test/ => generated 24 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 18/88] 172.16.10.49 () {42 vars in 789 bytes} [Mon Jul 30 19:41:39 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 69/89] 172.16.10.49 () {52 vars in 1029 bytes} [Mon Jul 30 19:42:04 2018] POST /inner_index/ => generated 5590 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 70/90] 172.16.10.49 () {40 vars in 688 bytes} [Tue Jul 31 09:12:51 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 71/91] 172.16.10.49 () {42 vars in 745 bytes} [Tue Jul 31 09:12:55 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112258|app: 0|req: 19/92] 172.16.10.49 () {52 vars in 985 bytes} [Tue Jul 31 09:13:01 2018] POST /inner_index/ => generated 5590 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 72/93] 172.16.10.49 () {42 vars in 789 bytes} [Tue Jul 31 09:13:06 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 20/94] 172.16.10.49 () {52 vars in 1029 bytes} [Tue Jul 31 09:13:13 2018] POST /inner_index/ => generated 5590 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 73/95] 172.16.10.49 () {44 vars in 860 bytes} [Tue Jul 31 09:13:23 2018] GET /auto_list/ => generated 4916 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 112258|app: 0|req: 21/96] 172.16.10.49 () {44 vars in 862 bytes} [Tue Jul 31 09:13:26 2018] GET /handle_sqlt/ => generated 5768 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 74/97] 172.16.10.49 () {40 vars in 688 bytes} [Tue Jul 31 16:05:28 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 22/98] 172.16.10.49 () {52 vars in 985 bytes} [Tue Jul 31 16:05:33 2018] POST /inner_index/ => generated 5590 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 75/99] 172.16.10.49 () {44 vars in 864 bytes} [Tue Jul 31 16:05:38 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112258|app: 0|req: 23/100] 172.16.10.49 () {44 vars in 864 bytes} [Tue Jul 31 16:08:01 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112260|app: 0|req: 77/101] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Jul 31 16:08:33 2018] POST /handle_sqlt/ => generated 2515 bytes in 1463 msecs (HTTP/1.1 200) 4 headers in 145 bytes (192 switches on core 0)
+Tue Jul 31 16:11:56 2018 - uwsgi_response_write_body_do(): Broken pipe [core/writer.c line 429] during POST /handle_sqlt/ (172.16.10.49)
+OSError: write error
+[pid: 112260|app: 0|req: 78/102] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Jul 31 16:05:55 2018] POST /handle_sqlt/ => generated 0 bytes in 361280 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 1)
+[pid: 112260|app: 0|req: 79/103] 172.16.10.49 () {44 vars in 864 bytes} [Tue Jul 31 16:13:13 2018] GET /handle_sqlt/ => generated 5768 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112258|app: 0|req: 24/104] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Jul 31 16:13:16 2018] POST /handle_sqlt/ => generated 8755773 bytes in 3592 msecs (HTTP/1.1 200) 4 headers in 145 bytes (36641 switches on core 1)
+Tue Jul 31 16:15:41 2018 - SIGPIPE: writing to a closed pipe/socket/fd (probably the client disconnected) !!!
+Tue Jul 31 16:15:41 2018 - uwsgi_response_write_body_do(): Broken pipe [core/writer.c line 429] during POST /handle_sqlt/ (172.16.10.49)
+OSError: write error
+[pid: 112260|app: 0|req: 79/105] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Jul 31 16:09:33 2018] POST /handle_sqlt/ => generated 0 bytes in 367527 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+Tue Jul 31 16:23:46 2018 - uwsgi_response_write_body_do(): Broken pipe [core/writer.c line 429] during POST /handle_sqlt/ (172.16.10.49)
+OSError: write error
+[pid: 112260|app: 0|req: 80/106] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Jul 31 16:19:28 2018] POST /handle_sqlt/ => generated 0 bytes in 257657 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 1)
+Tue Jul 31 16:26:51 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 16:26:51 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 16:26:51 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 16:26:51 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 16:26:51 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 16:26:51 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 16:26:51 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 16:26:51 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Tue Jul 31 16:45:22 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x82dd80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x82dd80 pid: 116726 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 116726)
+spawned uWSGI worker 1 (pid: 116730, cores: 2)
+spawned uWSGI worker 2 (pid: 116731, cores: 2)
+spawned uWSGI worker 3 (pid: 116732, cores: 2)
+spawned uWSGI worker 4 (pid: 116734, cores: 2)
+[pid: 116730|app: 0|req: 1/1] 172.16.10.49 () {42 vars in 745 bytes} [Tue Jul 31 16:46:30 2018] GET / => generated 3892 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 116734|app: 0|req: 1/2] 172.16.10.49 () {52 vars in 985 bytes} [Tue Jul 31 16:46:35 2018] POST /inner_index/ => generated 5590 bytes in 57 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 116734|app: 0|req: 2/3] 172.16.10.49 () {44 vars in 862 bytes} [Tue Jul 31 16:46:41 2018] GET /other/test/ => generated 24 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 116734|app: 0|req: 3/4] 172.16.10.49 () {44 vars in 844 bytes} [Tue Jul 31 16:46:44 2018] GET /inner_index/ => generated 67161 bytes in 106 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 116732|app: 0|req: 1/5] 172.16.10.49 () {42 vars in 789 bytes} [Tue Jul 31 16:46:47 2018] GET / => generated 3892 bytes in 39 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 116734|app: 0|req: 4/6] 172.16.10.49 () {52 vars in 1029 bytes} [Tue Jul 31 16:46:51 2018] POST /inner_index/ => generated 5590 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 116734|app: 0|req: 5/7] 172.16.10.49 () {44 vars in 864 bytes} [Tue Jul 31 16:46:57 2018] GET /handle_sqlt/ => generated 5768 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 116734|app: 0|req: 6/8] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Jul 31 16:47:09 2018] POST /handle_sqlt/ => generated 3200626 bytes in 1663 msecs (HTTP/1.1 200) 4 headers in 145 bytes (59017 switches on core 1)
+[pid: 116732|app: 0|req: 2/9] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Jul 31 16:49:36 2018] POST /handle_sqlt/ => generated 126594 bytes in 168 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 116734|app: 0|req: 7/10] 172.16.10.49 () {40 vars in 688 bytes} [Tue Jul 31 16:49:52 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 116732|app: 0|req: 3/11] 172.16.10.49 () {52 vars in 985 bytes} [Tue Jul 31 16:49:55 2018] POST /inner_index/ => generated 125836 bytes in 117 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 116734|app: 0|req: 8/12] 172.16.10.49 () {42 vars in 745 bytes} [Tue Jul 31 16:51:33 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 116732|app: 0|req: 4/13] 172.16.10.49 () {52 vars in 985 bytes} [Tue Jul 31 16:51:34 2018] POST /inner_index/ => generated 5590 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 116732|app: 0|req: 5/14] 172.16.10.49 () {44 vars in 864 bytes} [Tue Jul 31 16:51:40 2018] GET /handle_sqlt/ => generated 5768 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 116734|app: 0|req: 9/15] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Jul 31 16:51:49 2018] POST /handle_sqlt/ => generated 2515 bytes in 1540 msecs (HTTP/1.1 200) 4 headers in 145 bytes (192 switches on core 0)
+[pid: 116734|app: 0|req: 10/16] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Jul 31 16:57:04 2018] POST /handle_sqlt/ => generated 35592467 bytes in 12621 msecs (HTTP/1.1 200) 4 headers in 145 bytes (272364 switches on core 1)
+[pid: 116732|app: 0|req: 6/17] 172.16.10.49 () {42 vars in 789 bytes} [Tue Jul 31 17:02:47 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 116731|app: 0|req: 1/18] 172.16.10.49 () {44 vars in 820 bytes} [Tue Jul 31 17:02:48 2018] GET / => generated 3892 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 116734|app: 0|req: 11/19] 172.16.10.49 () {52 vars in 1029 bytes} [Tue Jul 31 17:02:50 2018] POST /inner_index/ => generated 5590 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 116734|app: 0|req: 12/20] 172.16.10.49 () {44 vars in 864 bytes} [Tue Jul 31 17:02:53 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+Tue Jul 31 17:06:08 2018 - SIGPIPE: writing to a closed pipe/socket/fd (probably the client disconnected) !!!
+Tue Jul 31 17:06:08 2018 - uwsgi_response_write_body_do(): Broken pipe [core/writer.c line 429] during POST /handle_sqlt/ (172.16.10.49)
+OSError: write error
+[pid: 116734|app: 0|req: 13/21] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Jul 31 17:03:06 2018] POST /handle_sqlt/ => generated 0 bytes in 182445 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 116734|app: 0|req: 14/22] 172.16.10.49 () {44 vars in 864 bytes} [Tue Jul 31 17:13:34 2018] GET /handle_sqlt/ => generated 5768 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+Tue Jul 31 17:31:54 2018 - SIGPIPE: writing to a closed pipe/socket/fd (probably the client disconnected) !!!
+Tue Jul 31 17:31:54 2018 - uwsgi_response_write_body_do(): Broken pipe [core/writer.c line 429] during POST /handle_sqlt/ (172.16.10.49)
+OSError: write error
+[pid: 116734|app: 0|req: 15/23] 172.16.10.49 () {52 vars in 1041 bytes} [Tue Jul 31 17:29:48 2018] POST /handle_sqlt/ => generated 0 bytes in 126347 msecs (HTTP/1.1 200) 4 headers in 145 bytes (1 switches on core 0)
+Tue Jul 31 17:43:20 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 17:43:20 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 17:43:20 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 17:43:20 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 17:43:20 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 17:43:20 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 17:43:20 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Tue Jul 31 17:43:20 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Aug  1 15:06:59 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x1358d30
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1358d30 pid: 96086 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 96086)
+spawned uWSGI worker 1 (pid: 96090, cores: 2)
+spawned uWSGI worker 2 (pid: 96091, cores: 2)
+spawned uWSGI worker 3 (pid: 96092, cores: 2)
+spawned uWSGI worker 4 (pid: 96094, cores: 2)
+[pid: 96091|app: 0|req: 1/1] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug  1 15:07:08 2018] GET / => generated 76427 bytes in 182 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+Wed Aug  1 15:08:14 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:08:14 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:08:14 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:08:14 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:08:14 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:08:14 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:08:14 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:08:14 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Aug  1 15:10:34 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0xd42d30
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xd42d30 pid: 96572 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 96572)
+spawned uWSGI worker 1 (pid: 96576, cores: 2)
+spawned uWSGI worker 2 (pid: 96577, cores: 2)
+spawned uWSGI worker 3 (pid: 96578, cores: 2)
+spawned uWSGI worker 4 (pid: 96581, cores: 2)
+[pid: 96578|app: 0|req: 1/1] 172.16.10.49 () {44 vars in 820 bytes} [Wed Aug  1 15:10:44 2018] GET / => generated 76605 bytes in 139 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 96581|app: 0|req: 1/2] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug  1 15:10:46 2018] GET / => generated 76403 bytes in 139 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 96578|app: 0|req: 2/3] 172.16.10.49 () {44 vars in 820 bytes} [Wed Aug  1 15:15:43 2018] GET / => generated 3892 bytes in 504 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 96581|app: 0|req: 2/4] 172.16.10.49 () {52 vars in 1029 bytes} [Wed Aug  1 15:15:45 2018] POST /inner_index/ => generated 5590 bytes in 521 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 96581|app: 0|req: 3/5] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug  1 15:15:48 2018] GET /handle_sqlt/ => generated 5768 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 96581|app: 0|req: 4/6] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug  1 15:17:01 2018] POST /handle_sqlt/ => generated 67421 bytes in 83 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 96578|app: 0|req: 3/7] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug  1 15:17:48 2018] GET /handle_sqlt/ => generated 5768 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 96578|app: 0|req: 4/8] 172.16.10.49 () {46 vars in 895 bytes} [Wed Aug  1 15:17:50 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 96578|app: 0|req: 5/9] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug  1 15:17:53 2018] POST /handle_sqlt/ => generated 67419 bytes in 75 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Aug  1 15:18:01 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8001).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 96581|app: 0|req: 5/10] 172.16.10.49 () {46 vars in 895 bytes} [Wed Aug  1 15:18:07 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 96581|app: 0|req: 6/11] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug  1 15:18:10 2018] POST /handle_sqlt/ => generated 67419 bytes in 74 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+Wed Aug  1 15:18:50 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:18:50 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:18:50 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:18:50 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:18:50 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:18:50 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:18:50 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:18:50 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Aug  1 15:18:54 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x26abd30
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x26abd30 pid: 97783 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 97783)
+spawned uWSGI worker 1 (pid: 97787, cores: 2)
+spawned uWSGI worker 2 (pid: 97788, cores: 2)
+spawned uWSGI worker 3 (pid: 97789, cores: 2)
+spawned uWSGI worker 4 (pid: 97791, cores: 2)
+[pid: 97787|app: 0|req: 1/1] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug  1 15:19:02 2018] GET / => generated 3892 bytes in 523 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 97791|app: 0|req: 1/2] 172.16.10.49 () {52 vars in 1029 bytes} [Wed Aug  1 15:19:04 2018] POST /inner_index/ => generated 5590 bytes in 538 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 97791|app: 0|req: 2/3] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug  1 15:19:08 2018] GET /handle_sqlt/ => generated 5768 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 97791|app: 0|req: 3/4] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug  1 15:19:10 2018] POST /handle_sqlt/ => generated 59201 bytes in 4221 msecs (HTTP/1.1 500) 1 headers in 63 bytes (1 switches on core 0)
+[pid: 97791|app: 0|req: 4/5] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug  1 15:22:36 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 97791|app: 0|req: 5/6] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug  1 15:22:54 2018] POST /handle_sqlt/ => generated 59104 bytes in 797 msecs (HTTP/1.1 500) 1 headers in 63 bytes (1 switches on core 0)
+Wed Aug  1 15:28:55 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:28:55 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:28:55 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:28:55 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:28:55 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:28:55 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:28:55 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug  1 15:28:55 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Aug  1 15:43:49 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x1fbed30
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1fbed30 pid: 101420 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 101420)
+spawned uWSGI worker 1 (pid: 101424, cores: 2)
+spawned uWSGI worker 2 (pid: 101425, cores: 2)
+spawned uWSGI worker 3 (pid: 101426, cores: 2)
+spawned uWSGI worker 4 (pid: 101428, cores: 2)
+[pid: 101428|app: 0|req: 1/1] 172.16.10.49 () {40 vars in 688 bytes} [Wed Aug  1 15:44:06 2018] GET / => generated 3892 bytes in 515 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 101428|app: 0|req: 2/2] 172.16.10.49 () {52 vars in 985 bytes} [Wed Aug  1 15:44:11 2018] POST /inner_index/ => generated 3918 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 101428|app: 0|req: 3/3] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug  1 15:44:15 2018] GET /handle_sqlt/ => generated 4096 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+[pid: 101428|app: 0|req: 4/4] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug  1 15:44:20 2018] POST /handle_sqlt/ => generated 3 bytes in 185651 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 101428|app: 0|req: 5/5] 172.16.10.49 () {40 vars in 674 bytes} [Fri Aug  3 09:07:26 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 101426|app: 0|req: 1/6] 172.16.10.49 () {42 vars in 711 bytes} [Fri Aug  3 09:07:26 2018] GET /favicon.ico => generated 5307 bytes in 522 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 101428|app: 0|req: 6/7] 172.16.10.49 () {52 vars in 977 bytes} [Fri Aug  3 09:07:36 2018] POST /inner_index/ => generated 5590 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 101428|app: 0|req: 7/8] 172.16.10.49 () {44 vars in 848 bytes} [Fri Aug  3 09:08:05 2018] GET /city_total/ => generated 5382 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 101428|app: 0|req: 9/9] 172.16.10.49 () {38 vars in 611 bytes} [Fri Aug  3 09:09:07 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 101428|app: 0|req: 10/10] 172.16.10.49 () {36 vars in 559 bytes} [Fri Aug  3 09:09:07 2018] GET /favicon.ico => generated 5307 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 101428|app: 0|req: 10/11] 172.16.10.49 () {44 vars in 1026 bytes} [Fri Aug  3 09:08:22 2018] GET /city_total/1/?para1=94&t_d1=2018-04-17&t_d2=2018-07-31&sub_buton=%E4%B8%8B%E8%BD%BD%E6%95%B0%E6%8D%AE => generated 7384 bytes in 48205 msecs (HTTP/1.1 200) 4 headers in 150 bytes (143 switches on core 1)
+[pid: 101426|app: 0|req: 2/12] 172.16.10.49 () {48 vars in 876 bytes} [Fri Aug  3 09:09:29 2018] POST /inner_index/ => generated 5590 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 101428|app: 0|req: 12/13] 172.16.10.49 () {36 vars in 559 bytes} [Fri Aug  3 09:09:29 2018] GET /favicon.ico => generated 5307 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 101426|app: 0|req: 3/14] 172.16.10.49 () {42 vars in 785 bytes} [Fri Aug  3 09:09:38 2018] GET /city_total/ => generated 5382 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 101428|app: 0|req: 12/15] 172.16.10.49 () {44 vars in 1026 bytes} [Fri Aug  3 09:09:16 2018] GET /city_total/1/?para1=94&t_d1=2018-04-17&t_d2=2018-07-31&sub_buton=%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE => generated 12163 bytes in 60608 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 101428|app: 0|req: 13/16] 172.16.10.49 () {44 vars in 1026 bytes} [Fri Aug  3 09:10:59 2018] GET /city_total/1/?para1=94&t_d1=2018-07-01&t_d2=2018-07-31&sub_buton=%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE => generated 12161 bytes in 22558 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 101428|app: 0|req: 14/17] 172.16.10.49 () {44 vars in 1022 bytes} [Fri Aug  3 09:11:25 2018] GET /city_total/2/?para1=94&t_d1=2018-07-01&t_d2=2018-07-31 => generated 12325 bytes in 22666 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 101428|app: 0|req: 16/18] 172.16.10.49 () {44 vars in 975 bytes} [Fri Aug  3 09:12:17 2018] GET /city_total/3/?para1=94&t_d1=2018-07-01&t_d2=2018-07-31 => generated 12378 bytes in 30843 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 101428|app: 0|req: 16/19] 172.16.10.49 () {44 vars in 975 bytes} [Fri Aug  3 09:12:17 2018] GET /city_total/3/?para1=94&t_d1=2018-07-01&t_d2=2018-07-31 => generated 12378 bytes in 31885 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 101428|app: 0|req: 17/20] 172.16.10.49 () {44 vars in 904 bytes} [Fri Aug  3 09:12:52 2018] GET /company_day_total/ => generated 5428 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 101426|app: 0|req: 4/21] 172.16.10.49 () {40 vars in 712 bytes} [Fri Aug  3 09:30:02 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 101428|app: 0|req: 18/22] 172.16.10.49 () {48 vars in 920 bytes} [Fri Aug  3 09:30:09 2018] POST /inner_index/ => generated 5590 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 101426|app: 0|req: 5/23] 172.16.10.49 () {42 vars in 787 bytes} [Fri Aug  3 09:30:12 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+连接数据库异常 (psycopg2.ProgrammingError) syntax error at or near "fuc_driver_reward"
+LINE 1: fuc_driver_reward( '2018-06-10', '94', '大众')
+        ^
+ [SQL: "fuc_driver_reward( '2018-06-10', '94', '大众')"] (Background on this error at: http://sqlalche.me/e/f405)
+[pid: 101426|app: 0|req: 6/24] 172.16.10.49 () {48 vars in 934 bytes} [Fri Aug  3 09:30:17 2018] POST /handle_sqlt/ => generated 67323 bytes in 152 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 101425|app: 0|req: 1/25] 172.16.10.49 () {42 vars in 787 bytes} [Fri Aug  3 09:30:28 2018] GET /handle_sqlt/ => generated 5768 bytes in 505 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+[pid: 101428|app: 0|req: 19/26] 172.16.10.49 () {48 vars in 934 bytes} [Fri Aug  3 09:30:38 2018] POST /handle_sqlt/ => generated 3 bytes in 2337 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 101428|app: 0|req: 20/27] 172.16.10.49 () {42 vars in 787 bytes} [Fri Aug  3 09:30:43 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 101428|app: 0|req: 21/28] 172.16.10.49 () {42 vars in 787 bytes} [Fri Aug  3 09:37:52 2018] GET /company_day/ => generated 5481 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 101428|app: 0|req: 22/29] 172.16.10.49 () {42 vars in 1018 bytes} [Fri Aug  3 09:38:10 2018] GET /company_day/1/?para1=94&para2=%E5%A4%A7%E4%BC%97&t_d=2018-07-01&sub_buton=%E4%B8%8B%E8%BD%BD%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE => generated 141188 bytes in 411 msecs (HTTP/1.1 200) 4 headers in 166 bytes (1137 switches on core 1)
+Fri Aug  3 18:35:36 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:35:36 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:35:36 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:35:36 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:35:36 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:35:36 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:35:36 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:35:36 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug  3 18:35:50 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x1755d80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1755d80 pid: 106559 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 106559)
+spawned uWSGI worker 1 (pid: 106563, cores: 2)
+spawned uWSGI worker 2 (pid: 106564, cores: 2)
+spawned uWSGI worker 3 (pid: 106565, cores: 2)
+spawned uWSGI worker 4 (pid: 106567, cores: 2)
+[pid: 106567|app: 0|req: 1/1] 172.16.10.49 () {40 vars in 674 bytes} [Fri Aug  3 18:36:14 2018] GET / => generated 75240 bytes in 138 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 106565|app: 0|req: 1/2] 172.16.10.49 () {40 vars in 654 bytes} [Fri Aug  3 18:36:14 2018] GET /favicon.ico => generated 89700 bytes in 160 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 106567|app: 0|req: 2/3] 172.16.10.49 () {42 vars in 705 bytes} [Fri Aug  3 18:38:16 2018] GET / => generated 3892 bytes in 648 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 106567|app: 0|req: 3/4] 172.16.10.49 () {46 vars in 764 bytes} [Fri Aug  3 18:38:17 2018] GET /favicon.ico => generated 5307 bytes in 11 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 106565|app: 0|req: 2/5] 172.16.10.49 () {52 vars in 977 bytes} [Fri Aug  3 18:38:20 2018] POST /inner_index/ => generated 5590 bytes in 521 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 106565|app: 0|req: 3/6] 172.16.10.49 () {44 vars in 846 bytes} [Fri Aug  3 18:38:24 2018] GET /auto_list/ => generated 4916 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 106567|app: 0|req: 4/7] 172.16.10.49 () {44 vars in 848 bytes} [Fri Aug  3 18:38:27 2018] GET /handle_sqlt/ => generated 49458 bytes in 53 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 106565|app: 0|req: 4/8] 172.16.10.49 () {46 vars in 877 bytes} [Fri Aug  3 18:40:17 2018] GET /auto_list/ => generated 4916 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 106567|app: 0|req: 5/9] 172.16.10.49 () {44 vars in 848 bytes} [Fri Aug  3 18:40:19 2018] GET /handle_sqlt/ => generated 49458 bytes in 58 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 1)
+Fri Aug  3 18:40:44 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:40:44 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:40:44 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:40:44 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:40:44 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:40:44 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:40:44 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:40:44 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug  3 18:41:28 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0xe0cd80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xe0cd80 pid: 107373 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 107373)
+spawned uWSGI worker 1 (pid: 107377, cores: 2)
+spawned uWSGI worker 2 (pid: 107378, cores: 2)
+spawned uWSGI worker 3 (pid: 107379, cores: 2)
+spawned uWSGI worker 4 (pid: 107381, cores: 2)
+[pid: 107381|app: 0|req: 1/1] 172.16.10.49 () {42 vars in 775 bytes} [Fri Aug  3 18:41:36 2018] GET / => generated 3892 bytes in 539 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 107379|app: 0|req: 1/2] 172.16.10.49 () {52 vars in 1021 bytes} [Fri Aug  3 18:41:45 2018] POST /inner_index/ => generated 5590 bytes in 538 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 107379|app: 0|req: 2/3] 172.16.10.49 () {44 vars in 850 bytes} [Fri Aug  3 18:41:51 2018] GET /handle_sqlt/ => generated 49462 bytes in 96 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 1)
+[pid: 107381|app: 0|req: 2/4] 172.16.10.49 () {52 vars in 1021 bytes} [Fri Aug  3 18:42:30 2018] POST /inner_index/ => generated 5590 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 107381|app: 0|req: 3/5] 172.16.10.49 () {44 vars in 850 bytes} [Fri Aug  3 18:42:32 2018] GET /handle_sqlt/ => generated 49462 bytes in 95 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 107381|app: 0|req: 4/6] 172.16.10.49 () {52 vars in 1021 bytes} [Fri Aug  3 18:44:43 2018] POST /inner_index/ => generated 5590 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 107381|app: 0|req: 5/7] 172.16.10.49 () {52 vars in 1021 bytes} [Fri Aug  3 18:44:44 2018] POST /inner_index/ => generated 5590 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 107381|app: 0|req: 6/8] 172.16.10.49 () {44 vars in 850 bytes} [Fri Aug  3 18:44:56 2018] GET /handle_sqlt/ => generated 49462 bytes in 52 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 1)
+Fri Aug  3 18:52:51 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:52:51 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:52:51 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:52:51 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:52:51 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:52:51 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:52:51 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 18:52:51 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug  3 18:53:03 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x15a3d80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x15a3d80 pid: 108960 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 108960)
+spawned uWSGI worker 1 (pid: 108964, cores: 2)
+spawned uWSGI worker 2 (pid: 108965, cores: 2)
+spawned uWSGI worker 3 (pid: 108966, cores: 2)
+spawned uWSGI worker 4 (pid: 108968, cores: 2)
+[pid: 108968|app: 0|req: 1/1] 172.16.10.49 () {42 vars in 775 bytes} [Fri Aug  3 18:53:13 2018] GET / => generated 3892 bytes in 521 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 108965|app: 0|req: 1/2] 172.16.10.49 () {52 vars in 1021 bytes} [Fri Aug  3 18:53:16 2018] POST /inner_index/ => generated 5590 bytes in 541 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 108968|app: 0|req: 2/3] 172.16.10.49 () {44 vars in 850 bytes} [Fri Aug  3 18:53:20 2018] GET /handle_sqlt/ => generated 49462 bytes in 110 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 1)
+[pid: 108968|app: 0|req: 3/4] 172.16.10.49 () {52 vars in 1021 bytes} [Fri Aug  3 19:00:13 2018] POST /inner_index/ => generated 5590 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 108968|app: 0|req: 4/5] 172.16.10.49 () {44 vars in 850 bytes} [Fri Aug  3 19:00:16 2018] GET /handle_sqlt/ => generated 49462 bytes in 58 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 1)
+Fri Aug  3 19:00:38 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:00:38 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:00:38 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:00:38 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:00:38 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:00:38 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:00:38 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:00:38 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug  3 19:00:43 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0xc2ad80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xc2ad80 pid: 110040 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 110040)
+spawned uWSGI worker 1 (pid: 110044, cores: 2)
+spawned uWSGI worker 2 (pid: 110045, cores: 2)
+spawned uWSGI worker 3 (pid: 110046, cores: 2)
+spawned uWSGI worker 4 (pid: 110048, cores: 2)
+[pid: 110045|app: 0|req: 1/1] 172.16.10.49 () {42 vars in 775 bytes} [Fri Aug  3 19:00:50 2018] GET / => generated 95738 bytes in 665 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 110045|app: 0|req: 2/2] 172.16.10.49 () {42 vars in 775 bytes} [Fri Aug  3 19:01:26 2018] GET / => generated 95738 bytes in 88 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 1)
+Fri Aug  3 19:01:38 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:01:38 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:01:38 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:01:38 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:01:38 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:01:38 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:01:38 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:01:38 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug  3 19:01:42 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x13e6d80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x13e6d80 pid: 110237 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 110237)
+spawned uWSGI worker 1 (pid: 110241, cores: 2)
+spawned uWSGI worker 2 (pid: 110242, cores: 2)
+spawned uWSGI worker 3 (pid: 110243, cores: 2)
+spawned uWSGI worker 4 (pid: 110245, cores: 2)
+[pid: 110243|app: 0|req: 1/1] 172.16.10.49 () {42 vars in 775 bytes} [Fri Aug  3 19:01:49 2018] GET / => generated 3892 bytes in 524 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 110243|app: 0|req: 2/2] 172.16.10.49 () {52 vars in 1021 bytes} [Fri Aug  3 19:01:53 2018] POST /inner_index/ => generated 5590 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 110245|app: 0|req: 1/3] 172.16.10.49 () {44 vars in 850 bytes} [Fri Aug  3 19:01:56 2018] GET /handle_sqlt/ => generated 5768 bytes in 511 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 110245|app: 0|req: 2/4] 172.16.10.49 () {52 vars in 1035 bytes} [Fri Aug  3 19:02:26 2018] POST /handle_sqlt/ => generated 68261 bytes in 569 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+Fri Aug  3 19:03:39 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:03:39 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:03:39 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:03:39 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:03:39 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:03:39 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:03:39 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:03:39 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug  3 19:03:42 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x22d9d80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x22d9d80 pid: 110598 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 110598)
+spawned uWSGI worker 1 (pid: 110602, cores: 2)
+spawned uWSGI worker 2 (pid: 110603, cores: 2)
+spawned uWSGI worker 3 (pid: 110604, cores: 2)
+spawned uWSGI worker 4 (pid: 110606, cores: 2)
+[pid: 110604|app: 0|req: 1/1] 172.16.10.49 () {44 vars in 850 bytes} [Fri Aug  3 19:03:46 2018] GET /handle_sqlt/ => generated 5768 bytes in 547 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 110604|app: 0|req: 2/2] 172.16.10.49 () {46 vars in 881 bytes} [Fri Aug  3 19:03:50 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 110606|app: 0|req: 1/3] 172.16.10.49 () {44 vars in 850 bytes} [Fri Aug  3 19:03:54 2018] GET /handle_sqlt/ => generated 5768 bytes in 550 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 110606|app: 0|req: 2/4] 172.16.10.49 () {52 vars in 1035 bytes} [Fri Aug  3 19:03:58 2018] POST /handle_sqlt/ => generated 68595 bytes in 502 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+send success!
+[pid: 110606|app: 0|req: 3/5] 172.16.10.49 () {46 vars in 881 bytes} [Fri Aug  3 19:05:11 2018] GET /handle_sqlt/ => generated 5768 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 110606|app: 0|req: 4/6] 172.16.10.49 () {52 vars in 1035 bytes} [Fri Aug  3 19:05:13 2018] POST /handle_sqlt/ => generated 68594 bytes in 113 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+send success!
+Fri Aug  3 19:05:31 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:05:31 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:05:31 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:05:31 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:05:31 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:05:31 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:05:31 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:05:31 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug  3 19:05:35 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x247cd80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x247cd80 pid: 110959 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 110959)
+spawned uWSGI worker 1 (pid: 110963, cores: 2)
+spawned uWSGI worker 2 (pid: 110964, cores: 2)
+spawned uWSGI worker 3 (pid: 110965, cores: 2)
+spawned uWSGI worker 4 (pid: 110967, cores: 2)
+[pid: 110967|app: 0|req: 1/1] 172.16.10.49 () {46 vars in 881 bytes} [Fri Aug  3 19:05:40 2018] GET /handle_sqlt/ => generated 5768 bytes in 516 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 110967|app: 0|req: 2/2] 172.16.10.49 () {52 vars in 1035 bytes} [Fri Aug  3 19:05:46 2018] POST /handle_sqlt/ => generated 51781 bytes in 482 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+send success!
+Fri Aug  3 19:07:59 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:07:59 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:07:59 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:07:59 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:07:59 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:07:59 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:07:59 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:07:59 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug  3 19:08:05 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x2230d80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2230d80 pid: 111338 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 111338)
+spawned uWSGI worker 1 (pid: 111340, cores: 2)
+spawned uWSGI worker 2 (pid: 111341, cores: 2)
+spawned uWSGI worker 3 (pid: 111342, cores: 2)
+spawned uWSGI worker 4 (pid: 111344, cores: 2)
+[pid: 111344|app: 0|req: 1/1] 172.16.10.49 () {40 vars in 684 bytes} [Fri Aug  3 19:08:20 2018] GET /favicon.ico => generated 5307 bytes in 496 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 111342|app: 0|req: 1/2] 172.16.10.49 () {40 vars in 688 bytes} [Fri Aug  3 19:08:21 2018] GET / => generated 3892 bytes in 530 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 111342|app: 0|req: 2/3] 172.16.10.49 () {52 vars in 985 bytes} [Fri Aug  3 19:08:23 2018] POST /inner_index/ => generated 5590 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 111344|app: 0|req: 2/4] 172.16.10.49 () {44 vars in 864 bytes} [Fri Aug  3 19:08:26 2018] GET /handle_sqlt/ => generated 5768 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 111344|app: 0|req: 3/5] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug  3 19:08:30 2018] POST /handle_sqlt/ => generated 51843 bytes in 481 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+send success!
+Fri Aug  3 19:15:12 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:15:12 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:15:12 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:15:12 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:15:12 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:15:12 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:15:12 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Fri Aug  3 19:15:12 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug  3 19:15:16 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x157fd80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x157fd80 pid: 112354 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 112354)
+spawned uWSGI worker 1 (pid: 112358, cores: 2)
+spawned uWSGI worker 2 (pid: 112359, cores: 2)
+spawned uWSGI worker 3 (pid: 112360, cores: 2)
+spawned uWSGI worker 4 (pid: 112362, cores: 2)
+[pid: 112362|app: 0|req: 1/1] 172.16.10.49 () {44 vars in 864 bytes} [Fri Aug  3 19:15:21 2018] GET /handle_sqlt/ => generated 5768 bytes in 550 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112362|app: 0|req: 2/2] 172.16.10.49 () {46 vars in 895 bytes} [Fri Aug  3 19:15:24 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 112359|app: 0|req: 1/3] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug  3 19:15:36 2018] POST /handle_sqlt/ => generated 51845 bytes in 1039 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+send success!
+[pid: 112359|app: 0|req: 2/4] 172.16.10.49 () {40 vars in 688 bytes} [Sat Aug  4 14:34:37 2018] GET / => generated 3892 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112360|app: 0|req: 1/5] 172.16.10.49 () {52 vars in 985 bytes} [Sat Aug  4 14:34:42 2018] POST /inner_index/ => generated 5590 bytes in 541 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 112360|app: 0|req: 2/6] 172.16.10.49 () {44 vars in 864 bytes} [Sat Aug  4 14:34:45 2018] GET /handle_sqlt/ => generated 5768 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112360|app: 0|req: 3/7] 172.16.10.220 () {42 vars in 636 bytes} [Sat Aug  4 18:57:09 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 112362|app: 0|req: 3/8] 172.16.10.220 () {38 vars in 589 bytes} [Sat Aug  4 18:57:09 2018] GET /apple-touch-icon-precomposed.png => generated 5370 bytes in 10 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 112360|app: 0|req: 4/9] 172.16.10.220 () {38 vars in 565 bytes} [Sat Aug  4 18:57:10 2018] GET /apple-touch-icon.png => generated 5334 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 112360|app: 0|req: 5/10] 172.16.10.220 () {38 vars in 547 bytes} [Sat Aug  4 18:57:10 2018] GET /favicon.ico => generated 5307 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 112360|app: 0|req: 6/11] 172.16.10.220 () {38 vars in 589 bytes} [Sat Aug  4 18:57:10 2018] GET /apple-touch-icon-precomposed.png => generated 5370 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 112360|app: 0|req: 7/12] 172.16.10.220 () {38 vars in 565 bytes} [Sat Aug  4 18:57:10 2018] GET /apple-touch-icon.png => generated 5334 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 112360|app: 0|req: 8/13] 172.16.10.220 () {38 vars in 547 bytes} [Sat Aug  4 18:57:10 2018] GET /favicon.ico => generated 5307 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 112362|app: 0|req: 4/14] 172.16.10.220 () {42 vars in 685 bytes} [Sat Aug  4 18:57:10 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 112360|app: 0|req: 9/15] 172.16.10.220 () {38 vars in 589 bytes} [Sat Aug  4 18:57:10 2018] GET /apple-touch-icon-precomposed.png => generated 5370 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 112362|app: 0|req: 5/16] 172.16.10.220 () {38 vars in 565 bytes} [Sat Aug  4 18:57:10 2018] GET /apple-touch-icon.png => generated 5334 bytes in 11 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 112362|app: 0|req: 6/17] 172.16.10.220 () {38 vars in 547 bytes} [Sat Aug  4 18:57:10 2018] GET /favicon.ico => generated 5307 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 112360|app: 0|req: 10/18] 172.16.10.220 () {38 vars in 589 bytes} [Sat Aug  4 18:57:10 2018] GET /apple-touch-icon-precomposed.png => generated 5370 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 112362|app: 0|req: 7/19] 172.16.10.220 () {38 vars in 565 bytes} [Sat Aug  4 18:57:10 2018] GET /apple-touch-icon.png => generated 5334 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 112362|app: 0|req: 8/20] 172.16.10.220 () {38 vars in 547 bytes} [Sat Aug  4 18:57:10 2018] GET /favicon.ico => generated 5307 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+Sun Aug  5 00:18:21 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:18:21 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:18:21 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:18:21 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:18:21 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:18:21 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:18:21 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:18:21 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Sun Aug  5 00:26:59 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0xc72d60
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xc72d60 pid: 143681 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 143681)
+spawned uWSGI worker 1 (pid: 143685, cores: 2)
+spawned uWSGI worker 2 (pid: 143686, cores: 2)
+spawned uWSGI worker 3 (pid: 143687, cores: 2)
+spawned uWSGI worker 4 (pid: 143689, cores: 2)
+[pid: 143686|app: 0|req: 1/1] 172.16.10.49 () {42 vars in 775 bytes} [Sun Aug  5 00:27:07 2018] GET / => generated 3892 bytes in 514 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 143686|app: 0|req: 2/2] 172.16.10.49 () {42 vars in 755 bytes} [Sun Aug  5 00:27:08 2018] GET /favicon.ico => generated 5307 bytes in 11 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 143687|app: 0|req: 1/3] 172.16.10.49 () {52 vars in 1021 bytes} [Sun Aug  5 00:27:11 2018] POST /inner_index/ => generated 5590 bytes in 522 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 143689|app: 0|req: 1/4] 172.16.10.49 () {44 vars in 850 bytes} [Sun Aug  5 00:27:14 2018] GET /handle_sqlt/ => generated 5768 bytes in 539 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+[pid: 143689|app: 0|req: 2/5] 172.16.10.49 () {52 vars in 1035 bytes} [Sun Aug  5 00:27:42 2018] POST /handle_sqlt/ => generated 144 bytes in 2618 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 143689|app: 0|req: 3/6] 172.16.10.49 () {44 vars in 850 bytes} [Sun Aug  5 00:28:20 2018] GET /handle_sqlt/ => generated 5768 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 143689|app: 0|req: 4/7] 172.16.10.49 () {40 vars in 712 bytes} [Sun Aug  5 00:29:09 2018] GET /handle_sqlt/ => generated 33 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+[pid: 143689|app: 0|req: 5/8] 172.16.10.49 () {52 vars in 1035 bytes} [Sun Aug  5 00:31:33 2018] POST /handle_sqlt/ => generated 144 bytes in 14954 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 143687|app: 0|req: 2/9] 172.16.10.49 () {44 vars in 850 bytes} [Sun Aug  5 00:32:56 2018] GET /handle_sqlt/ => generated 5768 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 143689|app: 0|req: 7/10] 172.16.10.49 () {42 vars in 775 bytes} [Sun Aug  5 00:33:00 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 143689|app: 0|req: 8/11] 172.16.10.49 () {52 vars in 1021 bytes} [Sun Aug  5 00:33:04 2018] POST /inner_index/ => generated 5590 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+[pid: 143689|app: 0|req: 8/12] 172.16.10.49 () {52 vars in 1035 bytes} [Sun Aug  5 00:32:56 2018] POST /handle_sqlt/ => generated 144 bytes in 14694 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 143689|app: 0|req: 9/13] 172.16.10.49 () {44 vars in 850 bytes} [Sun Aug  5 00:33:13 2018] GET /handle_sqlt/ => generated 5768 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 143689|app: 0|req: 11/14] 172.16.10.49 () {44 vars in 850 bytes} [Sun Aug  5 00:35:49 2018] GET /handle_sqlt/ => generated 5768 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 143689|app: 0|req: 12/15] 172.16.10.49 () {44 vars in 856 bytes} [Sun Aug  5 00:35:50 2018] GET /chart/func_add/ => generated 751 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 143689|app: 0|req: 13/16] 172.16.10.49 () {52 vars in 1044 bytes} [Sun Aug  5 00:36:09 2018] POST /chart/func_add/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 3 headers in 138 bytes (1 switches on core 0)
+[pid: 143689|app: 0|req: 14/17] 172.16.10.49 () {46 vars in 884 bytes} [Sun Aug  5 00:36:09 2018] GET /handle_sqlt/ => generated 5934 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+[pid: 143689|app: 0|req: 14/18] 172.16.10.49 () {52 vars in 1035 bytes} [Sun Aug  5 00:33:18 2018] POST /handle_sqlt/ => generated 144 bytes in 402540 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+Sun Aug  5 00:46:33 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:46:33 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:46:33 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:46:33 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:46:33 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:46:33 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:46:33 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:46:33 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Sun Aug  5 00:46:42 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x1cfdd60
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1cfdd60 pid: 146393 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 146393)
+spawned uWSGI worker 1 (pid: 146395, cores: 2)
+spawned uWSGI worker 2 (pid: 146396, cores: 2)
+spawned uWSGI worker 3 (pid: 146397, cores: 2)
+spawned uWSGI worker 4 (pid: 146399, cores: 2)
+[pid: 146399|app: 0|req: 1/1] 172.16.10.49 () {40 vars in 688 bytes} [Sun Aug  5 00:46:52 2018] GET / => generated 3892 bytes in 489 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 146399|app: 0|req: 2/2] 172.16.10.49 () {52 vars in 985 bytes} [Sun Aug  5 00:46:54 2018] POST /inner_index/ => generated 5590 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 146397|app: 0|req: 1/3] 172.16.10.49 () {44 vars in 864 bytes} [Sun Aug  5 00:46:56 2018] GET /handle_sqlt/ => generated 5934 bytes in 545 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+[pid: 146399|app: 0|req: 3/4] 172.16.10.49 () {52 vars in 1043 bytes} [Sun Aug  5 00:47:08 2018] POST /handle_sqlt/ => generated 144 bytes in 34666 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+send success!
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 146399|app: 0|req: 4/5] 172.16.10.49 () {44 vars in 864 bytes} [Sun Aug  5 00:48:20 2018] GET /handle_sqlt/ => generated 5934 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+Sun Aug  5 00:53:39 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:53:39 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:53:39 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:53:39 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:53:39 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:53:39 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:53:39 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 00:53:39 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Sun Aug  5 00:53:42 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x8eed60
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x8eed60 pid: 147388 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 147388)
+spawned uWSGI worker 1 (pid: 147392, cores: 2)
+spawned uWSGI worker 2 (pid: 147393, cores: 2)
+spawned uWSGI worker 3 (pid: 147394, cores: 2)
+spawned uWSGI worker 4 (pid: 147396, cores: 2)
+[pid: 147393|app: 0|req: 1/1] 172.16.10.49 () {46 vars in 895 bytes} [Sun Aug  5 00:53:50 2018] GET /handle_sqlt/ => generated 5934 bytes in 547 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 147396|app: 0|req: 1/2] 172.16.10.49 () {52 vars in 1043 bytes} [Sun Aug  5 00:53:59 2018] POST /handle_sqlt/ => generated 73979 bytes in 35337 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Sun Aug  5 11:13:02 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 11:13:02 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 11:13:02 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 11:13:02 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 11:13:02 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 11:13:02 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 11:13:02 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun Aug  5 11:13:02 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
