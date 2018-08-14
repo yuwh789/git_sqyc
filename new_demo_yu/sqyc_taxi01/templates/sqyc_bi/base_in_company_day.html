@@ -5,30 +5,27 @@
 
 
 {% block middle_head_right_up %}
-        <!--条件侧栏上部-->
+        <!--条件侧栏上部day report-->
                 <div class="middle_head_right_up">
 
-                    <form action="/company_day/1/" class="form_pro" method="get" >
-
+                    <form action="/company_day/1/" class="form_pro" method="post"  >
+                        {% csrf_token %}
                         城 市id: <input type="text" value="{{ city_id }}"  name = 'para1'>  &nbsp
                         公 司: <input type="text"  value="{{ company_name }}" name='para2'>   &nbsp
                         日 期: <input type="date" value="{{ t_d }}" name="t_d">   &nbsp
 
-
-
                         <input type="submit" value="查询"  name="sub_buton">  &nbsp
                         <input type="submit" value="下载所有数据" name="sub_buton">
 {#                        <a href="">下载数据</a>#}
-
                     </form>
 
                 </div>
 {% endblock middle_head_right_up %}
 
 
-
 {#  图表区域   #}
 {% block middle_head_right %}
+
     <div class="middle_head_right">
         <table border="1" >
                   <tr class="s_tr1">
@@ -46,10 +43,7 @@
                         <th>当日奖励</th>
                     </tr>
 
-
-
                  {% for order in order_list %}
-
                     <tr class='s_tr2'>
                         <td>{{ order.t_date }}</td>
                         <td>{{ order.city_id }}</td>
@@ -72,8 +66,8 @@
 
 
 {% block middle_down %}
-
     <div class="pagenation">
+
         {% if order_list.has_previous %}
 {#            当前页数-1#}
             <a href="/company_day/{{order_list.number|add:-1}}/?para1={{ city_id }}&para2={{ company_name }}&t_d={{ t_d }}">上一页</a>
@@ -82,20 +76,17 @@
          {% for pindex in pages %}
 {#             若页码跟当前页内容的页数一样#}
              {% if pindex == order_list.number %}
-                <a href="/company_day/{{ pindex }}/?para1={{ city_id }}&para2={{ company_name }}&t_d={{ t_d }}"  class="active"> {{ pindex }} </a>
+                <a href="/company_day/{{pindex}}/?para1={{city_id}}&para2={{company_name}}&t_d={{t_d}}"  class="active"> {{pindex}} </a>
              {% else %}
                  <a href="/company_day/{{ pindex }}/?para1={{ city_id }}&para2={{ company_name }}&t_d={{ t_d }}"  class=""> {{ pindex }} </a>
              {% endif %}
-
         {% endfor %}
 
-    {% if order_list.has_next %}
-        <a href="/company_day/{{ order_list.number|add:1 }}/?para1={{ city_id }}&para2={{ company_name }}&t_d={{ t_d }}"> 下一页 </a>
-    {% endif %}
+        {% if order_list.has_next %}
+            <a href="/company_day/{{ order_list.number|add:1 }}/?para1={{ city_id }}&para2={{ company_name }}&t_d={{ t_d }}"> 下一页 </a>
+        {% endif %}
 
     </div>
-
-
 {% endblock %}
 
 

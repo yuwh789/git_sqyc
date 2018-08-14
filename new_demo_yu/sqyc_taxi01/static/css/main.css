@@ -1,5 +1,12 @@
 /*body{font-family:'Microsoft Yahei';font-size:12px;color:#666;}*/
 /*html,body{height:100%}*/
+/* 把标签默认的间距设为0 */
+body{
+    margin:0;
+    padding:0;
+    #border:1px solid #142c55;
+}
+
 
 .s_head_title{
      margin: auto;
@@ -22,7 +29,6 @@
 }
 
 
-
 .s_head_title span{
  height: 65px;
  text-align: center;  line-height: 65px;
@@ -30,6 +36,7 @@
  font-size: 18px;  font-weight: normal;
  margin-left: 20px;
 }
+
 
 .middle_head{
     background: white;
@@ -41,7 +48,7 @@
 }
 
 .middle_head_left {
-/*background: #7373b9 url("{% static 'images/head_left.jpg' %}");*/
+    /*background: #7373b9 url("{% static 'images/head_left.jpg' %}");*/
     background:#7373b9  url('../images/head_left.jpg') repeat;
     /*background:#7373b9    ;*/
     width: 200px;
@@ -54,24 +61,26 @@
 
 
 .middle_head_left li {
-/*height: 60px;  需注释掉, 若固定则会影响li下面的子集li   ##! */
-width: 100%;
+    /*height: 60px;  需注释掉, 若固定则会影响li下面的子集li   ##! */
+    width: 100%;
     border: 1px solid white;
-border-top: 0;  border-left: 0;  border-right: 0;
-list-style: none;     padding: 0;
-/*列表前面的原点样式*/
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    list-style: none;
+    padding: 0;
+    /*列表前面的原点样式*/
 }
 
 
 .middle_head_left li a   {
     font-size: 16px;
-/*标签高度,  及文字高度*,  a标签设置高度可以把上面的li撑起来*/
+/*标签高度,  及文字高度*,  a >>把li撑起来*/
     height: 60px;
     line-height: 60px;
 /*text-align: center; 文字水平, 及文字缩进  */
     text-decoration: None;
     text-indent: 10px;
-/*color:black;*/
     color: white;
     display: block;
 }
@@ -97,7 +106,11 @@ text-indent: 30px;
     height: 100%;
 }
 
-.middle_head_right table { width: 100%; font-size: 14px; padding: 0; border: 1px white}
+.middle_head_right table{
+    width: 100%;
+    font-size: 14px;
+    padding: 0;
+    border: 1px white}
 
 .middle_head_right .s_tr1 th{
         /*width: 100%;     font-size: 20px;*/
@@ -106,35 +119,46 @@ text-indent: 30px;
 }
 
 .middle_head_right .s_tr2 td {
+        background: #DCE6F1 ;
         text-align: center;
-        }
+}
+
+table tr{text-align:center;}
+
+/*设置偶数行颜色*/
+table tr:nth-child(even){background: #DCE6F1; }
+
+/*隔列*/
+/*table td:nth-child(even){color:red;}*/
+
 
 /*右侧栏上方*/
-
 .middle_head_right_up{
     width: auto;
     background: #eeeeee;
     height: 30px;
     padding-top: 2px;
     margin-left: 200px;
-    }
+}
+
 
 .down_btn {
     margin-top: 5px;
 }
+
 /*.form_pro {float:right;  }*/
 .form_pro select {width: 100px; height: 26px; }
+
 
 .pagenation{
     position: absolute;
     left:800px;
     top:660px;
-      height:32px;
+    height:32px;
     text-align:center;
     font-size:0;
     margin:30px auto;
 }
-
 
 
 .pagenation a{
@@ -149,7 +173,6 @@ margin:5px;
 
 .pagenation .active{ color:red}
 
-
 .dis_none{ display: None}
 
 .middle_head_right .li_list{
@@ -157,18 +180,40 @@ margin:5px;
     margin-top: 20px  ;
 }
 
-.middle_head_right  .li_list   a {
+.middle_head_right  .li_list  a{
         color: black;
-        text-align:center;
-        border:1px solid #d2d2d2;
         background-color:#f8f6f7;
-        font-size:16px;
+        /*border:2px solid #d2d2d2;*/
         padding:5px 20px;
+        text-align:center;
+        font-size:16px;
         line-height: 20px;
     }
 
 .middle_head_right .li_list a:hover{color: red}
 
+
+.middle_head_right  .li_list  span{
+        color: black;
+        background-color:#f8f6f7;
+        border:2px solid #d2d2d2;
+        padding:5px 20px;
+        text-align:center;
+        font-size:16px;
+        line-height: 20px;
+        width: 100px;
+    }
+
+
+.middle_head_right  .li_list  .new_a{
+        color: darkgrey;
+        background-color: white;
+        /*border:2px solid #d2d2d2;*/
+        padding:5px 20px;
+        text-align:center;
+        font-size:16px;
+        line-height: 20px;
+    }
 
 
 

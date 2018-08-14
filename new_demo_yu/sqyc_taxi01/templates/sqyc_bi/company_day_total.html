@@ -8,8 +8,8 @@
         <!--条件侧栏上部-->
                 <div class="middle_head_right_up">
 
-                    <form action="/company_day_total/1/" class="form_pro" method="get" >
-
+                    <form action="/company_day_total/1/" class="form_pro" method="post" >
+                        {% csrf_token %}
                         城 市id: <input type="text" value="{{ city_id }}"  name = 'para1'>  &nbsp
                         公 司: <input type="text"  value="{{ company_name }}" name='para2'>   &nbsp
                         开始日期: <input type="date" value="{{ t_d1 }}" name="t_d1">   &nbsp
@@ -34,11 +34,9 @@
                         <th>车牌号</th>
                         <th>司机姓名</th>
 
-
                         <th>在线分钟</th>
                         <th>完单量</th>
                         <th>在线天数</th>
-
                     </tr>
 
 

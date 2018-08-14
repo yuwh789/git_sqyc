@@ -5,7 +5,6 @@ import pymysql
 import time
 import  re
 import datetime
-# import matplotlib.pyplot as plt
 from sqlalchemy import create_engine
 
 import smtplib  ,time # 邮件使用库
@@ -13,7 +12,6 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header  # 给对象进行编码
 from email.mime.application import MIMEApplication # MIME程序类型,适用多种类型:如文本,图片,xlsx, MP3音频等
-from django.conf import settings
 
 
 class Psyco_handle(object):
@@ -27,26 +25,17 @@ class Psyco_handle(object):
 
     def data_s(self, dtFme, t_table):
         try:
-
             in_engine = "postgresql://%s:%s@%s:%s/%s" % (
             self.user_name, self.pwd, self.connect_ip, self.connect_port, self.database_name)
-
             self.engine = create_engine(in_engine)
-
             dtFme.to_sql(t_table, self.engine, index=False, if_exists="append")
-
             print("%s---Files save by Postgre !" % (time.strftime("%Y-%m-%d %H:%M", time.localtime())))
-
         except Exception as e:
-
             print("连接数据库发现异常", e)
-
             return "Postgre has gone away --- %s " % (time.strftime("%Y-%m-%d %H:%M", time.localtime()))
-
         return self.engine
 
     def data_r(self, insql):
-
         try:
             in_engine = "postgresql://%s:%s@%s:%s/%s" % (
             self.user_name, self.pwd, self.connect_ip, self.connect_port, self.database_name)
@@ -59,7 +48,6 @@ class Psyco_handle(object):
 
 
 class Date_list(object):
-
     def date_list(self):
         print("当前时间为: ", time.strftime("%Y-%m-%d %H:%M"))
         # 日期范围列表
@@ -67,7 +55,6 @@ class Date_list(object):
         a_day = datetime.timedelta(days=1)  # time
         if t_d1 == "":
             t_d1 = datetime.datetime.now() - a_day
-
         else:
             date_list = [t_d1]
             t_d1 = datetime.datetime.strptime(t_d1, "%Y-%m-%d")  #
@@ -88,10 +75,6 @@ class Date_list(object):
 
     def timedlta(self,inday):
         return datetime.datetime.now() - datetime.timedelta(days=int(inday))
-
-
-
-
 
 
 # 经度1，纬度1，经度2，纬度2 （十进制度数） lon1, lat1, lon2, lat2
@@ -115,6 +98,7 @@ def Distance(df):
         else :
             return None
 
+
 # 经纬度处理002
 def Distance2(df):
     if df['driver_coordinate'] is not None and df['fact_start_point'] is not None :
@@ -134,7 +118,6 @@ def Distance2(df):
         return None
 
 
-
 # 接驾异常
 def exc_j(df,x):
         if df['接驾秒']<120 or df['接驾里程']<100:
@@ -142,13 +125,13 @@ def exc_j(df,x):
         else:
             return 0
 
+
 # 服务异常
 def exc_fw(df,x):
         if df['行驶分钟']<2 or df['服务里程']<1000:
             return 1*x
         else:
             return 0
-
 
 
 # 两单间隔异常
@@ -180,7 +163,6 @@ def exc_dcws(df ): # 多次握手异常
         return 0
 
 
-
 #风控中位数评分
 def  func_money(df):
     if df['线上总额'] >= df['线上总额中位数'] *10:
@@ -191,7 +173,6 @@ def  func_money(df):
         return -0.2
     elif df['线上总额'] < df['线上总额中位数'] :
         return 0
-
 
 
 # 根据拉新指标，调整评分, 多次握手异常为0

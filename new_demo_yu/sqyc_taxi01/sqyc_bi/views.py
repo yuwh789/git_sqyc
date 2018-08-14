@@ -5,7 +5,7 @@ from sqyc_bi.models import *
 from django.http import HttpResponseNotAllowed,JsonResponse
 
 import csv
-from sqyc_bi.models import  *
+from bi_echarts.models import  *
 # Create your views here.
 from sqyc_bi.untils.decorators import *
 from sqyc_bi.untils.down_func import  *
@@ -16,15 +16,12 @@ import  pymysql
 from django.db import  connection
 from sqyc_bi.data_tools import  *
 import datetime
-from threading import *
 from multiprocessing import Process
 import time
 
 def Index(request):
     #return  HttpResponse('欢迎来到首约科技事业部BI报表')
-
     return render(request, 'sqyc_bi/login_index_new.html')
-
 
 
 @require_http_methods(['GET','POST'])
@@ -36,9 +33,8 @@ def User_account01(request):
         user_name = request.POST.get('uname')
         password = request.POST.get('passwd')
         adminpasswd = request.POST.get('adminpasswd')
-
-        user_account.objects.add_one_manager(user_name, password, adminpasswd)
-        return  HttpResponse("ok!")
+        user_account.objects.add_one_manager(user_name, password, adminpasswd )
+    return  HttpResponse("ok!")
 
 
 
@@ -54,7 +50,7 @@ def User_account(request):
         user_model.adminpasswd = request.POST.get('adminpasswd')
         if user_model.adminpasswd == "helloworld":
             user_model.save()
-            return HttpResponse("注册ok！"   )
+            return HttpResponse("恭喜！注册成功！")
         else:
             str1= "暗号错误,注册失败！%s" %user_model.adminpasswd
             return HttpResponse(str1 )
@@ -89,179 +85,153 @@ def Login_check(request):
         # else :
         #     privileges = 'hid'
         return render(request, 'sqyc_bi/base_in_index.html', {"privileges":privileges.comment })
-
     else:
-        # the_data = 'haha%s' %the_data
-        # return HttpResponse(the_data)
         return HttpResponse("账户或者密码错误！")
 
 
 
 @login_required
 def Wd_driver_num(request,page_index):
-    ''' 返回接单员数量信息,日期, 订单状态, 有无拉新；  一单,二单  '''
+    if request.method == 'GET':
+        return  render(request, 'sqyc_bi/base_in_order_num.html')
+    elif request.method == 'POST':
+        ''' 返回接单员数量信息,日期, 订单状态, 有无拉新；  一单,二单  '''
+        recmd_status = request.POST.get('recmd_status')
+        pro_status = request.POST.get('pro_status')
+        # t_date = request.POST.get('t_date')
+        sub_buton = request.POST.get('sub_buton')
+        if sub_buton =="下载所有数据":
+            order_list = t_driver_order_num.objects.all()
+            order_list = Down_files(request, order_list, create_date ='日期', order_status='订单状态', one_num='一单' )
+            return  order_list
+        else:
+            order_list = t_driver_order_num.objects.filter( order_status=pro_status).order_by('-create_date')
 
-    recmd_status = request.GET.get('recmd_status')
-    pro_status = request.GET.get('pro_status')
-    # t_date = request.GET.get('t_date')
-    sub_buton = request.GET.get('sub_buton')
+        # 1进行分页
+        paginator = Paginator(order_list,20)
+        # 2获取第n页内容
+        order_list = paginator.page(int(page_index))
+        # 3获取页码列表
+        pages = paginator.page_range
+        # 4.1获取总页数
+        num_pages = paginator.num_pages
+        current_num = int(page_index)
 
-    if sub_buton =="下载所有数据":
-        order_list = t_driver_order_num.objects.all()
-        order_list = Down_files(request, order_list, create_date ='日期', order_status='订单状态', one_num='一单' )
-        return  order_list
-    else:
-        order_list = t_driver_order_num.objects.filter( order_status=pro_status).order_by('-create_date')
-
-    # 1进行分页
-    paginator = Paginator(order_list,20)
-    # 2获取第n页内容
-    order_list = paginator.page(int(page_index))
-    # 3获取页码列表
-    pages = paginator.page_range
-    # 4.1获取总页数
-    num_pages = paginator.num_pages
-    current_num = int(page_index)
-
-    if num_pages<=10:
-        #总页数小于等于5
-        pages = range(1,num_pages+1)
-    elif current_num <=5:
-        # 当前页为前5页
-        pages = range(1,11)
-    elif num_pages - current_num<=4:
-        # 當前頁爲後5頁
-        pages = range(num_pages-10, num_pages+1)
-    else:
-        # 既不是前5页，也不是后5页
-        pages = range(current_num-5, current_num+5)
-
-    # 返回数据
-    return  render(request, 'sqyc_bi/base_in_order_num.html', {'order_list':order_list,
-                                                               'pages':pages ,
-                                                               'recmd_status':recmd_status,
-                                                               'pro_status':pro_status, })
-
-
-@login_required
-def Company_first(request):
-    '''测试用'''
-    return render(request,'sqyc_bi/base_in_company_day.html')
+        if num_pages<=10:
+            #总页数小于等于5
+            pages = range(1,num_pages+1)
+        elif current_num <=5:
+            # 当前页为前5页
+            pages = range(1,11)
+        elif num_pages - current_num<=4:
+            # 當前頁爲後5頁
+            pages = range(num_pages-10, num_pages+1)
+        else:
+            # 既不是前5页，也不是后5页
+            pages = range(current_num-5, current_num+5)
+        # 返回数据
+        return  render(request, 'sqyc_bi/base_in_order_num.html', {'order_list':order_list,
+                                                                   'pages':pages ,
+                                                                   'recmd_status':recmd_status,
+                                                                   'pro_status':pro_status, })
 
 
-
+@require_http_methods(['GET','POST'])
 @login_required
 def Company_day(request,page_index):
-    ''' 日报 ： com_cnt, reward_punish_money, total_online_minute'''
-    city_id = request.GET.get('para1')
-    company_name = request.GET.get('para2')
-    t_d = request.GET.get('t_d')
+    if request.method == 'GET':
+        return  render(request, 'sqyc_bi/base_in_company_day.html')
+    elif request.method == 'POST':
+        ''' 日报 ： com_cnt, reward_punish_money, total_online_minute'''
+        city_id = request.POST.get('para1')
+        company_name = request.POST.get('para2')
+        t_d = request.POST.get('t_d')
 
-    if request.session['user_name'].split("_")[0] == 'sqtaxi':
-        city_id = request.session['user_name'].split("_")[-1]
+        if request.session['user_name'].split("_")[0] == 'sqtaxi':
+            city_id = request.session['user_name'].split("_")[-1]
 
-    sub_buton = request.GET.get('sub_buton')
+        sub_buton = request.GET.get('sub_buton')
+        if sub_buton == '下载所有数据':
+            company_list = t_company_day_data.objects.filter(city_id=city_id,
+                                                             taxi_company_name__regex=company_name, t_date=t_d)
+            company_list = Down_files(request, company_list, t_date='日期', city='city', driver_id='driver_id',
+                                      driver_name='driver_name',driver_phone='driver_phone', taxi_company_name='公司',
+                                      com_cnt='完单量', plate_number='车牌号', id_number='证件号',total_online_minute='在线分钟')
+            return company_list
+        else:
+            company_list = t_company_day_data.objects.filter(city_id=city_id, taxi_company_name__regex=company_name, t_date=t_d)
+        #   分页函数
+        order_list, pages = Rtn_pages(company_list, page_index)
 
-    if sub_buton == '下载所有数据':
-        company_list = t_company_day_data.objects.filter(city_id=city_id,
-                                                         taxi_company_name__regex=company_name, t_date=t_d)
-        company_list = Down_files(request, company_list, t_date='日期', city='city', driver_id='driver_id',
-                                  driver_name='driver_name',driver_phone='driver_phone', taxi_company_name='公司',
-                                  com_cnt='完单量', plate_number='车牌号', id_number='证件号',total_online_minute='在线分钟')
-        return  company_list
-    else:
-        company_list = t_company_day_data.objects.filter(city_id=city_id, taxi_company_name__regex=company_name, t_date=t_d)
-
-    order_list, pages = Rtn_pages(company_list, page_index)
-
-
-    return  render(request, 'sqyc_bi/base_in_company_day.html',
-                   {'order_list': order_list,
-                    'pages': pages,
-                    'city_id': city_id ,
-                    'company_name': company_name,
-                    't_d': t_d } )
-
-
-@login_required
-def Company_day_total_first(request):
-    '''测试用'''
-    return render(request, 'sqyc_bi/company_day_total.html')
+        return  render(request, 'sqyc_bi/base_in_company_day.html',
+                       {'order_list': order_list,
+                        'pages': pages,
+                        'city_id': city_id ,
+                        'company_name': company_name,
+                        't_d': t_d})
 
 
+@require_http_methods(['GET','POST'])
 @login_required
 #  sq_yunying , sq_sj  ,  sqtaxi_beijing_44,  sqtaxi_haerbin_94,
 def Company_day_total(request, page_index):
-    '''公司汇总数据 公司， 证件  车牌 在线分钟 完单量 在线天数'''
-    t_d1 = request.GET.get('t_d1')
-    t_d2 = request.GET.get('t_d2')
-    city_id = request.GET.get('para1')
-    if request.session['user_name'].split("_")[0] == 'sqtaxi':
-        city_id = request.session['user_name'].split("_")[-1]
-    company_name = request.GET.get('para2')
-    sub_buton = request.GET.get('sub_buton')
+    if request.method == "GET":
+        return render(request, 'sqyc_bi/company_day_total.html')
+    elif request.method == "POST":
+        '''公司汇总数据 公司 证件 车牌 在线分钟 完单量 在线天数'''
+        t_d1 = request.POST.get('t_d1')
+        t_d2 = request.POST.get('t_d2')
+        city_id = request.POST.get('para1')
+        if request.session['user_name'].split("_")[0] == 'sqtaxi':
+            city_id = request.session['user_name'].split("_")[-1]
+        company_name = request.POST.get('para2')
+        sub_buton = request.POST.get('sub_buton')
 
+        # 大众， 天鹅特殊情况， 额外处理
+        if (company_name in ("大众", "天鹅") ) and sub_buton =="下载数据":
+            # Pg数据库存储过程大的使用方式， 与mysql略不同
+            sql = "SELECT * from  t_special_company_day('%s','%s','%s')"  %(t_d1, t_d2, company_name)
+        else:
+            sql = "select * from fuc_company_total('%s','%s', '%s','%s')" % (company_name, t_d1, t_d2, city_id)
 
-    cur = connection.cursor()
-    if (company_name in ("大众", "天鹅") ) and sub_buton =="下载数据":
         cur = connection.cursor()
-        # Pg数据库存储过程大的使用方式， 与mysql略不一样
-        sql = "SELECT * from  t_special_company_day('%s','%s','%s')"  %(t_d1, t_d2, company_name)
-    else:
-        sql = "select * from fuc_company_total('%s','%s', '%s','%s')" % (company_name, t_d1, t_d2, city_id)
-        # sql = "call fuc_company_total('%s','%s', '%s','%s')" %(company_name,t_d1, t_d2,city_id)
+        cur.execute(sql)
+        res = cur.fetchall()
 
-    cur.execute(sql)
-    res = cur.fetchall()
-    # 处理方式2， 列表推导式
-    colName = [col[0] for col in cur.description]  # 列名
-    order_list = [dict(zip(colName, row)) for row in res]  # 列名&行绑定， 处理为字典对象
+        # 处理方式2 列表推导式~ (分公司透视用的处理方式一-- 字典形式组成)
+        colName = [col[0] for col in cur.description]  # 列名
+        order_list = [dict(zip(colName, row)) for row in res]  # 列名&行绑定， 处理为字典对象
 
-    # order_list = []
-    # for i in res:
-    #     dic = {}
-    #     dic['taxi_company_name'] = i[0]
-    #     dic['id_number'] = i[1]
-    #     dic['plate_number'] = i[2]
-    #     dic['driver_name'] = i[3]
-    #     dic['sum_online_minute'] = i[4]
-    #     dic['sum_com_cnt'] = i[5]
-    #     dic['online_day'] = i[6]
-    #     order_list.append(dic)
+        if sub_buton =="下载数据":
+            order_list = Down_files_dic2(request, order_list, colName)
+            return order_list
+        else:
+            # 分页
+            order_list , pages = Rtn_pages(order_list, page_index)
 
-    if sub_buton =="下载数据":
-        order_list = Down_files_dic2(request, order_list, colName)
-        return order_list
-        #
-        # order_list = Down_files_dic(request, order_list, taxi_company_name='公司名称',id_number= '证件号',
-        #                             plate_number = "车牌号", driver_name = '司机姓名', sum_online_minute ='在线分钟',  sum_com_cnt ='完单数'
-        #                             , online_day ='在线天数' )
-    else:
-        order_list , pages = Rtn_pages(order_list, page_index)
+        return  render(request, 'sqyc_bi/company_day_total.html', {'order_list': order_list,
+                                                                   'company_name': company_name,
+                                                                   'pages': pages,
+                                                                   't_d1': t_d1,
+                                                                   't_d2': t_d2 ,
+                                                                   'city_id': city_id } )
 
-
-    return  render(request, 'sqyc_bi/company_day_total.html', {'order_list': order_list,
-                                                               'company_name': company_name,
-                                                               'pages': pages,
-                                                               't_d1': t_d1,
-                                                               't_d2': t_d2 ,
-                                                               'city_id': city_id } )
 
 @login_required
 def t_s_company_first(request):
-    '''test 初始化测试'''
-    return  render(request, "sqyc_bi/fun_city_total.html")
+    ''' 测试用 '''
+    return render(request, "sqyc_bi/fun_city_total.html")
+
 
 @login_required
 def t_s_company(request,page_index):
-    # 阶段汇总数据:  单位名称  司机数 上线司机数	未上线司机数	上线率 完单数	完单司机数 , todo
-
+    # city阶段汇总数据:单位名称-司机数-上线司机数-完单数-完单司机数 , todolist
     city_id = request.GET.get('para1')
     if request.session['user_name'].split("_")[0] == 'sqtaxi':
         city_id = request.session['user_name'].split("_")[-1]
     t_d1 = request.GET.get('t_d1')
     t_d2 = request.GET.get('t_d2')
-    sub_buton = request.GET.get('sub_buton')
+    sub_btn = request.GET.get('sub_buton')
 
     cur = connection.cursor()
     sql = "select * from  fuc_city_total('%s','%s', '%s' )" %(t_d1, t_d2,city_id)
@@ -278,10 +248,9 @@ def t_s_company(request,page_index):
         dic['com_order_cnt'] = i[3]
         dic['com_driver_cnt'] = i[4]
         dic['online_driver_cnt'] = i[5]
-
         order_list.append(dic)
 
-    if sub_buton =="下载数据":
+    if sub_btn =="下载数据":
         order_list = Down_files_dic(request, order_list,
                                     taxi_company_id = 'company_id',
                                     taxi_company_name='公司名称',
@@ -295,57 +264,6 @@ def t_s_company(request,page_index):
     return render(request, 'sqyc_bi/fun_city_total.html', {'order_list':order_list, 'ages':pages, 'city_id':city_id, 't_d1':t_d1,'t_d2':t_d2})
 
 
-def Auto_list(request):
-    return render(request, 'sqyc_bi/auto_index.html')
-
-
-
-def Handle_sql(request):
-    '''测试用'''
-    return render(request, 'bi_echarts/Handle_sql.html')
-
-    pass
-
-
-@login_required
-def Handle_sqlt_ttt(request):
-    from bi_echarts import  models
-    if request.method == 'GET':
-        order_list = models.func_comment.objects.all()
-        return render(request, 'bi_echarts/Handle_sql.html', {'order_list': order_list})
-    elif request.method == 'POST':
-        sub_buton = request.POST.get('sub_buton')
-        para1 = request.POST.get('para1')
-
-        cur = connection.cursor()
-        sql = para1.strip().replace(r"\n"," ")
-
-        #  REC,  thename-- sql-- date-- other
-        rec_model = t_rec_table()
-        rec_model.the_name = request.session.get('user_name')
-        rec_model.comment = sql
-        rec_model.save()
-
-        psy = Psyco_handle()
-        df1 = psy.data_r(sql)
-        t_d = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        path = r'/home/dev/virtualenv_files/t_demo1/result{}.xlsx'.format(t_d)
-        df1.to_excel(path)
-
-        to_address_list = [ "yuweihong@01zhuanche.com"]
-        mail_mimemuprt('风控数据',path, to_address_list)
-        return HttpResponse("ok!") 
-
-
-        #sql = "select * from  %s" %sql
-        #cur.execute(sql)
-        #res = cur.fetchall()
-
-        #colName = [col[0] for col in cur.description]
-        #order_list = [dict(zip(colName, row)) for row in res]
-        #order_list = Down_files_dic2( request, order_list, colName)
-        #return  order_list
-
 
 @login_required
 def Other_test(request):
@@ -353,70 +271,21 @@ def Other_test(request):
     return  HttpResponse(str)
 
 
-def company_test(request):
-    cur = connection.cursor()
-    sql = "call fuc_city_total('2018-05-20', '2018-05-22', 94) "
-    cur.execute(sql)
-    res = cur.fetchall()
-
-    order_list = []
-    for i in res:
-        dic = {}
-        dic['taxi_company_name'] = i[0]
-        dic['driver_cnt'] = i[1]
-        dic['com_order_cnt'] = i[2]
-        order_list.append(dic)
-
-    return JsonResponse( {"name":"yusir","age":20, "address":"beijing"} )
-    # return  JsonResponse(order_list)
-
-
-
-@login_required
-def Sqmap(request):
-
-    return render(request, 'sqyc_bi/sqmap.html')
-
-
 @login_required
 def Connect(request):
-
-    return  HttpResponse('问题联系方式： yuweihong')
-
-@login_required
-def Passenger_check(request):
-
-    return render(request, 'sqyc_bi/passenger_check.html')
-
-
-@login_required
-def Driver_check(request):
-
-    return   HttpResponse("本功能待开发， 敬请期待 ！！")
-
-@login_required
-def Else_check(request):
-
-    return   HttpResponse("本功能待开发， 敬请期待 ！！")
-
-
-def Handle_sql002(request):
-    return HttpResponse("您的需求已加入任务, 请稍后查收邮件,谢谢!(根据网络, 数据量, 服务器压力等因素,可能会几分钟不等)")
+    return  HttpResponse('问题联系方式： YuWeihong')
 
     
 @login_required
 def Handle_sqlt(request):
-    from bi_echarts import  models
     if request.method == 'GET':
-        order_list = models.func_comment.objects.all()
+        order_list = func_comment.objects.all()
+        # order_list, pages = Rtn_pages(order_list, page_index)
         return render(request, 'bi_echarts/Handle_sql.html', {'order_list': order_list})
     elif request.method == 'POST':
-        sub_buton = request.POST.get('sub_buton')
-        para1 = request.POST.get('para1')
         to_add = request.POST.get('recevi_person')
-
-        cur = connection.cursor()
-        sql = para1.strip().replace(r"\n"," ")
+        par_name = request.POST.get('par_name')
+        sql = request.POST.get('para1').strip().replace(r"\n"," ")
 
         #  REC,  thename-- sql-- date-- other
         rec_model = t_rec_table()
@@ -424,26 +293,100 @@ def Handle_sqlt(request):
         rec_model.comment = sql
         rec_model.save()
 
-        #to_add_list=['yuweihong@01zhuanche.com', ]
-        #to_add_list = to_add_list.append(to_add)
-        pro = Process(target=mail_mimemuprt_n, args=(sql,to_add,) ) # 发邮件的那个函数接口
+        pro = Process(target=mail_mimemuprt_n, args=(sql,par_name,to_add,) ) # 发邮件的那个函数接口
         pro.start()
-        time.sleep(1)
-        return HttpResponse("<h3>您的需求已添加任务,请稍后查收邮件!</h3> <h4>(网络状况,服务器运行状态会影响任务进度,请知悉!)</h4>")
+        time.sleep(0.2)
+        return HttpResponse("<h3>您的需求已添加任务,请稍后查收邮件!</h3> <h4>(网络>>服务器>>数据量>>均会影响任务进度,请了解!)</h4>")
+
+        #sql = "select * from  %s" %sql
+        #cur = connection.cursor()
+        #cur.execute(sql)
+        #res = cur.fetchall()
+        #colName = [col[0] for col in cur.description]
+        #order_list = [dict(zip(colName, row)) for row in res]
+        #order_list = Down_files_dic2( request, order_list, colName)
+        #return  order_list
 
 
-def  mail_mimemuprt_n(sql, to_add):
-    psy = Psyco_handle()
-    df1 = psy.data_r(sql)
-    t_d = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    path = r'/home/dev/virtualenv_files/t_demo1/result{}.xlsx'.format(t_d)
-    df1.to_excel(path)
-    
-    to_add_list = ['yuweihong@01zhuanche.com',]
-    to_add_list.append(to_add)
-    mail_mimemuprt('需求数据整理',path, to_add_list)      
+def Handle_del(request, theid):
+    ''' 删除添加备注里的信息 '''
+    order_list = func_comment.objects.filter(id = theid)
+    order_list.delete()
+    return  redirect('/handle_sqlt/')
 
-    
+
+@login_required
+def Look_reward(request):
+    if request.method == 'GET':
+        return  render(request, 'sqyc_bi/look_reward.html')
+    elif request.method == 'POST':
+        prm_phone = request.POST.get('prm_phone')
+        prm_city = request.POST.get('prm_city')
+        prm_date = request.POST.get('prm_date')
+        sql = "SELECT driver_id from mysql.taxi_account_driver where driver_phone = '{}'".format(prm_phone)
+        cur = connection.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+
+        # driver_id,  city_id, tdate
+        sql2 = "SELECT * from func_dr_rec_chk('{}', {}, '{}')".format(res[0][0],prm_city,prm_date )
+        cur.execute(sql2)
+        res2 = cur.fetchall()
+
+        colname = [col[0] for col in cur.description ]
+        order_list = [dict(zip(colname ,row)) for row in res2 ]
+        # return  HttpResponse(colname)
+        return render(request, 'sqyc_bi/look_reward.html',  {'order_list':order_list,'prm_phone':prm_phone,
+                                                             'prm_city':prm_city,'prm_date':prm_date } )
+
+
+@login_required
+def Auto_check(request):
+    cur = connection.cursor()
+    if request.method == 'GET':
+        return render(request, 'sqyc_bi/auto_index.html')
+    elif request.method == 'POST':
+        par_custid = request.POST.get("par_custid")
+        sql = "select 司机id dr_id, 司机姓名 dr_name, 司机身份证 dr_cid,  city_id ctyid, 城市 city, 司机手机号 dr_phone, 出租车公司 taxi_company,  司机端状态 app_status, 司机钱包状态 p_status \
+  from public.who_are_you( '{}') ".format(par_custid)
+        cur.execute(sql)
+        res = cur.fetchall()
+
+        colname = [col[0] for col in cur.description]
+        order_list = [ dict(zip(colname, row)) for row in res]
+        return render(request, 'sqyc_bi/auto_index.html', {'order_list':order_list,'cust_id':par_custid})
+
+
+def Cust_id_random(request):
+    par_custid = request.POST.get('par_custid')
+    par_sl = request.POST.get('par_sl')
+    cur = connection.cursor()
+    if par_sl == "生成":
+        sql = "select  * from random_china_id('999',v_date=>'O')"
+    elif par_sl == "验证":
+        sql = "select * from check_china_id('{}')".format(par_custid)
+
+    cur.execute(sql)
+    res = cur.fetchall()
+    colname = [col[0] for col in cur.description]
+    order_list = [dict(zip(colname, row)) for row in res]
+
+    return render(request, 'sqyc_bi/auto_index.html', {'order_list':order_list})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

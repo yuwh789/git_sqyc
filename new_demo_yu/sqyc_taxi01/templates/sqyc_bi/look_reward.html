@@ -1,0 +1,71 @@
+{% extends 'sqyc_bi/base_in_index.html' %}
+{% load staticfiles %}
+
+<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+
+{% block  page_title %}
+    <title>司机奖励查询</title>
+{% endblock page_title %}
+
+{% block middle_head_right_up %}
+        <!--条件侧栏上部-->
+                <div class="middle_head_right_up">
+                    <form action="/look_reward/" class="form_pro" method="post" >
+                        {% csrf_token %}
+                        司机手机号： <input type="text" value="{{prm_phone}}"  name = "prm_phone">  &nbsp;
+                        城市id：<input type="text" value="{{prm_city}}" name = "prm_city"> &nbsp;
+                        查询日期：<input type="date" value="{{prm_date}}" name = "prm_date"> &nbsp;
+                        <input type="submit" value="查看数据" name="sub_buton" class="down_btn">
+                    </form>
+                </div>
+{% endblock middle_head_right_up %}
+
+
+{#  图表区域   #}
+{% block middle_head_right %}
+    <div class="middle_head_right">
+        <table border="1" >
+                  <tr class="s_tr1">
+                    <th>订单日期</th>
+                    <th>司机ID</th>
+                    <th>司机姓名</th>
+                    <th>订单金额</th>
+                    <th>订单状态</th>
+
+                    <th>订单结束时间</th>
+                    <th>支付方式</th>
+                    <th>拉新状况</th>
+                    <th>订单号</th>
+                    <th>城市id</th>
+
+                    <th>乘客ID</th>
+                  </tr>
+
+
+                 {% for order in order_list %}
+{#                     class='s_tr2'#}
+                    <tr >
+                        <td>{{ order.boo_date }}</td>
+                        <td>{{ order.dri_id }}</td>
+                        <td>{{ order.boo_date }}</td>
+                        <td>{{ order.pa_money }}</td>
+                        <td>{{ order.fin_order }}</td>
+
+                        <td>{{ order.ser_end_date }}</td>
+                        <td>{{ order.p_meth }}</td>
+                        <td>{{ order.recmd_status }}</td>
+                        <td>{{ order.ord_id }}</td>
+                        <td>{{ order.cit_id }}</td>
+
+                        <td>{{ order.book_user_id }}</td>
+                    </tr>
+                {% endfor %}
+         </table>
+    </div>
+{% endblock %}
+
+
+{% block middle_down %}
+
+{% endblock %}
+

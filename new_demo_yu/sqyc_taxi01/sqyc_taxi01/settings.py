@@ -89,7 +89,6 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.mysql',  # mysql; postgresql_psycopg2
-
         'NAME': "sqyc_db",   # mysql: sqyc_db, pg: taxidb
         'USER': 'taxiuser',
         'PASSWORD': 'taxiuser',
@@ -131,11 +130,15 @@ USE_TZ = True
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 EMAIL_HOST = 'smtp.01zhuanche.com'
+
 EMAIL_PORT = 25
 
 EMAIL_HOST_USER = 'yuweihong@01zhuanche.com'
+
 EMAIL_HOST_PASSWORD = ''.join(re.findall('\d+', ehp) )+str
+
 EMAIL_FROM = 'yuweihong'
 
 
