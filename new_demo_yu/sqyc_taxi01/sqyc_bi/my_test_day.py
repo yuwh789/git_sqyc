@@ -277,21 +277,26 @@ def Driver_wd_hb_tb(t_d1):
    
     
 def run_company_day():
-    # Test_cany_day("2018-06-10",94,"大众")
     date_list = Date_list()
     # time  handle
     t_date = date_list.timedlta(1)
 
-    # === 哈尔滨数据
+    # === 94哈尔滨数据
     company_list = ["大众", "天鹅", "现代", "飞达"]  # 四家公司   8:30
     for company in company_list:
         Test_cany_day(t_date, 94, company)
 
-    #  === 温州数据
+    #  === 113温州数据
     time.sleep(2)
     company_list = ["交运"]
     for company in company_list:
         Test_cany_day(t_date, 113, company)
+
+    # === 44北京数据
+    time.sleep(2)
+    company_list = ["金建|银建"]
+    for company in company_list:
+        Test_cany_day(t_date, 44, company )
 
 
 def Run_driver_num():
@@ -317,6 +322,8 @@ def Run_risk():
 
 
 if __name__ == "__main__":
+    # Run_risk()
+    # Run_company_day()
     Run_driver_num()
     Run_hb_tb()
 

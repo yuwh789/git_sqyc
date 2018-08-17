@@ -8,8 +8,8 @@
         <!--条件侧栏上部-->
                 <div class="middle_head_right_up">
 
-                    <form action="/company_day_total/1/" class="form_pro" method="post" >
-                        {% csrf_token %}
+                    <form action="/company_day_total/1/" class="form_pro" method="get" >
+
                         城 市id: <input type="text" value="{{ city_id }}"  name = 'para1'>  &nbsp
                         公 司: <input type="text"  value="{{ company_name }}" name='para2'>   &nbsp
                         开始日期: <input type="date" value="{{ t_d1 }}" name="t_d1">   &nbsp

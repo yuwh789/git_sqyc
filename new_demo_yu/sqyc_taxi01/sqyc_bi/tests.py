@@ -10,8 +10,9 @@ def demo1():
     print("run_company_day over!")
 
     time.sleep(2)
-    Run_num_amount_score(44, '银建|金建')
+    Run_num_amount_score(44)
     print('run_num_amount_score over!')
+
 
 def R_driver_num():
     Run_driver_num()

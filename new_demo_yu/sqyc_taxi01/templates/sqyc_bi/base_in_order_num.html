@@ -11,8 +11,8 @@
         <!--条件侧栏上部-->
                 <div class="middle_head_right_up">
 
-                    <form action="/order_driver_num/1/" class="form_pro"  method="post" >
-                        {% csrf_token %}
+                    <form action="/order_driver_num/1/" class="form_pro"  method="get" >
+
                         日 期: <input type="date" value="{{ t_d }}" name="t_date">   &nbsp
                         <input type="text" value="北京"  name="city_input">
 
@@ -53,9 +53,7 @@
 
 
                  {% for order in order_list %}
-
                     <tr class='s_tr2'>
-
                         <td>{{ order.create_date }}</td>
                         <td>{{ order.order_status }}</td>
                         <td>{{ order.recmd_status }}</td>
@@ -90,13 +88,11 @@
              {% else %}
                  <a href="/order_driver_num/{{ pindex }}/?recmd_status={{ recmd_status }}&pro_status={{ pro_status }}"  class=""> {{ pindex }} </a>
              {% endif %}
-
         {% endfor %}
 
-    {% if order_list.has_next %}
-        <a href="/order_driver_num/{{ order_list.number|add:1 }}/?recmd_status={{ recmd_status }}&pro_status={{ pro_status }}"> 下一页 </a>
-    {% endif %}
-
+        {% if order_list.has_next %}
+            <a href="/order_driver_num/{{ order_list.number|add:1 }}/?recmd_status={{ recmd_status }}&pro_status={{ pro_status }}"> 下一页 </a>
+        {% endif %}
     </div>
 
 

@@ -60,8 +60,8 @@
             {% if  '分公司数据查询'  in  request.session.privileges %}
                 <li><a href="#" class="level1"> 分公司数据查询 </a>
                     <ul class="current">
-                        <li> <a href="/company_day/1/" class="cnt1">公司日报数据</a> </li>
-                        <li> <a href="/company_day_total/1/" class="cnt1">公司汇总数据</a> </li>
+                        <li> <a href="/Company_day_fr/" class="cnt1">公司日报数据</a> </li>
+                        <li> <a href="/company_day_total_fr/" class="cnt1">公司汇总数据</a> </li>
                         <li> <a href="/city_total/" class="cnt1">各分公司透视</a> </li>
                         <!--<li>司机详情数据</li>-->
                     </ul>
@@ -71,12 +71,12 @@
             {% endif %}
 
 
-            {% if  '司机信息查询' in request.session.privileges %}
+            {% if '司机信息查询' in request.session.privileges %}
                 <li>
                     <a href="#" class="level1"> 司机信息查询 </a>
                     <ul class="current">
                         <li> <a href="/other/test/" class="cnt1">接单司机数量</a> </li>
-                        <li> <a href="/order_driver_num/1/" class="cnt1">完单司机数量</a> </li>
+                        <li> <a href="/order_driver_num_fr/" class="cnt1">完单司机数量</a> </li>
                         <!--<li>司机详情数据</li>-->
                     </ul>
                 </li>
@@ -99,10 +99,10 @@
 
 
             {% if  '下载数据库文件' in request.session.privileges %}
-                <li><a href="#" class="level1"> 下载数据库文件 </a>
+                <li><a href="#" class="level1"> 运营应用查询 </a>
                     <ul class="current">
                         <li> <a href="/auto_check/" class="cnt1">便捷应用查询</a> </li>
-                        <li> <a href="/handle_sqlt/" class="cnt1">SQL 解析窗口</a> </li>
+                        <li> <a href="/handle_sqlt/" class="cnt1">SQL 任务窗口</a> </li>
                         <li> <a href="/look_reward/" class="cnt1">司机奖励查询</a> </li>
                         <!--<li>司机详情数据</li>-->
                     </ul>
@@ -143,8 +143,8 @@
                 <form action="" class="form_pro" method="get" >
                     司机姓名: <input type="text" value=""  name = ''>  &nbsp
                     司机电话: <input type="text"  value="" name=''>   &nbsp
-                    日 期: <input type="date" value="">   &nbsp
-
+                    开始日期: <input type="date" value="">   &nbsp
+                    结束日期：<input type="datetime-local" value="">   &nbsp
                     <select name="pro_status" id="" >
                         <option value="pro1">问题1</option>
                         <option value="pro2">占比</option>
@@ -159,20 +159,21 @@
 
         {% block middle_head_right %}
             <div class="middle_head_right">
-                <h1>
+                <h1 style="color: red">
                     &nbsp;平台公告：
                 </h1>
 
-                <h2>
+                <h1 style="color: goldenrod">
                     &nbsp;本平台仅限数据组内部使用!
-                </h2>
-
-                <h2>
-                    &nbsp;请勿外传!
+                     &nbsp;请勿外传!
                     &nbsp;谢谢配合！
-                </h2>
+                </h1>
 
-{#            <h3> 如有问题：请及时联系yuweihong@01zhuanche.com</h3>#}
+                <h1 style="color: #4f81bd"> &nbsp;<-请从左侧菜单栏选择您要查询的数据！</h1>
+
+                <a href="#"> &nbsp; <img src="{%  static 'images/car_pic.gif' %}"> </a>
+
+{#                <h2> &nbsp;如有问题：请及时联系yuweihong@01zhuanche.com</h2>#}
 
             </div>
         {% endblock middle_head_right %}

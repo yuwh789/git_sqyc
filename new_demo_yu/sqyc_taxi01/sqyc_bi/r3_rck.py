@@ -51,7 +51,7 @@ def Df_drInfo(t_d,psy):
 def Df_lx(t_d,psy):
     # 处理司机拉新
     print('---  拉新数据指标 --- ')
-    sql_lx= "SELECT  * from car_biz_driver_recommend where expires_date  >= '{}' ".format(t_d)  
+    sql_lx= "SELECT  * from mysql.car_biz_driver_recommend where expires_date  >= '{}' ".format(t_d)
     df_lx = psy.data_r(sql_lx)
     return df_lx
 
