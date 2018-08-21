@@ -89,7 +89,6 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',  # mysql; postgresql_psycopg2
-
         'NAME': "taxidb",   # mysql: sqyc_db, pg: taxidb
         'USER': 'taxiuser',
         'PASSWORD': 'taxiuser',
@@ -131,11 +130,15 @@ USE_TZ = True
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 EMAIL_HOST = 'smtp.01zhuanche.com'
+
 EMAIL_PORT = 25
 
 EMAIL_HOST_USER = 'yuweihong@01zhuanche.com'
+
 EMAIL_HOST_PASSWORD = ''.join(re.findall('\d+', ehp) )+str
+
 EMAIL_FROM = 'yuweihong'
 
 
@@ -148,9 +151,9 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static'), ] # 设置静态文件物�
 STATIC_ROOT = "/var/www/sqyc/c_static2/"
 
 CRONJOBS = [
-    ('00 05 * * *', 'sqyc_bi.tests.demo1'),
-    ('30 12 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
-    ('50 12 * * *', 'sqyc_bi.tests.demo3' ) ,
+    ('00 06 * * *', 'sqyc_bi.tests.demo1'),
+    ('50 12 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
+    ('00 03 * * 1', 'sqyc_bi.tests.demo3' ) ,
 
 ]
 

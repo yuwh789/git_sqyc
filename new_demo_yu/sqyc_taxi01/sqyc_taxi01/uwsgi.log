@@ -907,3 +907,258 @@ Wed Aug  1 15:06:05 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnect
 Wed Aug  1 15:06:05 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
 Wed Aug  1 15:06:05 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
 Wed Aug  1 15:06:05 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug 17 14:34:17 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x22d8d90
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x22d8d90 pid: 158565 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 158565)
+spawned uWSGI worker 1 (pid: 158569, cores: 2)
+spawned uWSGI worker 2 (pid: 158570, cores: 2)
+spawned uWSGI worker 3 (pid: 158571, cores: 2)
+spawned uWSGI worker 4 (pid: 158573, cores: 2)
+[pid: 158573|app: 0|req: 1/1] 172.16.10.49 () {40 vars in 688 bytes} [Fri Aug 17 14:34:49 2018] GET / => generated 3892 bytes in 521 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 2/2] 172.16.10.49 () {52 vars in 985 bytes} [Fri Aug 17 14:34:51 2018] POST /inner_index/ => generated 5272 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 3/3] 172.16.10.49 () {44 vars in 870 bytes} [Fri Aug 17 14:40:01 2018] GET /Company_day_fr/ => generated 5277 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 4/4] 172.16.10.49 () {44 vars in 883 bytes} [Fri Aug 17 14:40:04 2018] GET /order_driver_num_fr/ => generated 5479 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 5/5] 172.16.10.49 () {44 vars in 1079 bytes} [Fri Aug 17 14:40:05 2018] GET /order_driver_num/1/?t_date=&city_input=%E5%8C%97%E4%BA%AC&pro_status=%E5%AE%8C%E5%8D%95&sub_buton=%E6%9F%A5%E8%AF%A2 => generated 16478 bytes in 40 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158571|app: 0|req: 1/6] 172.16.10.49 () {44 vars in 1077 bytes} [Fri Aug 17 14:40:07 2018] GET /order_driver_num/2/?recmd_status=None&pro_status=%E5%AE%8C%E5%8D%95 => generated 16577 bytes in 569 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 6/7] 172.16.10.49 () {44 vars in 1028 bytes} [Fri Aug 17 14:40:09 2018] GET /order_driver_num/7/?recmd_status=None&pro_status=%E5%AE%8C%E5%8D%95 => generated 16507 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 7/8] 172.16.10.49 () {44 vars in 1028 bytes} [Fri Aug 17 14:40:12 2018] GET /order_driver_num/1/?recmd_status=None&pro_status=%E5%AE%8C%E5%8D%95 => generated 16478 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 8/9] 172.16.10.49 () {44 vars in 917 bytes} [Fri Aug 17 14:40:27 2018] GET /other/test/ => generated 30 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 9/10] 172.16.10.49 () {44 vars in 917 bytes} [Fri Aug 17 14:40:33 2018] GET /other/test/ => generated 30 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158571|app: 0|req: 2/11] 172.16.10.49 () {44 vars in 917 bytes} [Fri Aug 17 14:40:36 2018] GET /other/test/ => generated 30 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 10/12] 172.16.10.49 () {44 vars in 925 bytes} [Fri Aug 17 14:40:40 2018] GET /chart/show_map/ => generated 3733 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 11/13] 172.16.10.49 () {52 vars in 1042 bytes} [Fri Aug 17 14:41:00 2018] POST /chart/map/ => generated 167770 bytes in 1066 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 12/14] 172.16.10.49 () {44 vars in 925 bytes} [Fri Aug 17 14:42:16 2018] GET /chart/show_map/ => generated 3733 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 13/15] 172.16.10.49 () {44 vars in 1028 bytes} [Fri Aug 17 14:42:17 2018] GET /order_driver_num/1/?recmd_status=None&pro_status=%E5%AE%8C%E5%8D%95 => generated 16478 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 14/16] 172.16.10.49 () {44 vars in 925 bytes} [Fri Aug 17 14:42:26 2018] GET /Company_day_fr/ => generated 5277 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 15/17] 172.16.10.49 () {44 vars in 867 bytes} [Fri Aug 17 14:42:48 2018] GET /handle_sqlt/ => generated 5956 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 16/18] 172.16.10.49 () {44 vars in 870 bytes} [Fri Aug 17 14:44:18 2018] GET /Company_day_fr/ => generated 5277 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 17/19] 172.16.10.49 () {44 vars in 885 bytes} [Fri Aug 17 14:44:20 2018] GET /company_day_total_fr/ => generated 5213 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158570|app: 0|req: 1/20] 172.16.10.49 () {44 vars in 871 bytes} [Fri Aug 17 14:44:22 2018] GET /city_total/ => generated 5165 bytes in 548 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 18/21] 172.16.10.49 () {44 vars in 869 bytes} [Fri Aug 17 14:44:25 2018] GET /Company_day_fr/ => generated 5277 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158570|app: 0|req: 2/22] 172.16.10.49 () {44 vars in 1026 bytes} [Fri Aug 17 14:44:39 2018] GET /company_day/1/?para1=94&para2=%E5%A4%A7%E4%BC%97&t_d=2018-08-13&sub_buton=%E6%9F%A5%E8%AF%A2 => generated 18018 bytes in 1374 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 19/23] 172.16.10.49 () {44 vars in 1045 bytes} [Fri Aug 17 14:44:43 2018] GET /company_day/2/?para1=94&para2=%E5%A4%A7%E4%BC%97&t_d=2018-08-13 => generated 18100 bytes in 1380 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 20/24] 172.16.10.49 () {44 vars in 1016 bytes} [Fri Aug 17 14:44:45 2018] GET /company_day/3/?para1=94&para2=%E5%A4%A7%E4%BC%97&t_d=2018-08-13 => generated 18108 bytes in 1381 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 21/25] 172.16.10.49 () {44 vars in 1016 bytes} [Fri Aug 17 14:44:51 2018] GET /company_day/4/?para1=94&para2=%E5%A4%A7%E4%BC%97&t_d=2018-08-13 => generated 18123 bytes in 1380 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 22/26] 172.16.10.49 () {44 vars in 1016 bytes} [Fri Aug 17 14:44:54 2018] GET /company_day/5/?para1=94&para2=%E5%A4%A7%E4%BC%97&t_d=2018-08-13 => generated 18143 bytes in 1380 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 23/27] 172.16.10.49 () {44 vars in 931 bytes} [Fri Aug 17 14:45:00 2018] GET /order_driver_num_fr/ => generated 5479 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 24/28] 172.16.10.49 () {44 vars in 1079 bytes} [Fri Aug 17 14:45:01 2018] GET /order_driver_num/1/?t_date=&city_input=%E5%8C%97%E4%BA%AC&pro_status=%E5%AE%8C%E5%8D%95&sub_buton=%E6%9F%A5%E8%AF%A2 => generated 16478 bytes in 35 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 25/29] 172.16.10.49 () {44 vars in 1077 bytes} [Fri Aug 17 14:45:03 2018] GET /order_driver_num/2/?recmd_status=None&pro_status=%E5%AE%8C%E5%8D%95 => generated 16577 bytes in 35 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 26/30] 172.16.10.49 () {44 vars in 1028 bytes} [Fri Aug 17 14:45:05 2018] GET /order_driver_num/3/?recmd_status=None&pro_status=%E5%AE%8C%E5%8D%95 => generated 16591 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 158570|app: 0|req: 3/31] 172.16.10.49 () {44 vars in 1028 bytes} [Fri Aug 17 14:45:06 2018] GET /order_driver_num/4/?recmd_status=None&pro_status=%E5%AE%8C%E5%8D%95 => generated 16571 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 158570|app: 0|req: 4/32] 172.16.10.49 () {44 vars in 919 bytes} [Fri Aug 17 14:45:10 2018] GET /look_reward/ => generated 5217 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 27/33] 172.16.10.49 () {44 vars in 862 bytes} [Fri Aug 17 14:48:21 2018] GET /auto_check/ => generated 6099 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 28/34] 172.16.10.49 () {52 vars in 1038 bytes} [Fri Aug 17 14:48:25 2018] POST /auto_check/ => generated 6769 bytes in 2964 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 158573|app: 0|req: 29/35] 172.16.10.49 () {44 vars in 863 bytes} [Fri Aug 17 14:48:47 2018] GET /look_reward/ => generated 5217 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 158573|app: 0|req: 30/36] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 14:48:57 2018] POST /look_reward/ => generated 5241 bytes in 269 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 158571|app: 0|req: 3/37] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 14:49:01 2018] POST /look_reward/ => generated 5241 bytes in 119 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug 17 14:57:54 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x17ebd90
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x17ebd90 pid: 161853 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 161853)
+spawned uWSGI worker 1 (pid: 161857, cores: 2)
+spawned uWSGI worker 2 (pid: 161858, cores: 2)
+spawned uWSGI worker 3 (pid: 161859, cores: 2)
+spawned uWSGI worker 4 (pid: 161861, cores: 2)
+[pid: 161858|app: 0|req: 1/1] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 14:58:03 2018] POST /look_reward/ => generated 28 bytes in 636 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 1/2] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 14:58:12 2018] POST /look_reward/ => generated 28 bytes in 630 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 2/3] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 14:59:35 2018] POST /look_reward/ => generated 20536 bytes in 625 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 3/4] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 14:59:44 2018] POST /look_reward/ => generated 37587 bytes in 159 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 4/5] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:00:17 2018] POST /look_reward/ => generated 22726 bytes in 149 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 5/6] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:00:37 2018] POST /look_reward/ => generated 28 bytes in 113 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 6/7] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:04:47 2018] POST /look_reward/ => generated 67537 bytes in 236 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 7/8] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:05:04 2018] POST /look_reward/ => generated 67537 bytes in 173 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 8/9] 172.16.10.49 () {44 vars in 862 bytes} [Fri Aug 17 15:05:28 2018] GET /auto_check/ => generated 6099 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161858|app: 0|req: 2/10] 172.16.10.49 () {44 vars in 863 bytes} [Fri Aug 17 15:06:40 2018] GET /look_reward/ => generated 5217 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161858|app: 0|req: 3/11] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:06:56 2018] POST /look_reward/ => generated 14662 bytes in 191 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161858|app: 0|req: 4/12] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:07:00 2018] POST /look_reward/ => generated 14098 bytes in 128 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 9/13] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:07:04 2018] POST /look_reward/ => generated 15273 bytes in 129 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 10/14] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:07:07 2018] POST /look_reward/ => generated 9939 bytes in 126 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 11/15] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:07:13 2018] POST /look_reward/ => generated 6419 bytes in 126 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 12/16] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:07:19 2018] POST /look_reward/ => generated 15273 bytes in 130 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 13/17] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:07:23 2018] POST /look_reward/ => generated 13501 bytes in 127 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 14/18] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:07:27 2018] POST /look_reward/ => generated 10527 bytes in 125 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 15/19] 172.16.10.49 () {44 vars in 864 bytes} [Fri Aug 17 15:07:37 2018] GET /handle_sqlt/ => generated 5956 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 16/20] 172.16.10.49 () {44 vars in 864 bytes} [Fri Aug 17 15:07:41 2018] GET /look_reward/ => generated 5217 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161859|app: 0|req: 1/21] 172.16.10.49 () {44 vars in 862 bytes} [Fri Aug 17 15:08:43 2018] GET /auto_check/ => generated 6099 bytes in 536 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161858|app: 0|req: 5/22] 172.16.10.49 () {52 vars in 1038 bytes} [Fri Aug 17 15:10:05 2018] POST /auto_check/ => generated 6780 bytes in 2952 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161859|app: 0|req: 2/23] 172.16.10.49 () {52 vars in 1048 bytes} [Fri Aug 17 15:11:49 2018] POST /cust_id_random/ => generated 6667 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161858|app: 0|req: 6/24] 172.16.10.49 () {52 vars in 1050 bytes} [Fri Aug 17 15:11:55 2018] POST /cust_id_random/ => generated 6681 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161859|app: 0|req: 3/25] 172.16.10.49 () {44 vars in 867 bytes} [Fri Aug 17 15:12:03 2018] GET /handle_sqlt/ => generated 5956 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 17/26] 172.16.10.49 () {44 vars in 864 bytes} [Fri Aug 17 15:12:08 2018] GET /look_reward/ => generated 5217 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161859|app: 0|req: 4/27] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:12:46 2018] POST /look_reward/ => generated 15273 bytes in 128 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 18/28] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:12:52 2018] POST /look_reward/ => generated 6419 bytes in 123 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 19/29] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:12:59 2018] POST /look_reward/ => generated 10527 bytes in 126 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 20/30] 172.16.10.49 () {44 vars in 864 bytes} [Fri Aug 17 15:13:51 2018] GET /look_reward/ => generated 5217 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 21/31] 172.16.10.49 () {44 vars in 862 bytes} [Fri Aug 17 15:13:52 2018] GET /auto_check/ => generated 6099 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 22/32] 172.16.10.49 () {44 vars in 869 bytes} [Fri Aug 17 15:14:09 2018] GET /chart/show_map/ => generated 3733 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161859|app: 0|req: 5/33] 172.16.10.49 () {52 vars in 1042 bytes} [Fri Aug 17 15:16:17 2018] POST /chart/map/ => generated 167770 bytes in 179 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161859|app: 0|req: 6/34] 172.16.10.49 () {52 vars in 1037 bytes} [Fri Aug 17 15:16:49 2018] POST /chart/map/ => generated 312237 bytes in 152 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161859|app: 0|req: 7/35] 172.16.10.49 () {52 vars in 1037 bytes} [Fri Aug 17 15:17:18 2018] POST /chart/map/ => generated 135800 bytes in 80 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161859|app: 0|req: 8/36] 172.16.10.49 () {42 vars in 789 bytes} [Fri Aug 17 15:17:45 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 23/37] 172.16.10.49 () {52 vars in 1029 bytes} [Fri Aug 17 15:17:46 2018] POST /inner_index/ => generated 5272 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 24/38] 172.16.10.49 () {44 vars in 862 bytes} [Fri Aug 17 15:32:24 2018] GET /auto_check/ => generated 6099 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 25/39] 172.16.10.49 () {52 vars in 1038 bytes} [Fri Aug 17 15:32:26 2018] POST /auto_check/ => generated 6780 bytes in 2946 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 26/40] 172.16.10.49 () {52 vars in 1048 bytes} [Fri Aug 17 15:33:06 2018] POST /cust_id_random/ => generated 6667 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161859|app: 0|req: 9/41] 172.16.10.49 () {52 vars in 1052 bytes} [Fri Aug 17 15:33:14 2018] POST /cust_id_random/ => generated 6668 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 27/42] 172.16.10.49 () {52 vars in 1050 bytes} [Fri Aug 17 15:33:20 2018] POST /cust_id_random/ => generated 6681 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 28/43] 172.16.10.49 () {44 vars in 867 bytes} [Fri Aug 17 15:33:29 2018] GET /handle_sqlt/ => generated 5956 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 29/44] 172.16.10.49 () {44 vars in 864 bytes} [Fri Aug 17 15:33:49 2018] GET /look_reward/ => generated 5217 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161859|app: 0|req: 10/45] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:34:01 2018] POST /look_reward/ => generated 15273 bytes in 129 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 30/46] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:34:07 2018] POST /look_reward/ => generated 67605 bytes in 168 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 31/47] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:34:17 2018] POST /look_reward/ => generated 28 bytes in 224 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 32/48] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:34:24 2018] POST /look_reward/ => generated 67593 bytes in 175 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 161859|app: 0|req: 11/49] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:34:33 2018] POST /look_reward/ => generated 67587 bytes in 221 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 33/50] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:34:41 2018] POST /look_reward/ => generated 28 bytes in 116 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 161859|app: 0|req: 12/51] 172.16.10.49 () {44 vars in 862 bytes} [Fri Aug 17 15:36:17 2018] GET /auto_check/ => generated 6099 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 34/52] 172.16.10.49 () {52 vars in 1038 bytes} [Fri Aug 17 15:36:22 2018] POST /auto_check/ => generated 6111 bytes in 2917 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 35/53] 172.16.10.49 () {52 vars in 1048 bytes} [Fri Aug 17 15:36:35 2018] POST /cust_id_random/ => generated 6668 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 36/54] 172.16.10.49 () {44 vars in 867 bytes} [Fri Aug 17 15:36:38 2018] GET /look_reward/ => generated 5217 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 161861|app: 0|req: 37/55] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:36:51 2018] POST /look_reward/ => generated 28 bytes in 118 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 161861|app: 0|req: 38/56] 172.16.10.49 () {44 vars in 867 bytes} [Fri Aug 17 15:36:53 2018] GET /look_reward/ => generated 5217 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug 17 15:40:20 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x22d9d90
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x22d9d90 pid: 167641 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 167641)
+spawned uWSGI worker 1 (pid: 167645, cores: 2)
+spawned uWSGI worker 2 (pid: 167646, cores: 2)
+spawned uWSGI worker 3 (pid: 167647, cores: 2)
+spawned uWSGI worker 4 (pid: 167649, cores: 2)
+[pid: 167649|app: 0|req: 1/1] 172.16.10.49 () {46 vars in 898 bytes} [Fri Aug 17 15:40:26 2018] GET /look_reward/ => generated 5217 bytes in 546 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 167649|app: 0|req: 2/2] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:40:33 2018] POST /look_reward/ => generated 42 bytes in 108 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 167649|app: 0|req: 3/3] 172.16.10.49 () {44 vars in 867 bytes} [Fri Aug 17 15:40:35 2018] GET /look_reward/ => generated 5217 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 167649|app: 0|req: 4/4] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:40:51 2018] POST /look_reward/ => generated 42 bytes in 107 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 167646|app: 0|req: 1/5] 172.16.10.49 () {44 vars in 867 bytes} [Fri Aug 17 15:40:52 2018] GET /look_reward/ => generated 5217 bytes in 542 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 167649|app: 0|req: 5/6] 172.16.10.49 () {52 vars in 1043 bytes} [Fri Aug 17 15:41:59 2018] POST /look_reward/ => generated 42 bytes in 106 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Aug 17 15:42:20 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x1b7ed90
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1b7ed90 pid: 168006 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 168006)
+spawned uWSGI worker 1 (pid: 168010, cores: 2)
+spawned uWSGI worker 2 (pid: 168011, cores: 2)
+spawned uWSGI worker 3 (pid: 168012, cores: 2)
+spawned uWSGI worker 4 (pid: 168014, cores: 2)
+[pid: 168010|app: 0|req: 1/1] 172.16.10.49 () {44 vars in 867 bytes} [Fri Aug 17 15:42:23 2018] GET /look_reward/ => generated 76832 bytes in 210 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 168014|app: 0|req: 1/2] 172.16.10.49 () {52 vars in 1048 bytes} [Fri Aug 17 15:42:26 2018] POST /cust_id_random/ => generated 78556 bytes in 141 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 168012|app: 0|req: 1/3] 172.16.10.49 () {52 vars in 1048 bytes} [Fri Aug 17 15:42:27 2018] POST /cust_id_random/ => generated 78556 bytes in 142 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 168014|app: 0|req: 2/4] 172.16.10.49 () {42 vars in 789 bytes} [Fri Aug 17 15:42:31 2018] GET / => generated 76428 bytes in 82 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.

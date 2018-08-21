@@ -1,14 +1,15 @@
 {% extends 'sqyc_bi/base_in_index.html' %}
-{#{% load staticfiles %}#}
-
-{#<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>#}
-
 
 
 {% block middle_head_right_up %}
         <!--条件侧栏上部-->
         <div class="middle_head_right_up">
-            自动化数据列表下载：
+                <form action="/auto_check/" method="post">
+                    {% csrf_token %}
+                    司机状态查询>> &nbsp;
+                    请输入身份证号：<input type="text" style="width: 400px; height: 20px" name="par_custid" value="{{ cust_id }}" >
+                    &nbsp;<input type="submit" value="提交" style="width: 60px; ">
+                </form>
         </div>
 {% endblock middle_head_right_up %}
 
@@ -18,29 +19,43 @@
 {% block middle_head_right %}
 
     <div class="middle_head_right">
-        <ol>
-            <li class="li_list" >
-            <a href="" > 0风控数据结果下载 </a> &nbsp;
-           </li>
+{#        <ol> #}
+{#            <li class="li_list" ><a href="" > 司机状态查询 </a> &nbsp; </li>#}
+{#        </ol>#}
+        <table border="1" >
+                  <tr class="s_tr1">
+                    <th>城市</th>
+                    <th>城市ID</th>
+                    <th>司机ID</th>
+                    <th>司机姓名</th>
+                    <th>司机身份证</th>
 
-            <li class="li_list" >
-                <a href=""> 1新增完单用户明细（拉新及非拉新）</a>
-            </li>
+                    <th>司机手机号</th>
+                    <th>出租车公司</th>
+                    <th>司机端状态</th>
+                    <th>司机钱包状态</th>
+                  </tr>
 
-             <li class="li_list" >
-                <a href=""> 2七日阶段未完单乘客明细</a>
-             </li>
+                 {% for order in order_list %}
+{#                     class='s_tr2'#}
+                    <tr>
+                        <td>{{ order.city }}</td>
+                        <td>{{ order.ctyid }}</td>
+                        <td>{{ order.dr_id }}</td>
+                        <td>{{ order.dr_name }}</td>
+                        <td>{{ order.dr_name }}</td>
 
-             <li class="li_list" >
-                 <a href=""> 3十五日阶段未完单乘客明细</a>
-            </li>
-
-            <li class="li_list" >
-                 <a href="#"> 4 分公司特殊日报</a>
-            </li>
-
-        </ol>
-
+                        <td>{{ order.dr_phone }}</td>
+                        <td>{{ order.taxi_company }}</td>
+                        <td>{{ order.app_status }}</td>
+                        <td>{{ order.p_status }}</td>
+                    </tr>
+                {% endfor %}
+         </table>
+    <br>
+    <br>
+    <br>
+    <br>
     </div>
 
 {% endblock middle_head_right%}
@@ -48,6 +63,42 @@
 
 {#// ----------------#}
 {% block middle_down %}
+    <br>
+    <br>
+    <br>
+    <br>
+         <div class="middle_head_right_up">
+             <form action="/cust_id_random/" method="post">
+                 {% csrf_token %}
+                 检查身份证是否正确(T是正确,F是错误)>>&nbsp;
+                 输入证件: <input type="text" style="width: 260px" name="par_custid">
+                 <select name="par_sl"  style="font-size: 14px; height: 26px; width: 60px;">
+                     <option value="验证">验证</option>
+                     <option value="生成">生成</option>
+                 </select> &nbsp;
+                 <input type="submit" style="width: 60px; ">
+             </form>
+        </div>
+
+    <div  class="middle_head_right" >
+         <table border="1" >
+              <tr class="s_tr1">
+                  <th>title1</th>
+                  <th>生成结果</th>
+                  <th>验证如下</th>
+                  <th>其它</th>
+              </tr>
+
+             {% for order in order_list %}
+                <tr>
+                    <td> null1</td>
+                    <td>{{ order.random_china_id }}</td>
+                    <td> {{ order.check_china_id }}</td>
+                    <td> null</td>
+                </tr>
+            {% endfor %}
+         </table>
+    </div>
 
 
 {% endblock middle_down %}

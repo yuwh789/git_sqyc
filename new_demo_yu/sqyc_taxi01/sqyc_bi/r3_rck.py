@@ -51,7 +51,7 @@ def Df_drInfo(t_d,psy):
 def Df_lx(t_d,psy):
     # 处理司机拉新
     print('---  拉新数据指标 --- ')
-    sql_lx= "SELECT  * from mysql.car_biz_driver_recommend where expires_date  >= '{}' ".format(t_d)  
+    sql_lx= "SELECT  * from mysql.car_biz_driver_recommend where expires_date  >= '{}' ".format(t_d)
     df_lx = psy.data_r(sql_lx)
     return df_lx
 
@@ -103,8 +103,6 @@ def Passenger_info(t_d,psy):
     df_ck_num['乘客异常'] =( 1-  (df_ck_num['对接司机数']/df_ck_num['乘客完单数'] ) )*passenger_value
 
     return df_ck_num
-
-
 
 
 def Order_online(t_d,psy,fk_s_d):
@@ -166,8 +164,6 @@ def Order_online(t_d,psy,fk_s_d):
     return ret_xs
 
 
-
-
 def Online_order_handle(order_online,df_drInfo, passenger_info, df_lx):
     # 整合司机异常
     order_online = pd.merge(order_online ,df_drInfo[['driver_id','司机异常']], how = 'left',on = ['driver_id'] )
@@ -190,7 +186,6 @@ def Online_order_handle(order_online,df_drInfo, passenger_info, df_lx):
     return order_online
 
 
-
 def Func_new(ol_handle):
     # 调整风险评分, 根据金额异常等数据， 调整最终线上订单结果
     print('--- 调整风险评分 ---')
@@ -198,8 +193,6 @@ def Func_new(ol_handle):
     ol_handle['调整评分'] = ol_handle.apply(ret_newScore, axis =1) 
     ol_handle.drop(['passenger_id'],axis=1, inplace=True)
     return ol_handle
-
-
 
 
 def Ret_table(ret_xs,df_fkDr):
@@ -228,15 +221,10 @@ def Ret_table(ret_xs,df_fkDr):
     return ret_fr
 
 
-
 def Run_risk_info():
-
     # 设置保存路径
     print("===风控新规则处理===")
-
     psy = Psyco_handle()  # 风控库
-     
-    
     # 加载参数(数据指标)
     take_driver_num = 0.2  # 订单异常之 接驾异常参数  
     service_num = 0.2  # 订单异常之 服务常参数  
@@ -249,24 +237,19 @@ def Run_risk_info():
     t_d = Date_list().timedlta(1)
     t_d = datetime.datetime.strftime(t_d, '%Y-%m-%d')
     t1= time.time()
-	
-        
     # 司机--乘客异常分析
-    df_fkDr = Risk_record( t_d, psy )  # 1风控司机记录
+    df_fkDr = Risk_record(t_d, psy )  # 1风控司机记录
     t101= time.time()
     
     df_drInfo = Df_drInfo(t_d, psy)    # 2司机信息表，司机异常计算
     t102= time.time()
-
 
     df_lx = Df_lx(t_d, psy)      # 3司机拉新
     t103= time.time()
     
     passenger_info= Passenger_info(t_d, psy)     # 4乘客异常
     t104= time.time()
-    
- 
-    
+
     # 订单异常分析
     fk_s_d = Fk_seven_data(t_d,psy )    # 5风控七日订单数据
     t105= time.time()
@@ -275,9 +258,7 @@ def Run_risk_info():
     t106= time.time()
 
     online_order_handle = Online_order_handle(order_online,df_drInfo,passenger_info,df_lx)  # 线上订单整合
-
     func_new = Func_new(online_order_handle)  # 评分调整
-        
 
     ret_table = Ret_table(func_new,df_fkDr)  # 6结果表生成
     print("司机信息--%.2f; 司机拉新--%.2f; 乘客异常--%.2f;  风控七日--%.2f; 线上订单--%.2f; "   %( (t102-t101) , (t103-t102),(t104-t103),(t105-t104),(t106-t105))  )
@@ -347,7 +328,7 @@ if __name__ == '__main__':
         
         passenger_info= Passenger_info(t_d, psy)     # 4乘客异常
         t104= time.time()
-        
+
      
         
         # 订单异常分析

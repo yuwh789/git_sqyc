@@ -3,18 +3,18 @@
 
 <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
 
+{% block page_title %}
+<title>order---司机数量</title>
+{% endblock %}
 
 {% block middle_head_right_up %}
         <!--条件侧栏上部-->
                 <div class="middle_head_right_up">
 
-                    <form action="/order_driver_num/1/" class="form_pro" method="get" >
-
+                    <form action="/order_driver_num/1/" class="form_pro"  method="get" >
 
                         日 期: <input type="date" value="{{ t_d }}" name="t_date">   &nbsp
-
                         <input type="text" value="北京"  name="city_input">
-
 
                         <select name="pro_status" id="" >
                             <option value="完单">{{ pro_status }}</option>
@@ -23,16 +23,13 @@
                         </select>
                         &nbsp
                         &nbsp
-
                         <input type="submit" value="查询"  name="sub_buton">
                         <input type="submit" value="下载数据" name="sub_buton">
 {#                        <a href="">下载数据</a>#}
-
                     </form>
 
                 </div>
 {% endblock middle_head_right_up %}
-
 
 
 {#  图表区域   #}
@@ -55,18 +52,14 @@
                     </tr>
 
 
-
                  {% for order in order_list %}
-
                     <tr class='s_tr2'>
-
                         <td>{{ order.create_date }}</td>
                         <td>{{ order.order_status }}</td>
                         <td>{{ order.recmd_status }}</td>
                         <td>{{ order.one_num }}</td>
                         <td>{{ order.two_num }}</td>
                         <td>{{ order.three_num }}</td>
-
 
                         <td>{{ order.four_num }}</td>
                         <td>{{ order.five_seven_num }}</td>
@@ -95,13 +88,11 @@
              {% else %}
                  <a href="/order_driver_num/{{ pindex }}/?recmd_status={{ recmd_status }}&pro_status={{ pro_status }}"  class=""> {{ pindex }} </a>
              {% endif %}
-
         {% endfor %}
 
-    {% if order_list.has_next %}
-        <a href="/order_driver_num/{{ order_list.number|add:1 }}/?recmd_status={{ recmd_status }}&pro_status={{ pro_status }}"> 下一页 </a>
-    {% endif %}
-
+        {% if order_list.has_next %}
+            <a href="/order_driver_num/{{ order_list.number|add:1 }}/?recmd_status={{ recmd_status }}&pro_status={{ pro_status }}"> 下一页 </a>
+        {% endif %}
     </div>
 
 
