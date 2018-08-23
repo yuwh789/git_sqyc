@@ -40,12 +40,12 @@ def run_ser_pas():
     
     df1 = Thread(target=ser_passengeer, args=(psy, date_mid, date_now, result) )
     df2 = Thread(target=ser_passengeer,args =(psy, date_fr, date_mid, result))
-    df3 = Thread(target=yester_new_pas, args=(psy,date_yester,result))
+    #df3 = Thread(target=yester_new_pas, args=(psy,date_yester,result))
     df1.start()
     time.sleep(1)
     df2.start()
     time.sleep(3)
-    df3.start()
+    #df3.start()
     df1.join()
     df2.join()
     #df3.join()
@@ -61,10 +61,10 @@ def run_ser_pas():
     time.sleep(1)
     psy.data_s(res_fr_mid, 't_last_ser_pas')
 
-    df3.join()
-    res_yester = result[2]
-    res_yester['update_date'] = datetime.datetime.now()
-    psy.data_s(res_yester, 't_yester_new_pas')
+    #df3.join()
+    #res_yester = result[2]
+    #res_yester['update_date'] = datetime.datetime.now()
+    #psy.data_s(res_yester, 't_yester_new_pas')
     
 if __name__ == "__main__":
     print('start...')

@@ -53,7 +53,7 @@ def User_account(request):
             user_model.save()
             return HttpResponse("恭喜！注册成功！")
         else:
-            str1= "暗号错误,注册失败！%s" %user_model.adminpasswd
+            str1= "暗号错误,注册失败！如有问题联系:yuweihong@01zhuanche.com %s" %user_model.adminpasswd
             return HttpResponse(str1 )
 
 
@@ -269,7 +269,7 @@ def Other_test(request):
 
 @login_required
 def Connect(request):
-    return  HttpResponse('问题联系方式： YuWeihong')
+    return  HttpResponse('问题联系方式： YuWeihong@01zhuanche.com')
 
     
 @login_required
@@ -323,7 +323,7 @@ def Look_reward(request):
 
         colname = [col[0] for col in cur.description ]
         order_list = [dict(zip(colname ,row)) for row in res2 ]
-        if len(order_list) < 2:
+        if len(order_list) == 0:
             return HttpResponse("<h2> 亲~ 查无信息!</h2>")
         # return  HttpResponse(colname)
         return render(request, 'sqyc_bi/look_reward.html',  {'order_list':order_list,'prm_phone':prm_phone,

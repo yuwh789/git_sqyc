@@ -7,7 +7,7 @@
                 <form action="/auto_check/" method="post">
                     {% csrf_token %}
                     司机状态查询>> &nbsp;
-                    请输入身份证号：<input type="text" style="width: 400px; height: 20px" name="par_custid" value="{{ cust_id }}" >
+                    请输入证件或手机号：<input type="text" style="width: 400px; height: 20px" name="par_custid" value="{{ cust_id }}" >
                     &nbsp;<input type="submit" value="提交" style="width: 60px; ">
                 </form>
         </div>
@@ -43,7 +43,7 @@
                         <td>{{ order.ctyid }}</td>
                         <td>{{ order.dr_id }}</td>
                         <td>{{ order.dr_name }}</td>
-                        <td>{{ order.dr_name }}</td>
+                        <td>{{ order.dr_cid }}</td>
 
                         <td>{{ order.dr_phone }}</td>
                         <td>{{ order.taxi_company }}</td>

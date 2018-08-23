@@ -26,6 +26,7 @@
     <div class="middle_head_right">
         <table border="1" >
                   <tr class="s_tr1">
+                    <th>序号</th>
                     <th>订单日期</th>
                     <th>司机ID</th>
                     <th>司机姓名</th>
@@ -45,6 +46,7 @@
                  {% for order in order_list %}
 {#                     class='s_tr2'#}
                     <tr >
+                        <td>{{ forloop.counter }}</td>
                         <td>{{ order.boo_date }}</td>
                         <td>{{ order.dri_id }}</td>
                         <td>{{ order.dri_name }}</td>

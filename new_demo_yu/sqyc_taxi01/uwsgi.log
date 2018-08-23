@@ -490,3 +490,500 @@ send success!
 [pid: 165156|app: 0|req: 19/30] 172.16.10.49 () {52 vars in 1029 bytes} [Tue Aug 21 13:28:16 2018] POST /inner_index/ => generated 4077 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
 [pid: 165156|app: 0|req: 20/31] 172.16.10.49 () {44 vars in 864 bytes} [Tue Aug 21 13:28:31 2018] GET /look_reward/ => generated 4022 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
 [pid: 165154|app: 0|req: 10/32] 172.16.10.49 () {44 vars in 862 bytes} [Tue Aug 21 13:28:36 2018] GET /auto_check/ => generated 4904 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 21/33] 172.16.10.49 () {44 vars in 863 bytes} [Tue Aug 21 14:17:37 2018] GET /handle_sqlt/ => generated 5206 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 22/34] 172.16.10.49 () {44 vars in 864 bytes} [Tue Aug 21 14:17:45 2018] GET /look_reward/ => generated 4022 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 23/35] 172.16.10.49 () {44 vars in 864 bytes} [Tue Aug 21 14:17:50 2018] GET /handle_sqlt/ => generated 5206 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 24/36] 172.16.10.49 () {44 vars in 864 bytes} [Tue Aug 21 15:13:44 2018] GET /look_reward/ => generated 4022 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 11/37] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Aug 21 15:14:06 2018] POST /look_reward/ => generated 13908 bytes in 480 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 25/38] 172.16.10.49 () {44 vars in 862 bytes} [Tue Aug 21 15:14:20 2018] GET /auto_check/ => generated 4904 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 12/39] 172.16.10.49 () {52 vars in 1038 bytes} [Tue Aug 21 15:14:28 2018] POST /auto_check/ => generated 5585 bytes in 2957 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 26/40] 172.16.10.49 () {52 vars in 1046 bytes} [Tue Aug 21 15:14:42 2018] POST /cust_id_random/ => generated 5486 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 27/41] 172.16.10.49 () {52 vars in 1052 bytes} [Tue Aug 21 15:14:46 2018] POST /cust_id_random/ => generated 5472 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 13/42] 172.16.10.49 () {52 vars in 1052 bytes} [Tue Aug 21 15:14:50 2018] POST /cust_id_random/ => generated 5472 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 28/43] 172.16.10.49 () {52 vars in 1042 bytes} [Tue Aug 21 15:14:59 2018] POST /auto_check/ => generated 5585 bytes in 2953 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 29/44] 172.16.10.49 () {44 vars in 861 bytes} [Tue Aug 21 15:17:42 2018] GET /auto_check/ => generated 4904 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 30/45] 172.16.10.49 () {52 vars in 1038 bytes} [Tue Aug 21 15:18:08 2018] POST /auto_check/ => generated 5585 bytes in 2944 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 31/46] 172.16.10.49 () {44 vars in 863 bytes} [Tue Aug 21 15:18:14 2018] GET /handle_sqlt/ => generated 5206 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 32/47] 172.16.10.49 () {44 vars in 864 bytes} [Tue Aug 21 15:18:18 2018] GET /look_reward/ => generated 4022 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 33/48] 172.16.10.49 () {52 vars in 1043 bytes} [Tue Aug 21 15:18:33 2018] POST /look_reward/ => generated 9224 bytes in 745 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 34/49] 172.16.10.49 () {44 vars in 862 bytes} [Tue Aug 21 15:22:02 2018] GET /auto_check/ => generated 4904 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 35/50] 172.16.10.49 () {52 vars in 1038 bytes} [Tue Aug 21 15:22:08 2018] POST /auto_check/ => generated 35 bytes in 2962 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 36/51] 172.16.10.49 () {44 vars in 862 bytes} [Tue Aug 21 15:22:16 2018] GET /auto_check/ => generated 4904 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 37/52] 172.16.10.49 () {44 vars in 869 bytes} [Tue Aug 21 16:38:13 2018] GET /chart/show_map/ => generated 3733 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 38/53] 172.16.10.49 () {52 vars in 1042 bytes} [Tue Aug 21 16:40:17 2018] POST /chart/map/ => generated 212087 bytes in 207 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 39/54] 172.16.10.49 () {40 vars in 668 bytes} [Wed Aug 22 09:11:12 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 40/55] 172.16.10.49 () {48 vars in 878 bytes} [Wed Aug 22 09:11:23 2018] POST /inner_index/ => generated 5671 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 41/56] 172.16.10.49 () {42 vars in 803 bytes} [Wed Aug 22 09:11:33 2018] GET /order_driver_num_fr/ => generated 5878 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 42/57] 172.16.10.49 () {42 vars in 795 bytes} [Wed Aug 22 09:11:43 2018] GET /handle_sqlt/ => generated 6800 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165153|app: 0|req: 3/58] 172.16.10.49 () {42 vars in 787 bytes} [Wed Aug 22 09:12:09 2018] GET /look_reward/ => generated 5616 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165153|app: 0|req: 4/59] 172.16.10.49 () {40 vars in 684 bytes} [Wed Aug 22 09:13:55 2018] GET /favicon.ico => generated 5007 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 43/60] 172.16.10.49 () {40 vars in 688 bytes} [Wed Aug 22 09:13:55 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 44/61] 172.16.10.49 () {52 vars in 985 bytes} [Wed Aug 22 09:13:57 2018] POST /inner_index/ => generated 5671 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 45/62] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 09:14:10 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 46/63] 172.16.10.49 () {52 vars in 1029 bytes} [Wed Aug 22 09:14:18 2018] POST /inner_index/ => generated 5671 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 165153|app: 0|req: 5/64] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 09:14:26 2018] GET /look_reward/ => generated 5616 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 14/65] 172.16.10.49 () {44 vars in 870 bytes} [Wed Aug 22 09:14:28 2018] GET /chart/show_map/ => generated 3733 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165153|app: 0|req: 6/66] 172.16.10.49 () {52 vars in 1042 bytes} [Wed Aug 22 09:14:48 2018] POST /chart/map/ => generated 73611 bytes in 1961 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 47/67] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 09:15:53 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 15/68] 172.16.10.49 () {52 vars in 1029 bytes} [Wed Aug 22 09:15:55 2018] POST /inner_index/ => generated 5671 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 48/69] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 09:16:02 2018] GET /look_reward/ => generated 5616 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 49/70] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug 22 09:17:52 2018] POST /look_reward/ => generated 15502 bytes in 1796 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 50/71] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 09:21:49 2018] GET /handle_sqlt/ => generated 6800 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 51/72] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 09:22:15 2018] GET /look_reward/ => generated 5616 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 16/73] 172.16.10.49 () {44 vars in 862 bytes} [Wed Aug 22 09:22:18 2018] GET /auto_check/ => generated 6498 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 52/74] 172.16.10.49 () {44 vars in 869 bytes} [Wed Aug 22 09:23:00 2018] GET /chart/show_map/ => generated 3733 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 53/75] 172.16.10.49 () {44 vars in 863 bytes} [Wed Aug 22 09:27:25 2018] GET /handle_sqlt/ => generated 6800 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 54/76] 172.16.10.49 () {44 vars in 870 bytes} [Wed Aug 22 10:38:20 2018] GET /chart/func_add/ => generated 751 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 55/77] 172.16.10.49 () {52 vars in 1052 bytes} [Wed Aug 22 10:38:39 2018] POST /chart/func_add/ => generated 0 bytes in 11 msecs (HTTP/1.1 302) 3 headers in 138 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 17/78] 172.16.10.49 () {46 vars in 898 bytes} [Wed Aug 22 10:38:39 2018] GET /handle_sqlt/ => generated 7092 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 56/79] 172.16.10.49 () {44 vars in 870 bytes} [Wed Aug 22 10:38:45 2018] GET /chart/func_add/ => generated 751 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 18/80] 172.16.10.49 () {52 vars in 1052 bytes} [Wed Aug 22 10:39:03 2018] POST /chart/func_add/ => generated 0 bytes in 11 msecs (HTTP/1.1 302) 3 headers in 138 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 57/81] 172.16.10.49 () {46 vars in 898 bytes} [Wed Aug 22 10:39:03 2018] GET /handle_sqlt/ => generated 7389 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+[pid: 165156|app: 0|req: 58/82] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug 22 11:00:27 2018] POST /handle_sqlt/ => generated 136 bytes in 223 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+send success!
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 165156|app: 0|req: 59/83] 172.16.10.49 () {44 vars in 867 bytes} [Wed Aug 22 11:00:52 2018] GET /handle_sqlt/ => generated 7389 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 60/84] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 11:04:57 2018] GET /look_reward/ => generated 5616 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 61/85] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug 22 11:05:53 2018] POST /look_reward/ => generated 15502 bytes in 372 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 62/86] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 11:10:14 2018] GET /handle_sqlt/ => generated 7389 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 63/87] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 11:11:03 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 19/88] 172.16.10.49 () {44 vars in 862 bytes} [Wed Aug 22 11:20:14 2018] GET /auto_check/ => generated 6498 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 64/89] 172.16.10.49 () {52 vars in 1038 bytes} [Wed Aug 22 11:20:35 2018] POST /auto_check/ => generated 7179 bytes in 2969 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 65/90] 172.16.10.49 () {44 vars in 863 bytes} [Wed Aug 22 11:30:39 2018] GET /handle_sqlt/ => generated 7389 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 66/91] 172.16.10.49 () {44 vars in 854 bytes} [Wed Aug 22 11:55:33 2018] GET /user_account/ => generated 729 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 20/92] 172.16.10.49 () {52 vars in 1046 bytes} [Wed Aug 22 11:55:36 2018] POST /user_account/ => generated 32 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 21/93] 172.16.10.49 () {40 vars in 688 bytes} [Wed Aug 22 13:12:45 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 67/94] 172.16.10.49 () {52 vars in 985 bytes} [Wed Aug 22 13:12:54 2018] POST /inner_index/ => generated 4077 bytes in 93 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 68/95] 172.16.20.150 () {40 vars in 681 bytes} [Wed Aug 22 13:18:38 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 22/96] 172.16.20.150 () {42 vars in 718 bytes} [Wed Aug 22 13:18:39 2018] GET /favicon.ico => generated 5007 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 23/97] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 13:21:48 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 69/98] 172.16.10.49 () {44 vars in 854 bytes} [Wed Aug 22 13:21:48 2018] GET /user_account/ => generated 729 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 70/99] 172.16.10.49 () {52 vars in 1046 bytes} [Wed Aug 22 13:22:00 2018] POST /user_account/ => generated 24 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 71/100] 172.16.10.49 () {44 vars in 854 bytes} [Wed Aug 22 13:22:16 2018] GET /user_account/ => generated 729 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 24/101] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 13:22:17 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 72/102] 172.16.10.49 () {44 vars in 854 bytes} [Wed Aug 22 13:23:15 2018] GET /user_account/ => generated 729 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 25/103] 172.16.10.49 () {52 vars in 1046 bytes} [Wed Aug 22 13:23:32 2018] POST /user_account/ => generated 24 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 73/104] 172.16.20.150 () {52 vars in 984 bytes} [Wed Aug 22 13:24:22 2018] POST /inner_index/ => generated 4077 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 74/105] 172.16.20.150 () {44 vars in 855 bytes} [Wed Aug 22 13:26:12 2018] GET /auto_check/ => generated 4904 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 76/106] 172.16.20.150 () {52 vars in 1037 bytes} [Wed Aug 22 13:26:23 2018] POST /auto_check/ => generated 35 bytes in 3128 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 77/107] 172.16.20.150 () {52 vars in 1037 bytes} [Wed Aug 22 13:26:25 2018] POST /auto_check/ => generated 35 bytes in 3064 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 26/108] 172.16.20.150 () {52 vars in 1037 bytes} [Wed Aug 22 13:26:25 2018] POST /auto_check/ => generated 35 bytes in 3079 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 78/109] 172.16.20.150 () {52 vars in 1037 bytes} [Wed Aug 22 13:26:28 2018] POST /auto_check/ => generated 35 bytes in 3076 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165153|app: 0|req: 7/110] 172.16.20.150 () {52 vars in 1037 bytes} [Wed Aug 22 13:26:28 2018] POST /auto_check/ => generated 35 bytes in 3098 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 78/111] 172.16.20.150 () {52 vars in 1037 bytes} [Wed Aug 22 13:26:28 2018] POST /auto_check/ => generated 35 bytes in 3094 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 79/112] 172.16.20.150 () {44 vars in 855 bytes} [Wed Aug 22 13:26:38 2018] GET /auto_check/ => generated 4904 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 80/113] 172.16.10.49 () {44 vars in 854 bytes} [Wed Aug 22 13:26:39 2018] GET /user_account/ => generated 729 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165153|app: 0|req: 8/114] 172.16.20.150 () {44 vars in 856 bytes} [Wed Aug 22 13:26:41 2018] GET /look_reward/ => generated 4022 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 81/115] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 13:26:41 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 82/116] 172.16.10.49 () {52 vars in 1029 bytes} [Wed Aug 22 13:26:50 2018] POST /inner_index/ => generated 4094 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 83/117] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:27:17 2018] POST /look_reward/ => generated 90716 bytes in 285 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 84/118] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:27:29 2018] POST /look_reward/ => generated 90719 bytes in 197 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 85/119] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:27:33 2018] POST /look_reward/ => generated 90719 bytes in 206 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 86/120] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:28:00 2018] POST /look_reward/ => generated 90701 bytes in 196 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 27/121] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:28:08 2018] POST /look_reward/ => generated 90736 bytes in 231 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 87/122] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:28:23 2018] POST /look_reward/ => generated 28 bytes in 2703 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 88/123] 172.16.20.150 () {44 vars in 856 bytes} [Wed Aug 22 13:28:28 2018] GET /look_reward/ => generated 4022 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 89/124] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:28:36 2018] POST /look_reward/ => generated 28 bytes in 133 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 90/125] 172.16.20.150 () {44 vars in 856 bytes} [Wed Aug 22 13:28:38 2018] GET /look_reward/ => generated 4022 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 91/126] 172.16.20.88 () {38 vars in 701 bytes} [Wed Aug 22 13:28:39 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 28/127] 172.16.20.88 () {38 vars in 640 bytes} [Wed Aug 22 13:28:39 2018] GET /favicon.ico => generated 5007 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 92/128] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:28:41 2018] POST /look_reward/ => generated 28 bytes in 127 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 93/129] 172.16.20.150 () {44 vars in 856 bytes} [Wed Aug 22 13:28:43 2018] GET /look_reward/ => generated 4022 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 94/130] 172.16.20.88 () {42 vars in 764 bytes} [Wed Aug 22 13:29:01 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 29/131] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:29:07 2018] POST /look_reward/ => generated 28 bytes in 124 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 95/132] 172.16.20.150 () {44 vars in 856 bytes} [Wed Aug 22 13:29:11 2018] GET /look_reward/ => generated 4022 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 30/133] 172.16.20.88 () {50 vars in 973 bytes} [Wed Aug 22 13:29:18 2018] POST /inner_index/ => generated 4094 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 96/134] 172.16.20.88 () {44 vars in 845 bytes} [Wed Aug 22 13:29:20 2018] GET /Company_day_fr/ => generated 4099 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 97/135] 172.16.20.88 () {44 vars in 860 bytes} [Wed Aug 22 13:29:23 2018] GET /company_day_total_fr/ => generated 4035 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 31/136] 172.16.20.88 () {44 vars in 846 bytes} [Wed Aug 22 13:29:25 2018] GET /city_total/ => generated 3987 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 98/137] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:29:32 2018] POST /look_reward/ => generated 28 bytes in 123 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 99/138] 172.16.20.150 () {44 vars in 856 bytes} [Wed Aug 22 13:29:38 2018] GET /look_reward/ => generated 4022 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 32/139] 172.16.20.88 () {44 vars in 844 bytes} [Wed Aug 22 13:30:12 2018] GET /chart/show_map/ => generated 3733 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 100/140] 172.16.20.150 () {52 vars in 1042 bytes} [Wed Aug 22 13:30:19 2018] POST /look_reward/ => generated 10320 bytes in 133 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 101/141] 172.16.20.88 () {44 vars in 846 bytes} [Wed Aug 22 13:30:23 2018] GET /city_total/ => generated 3987 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 102/142] 172.16.20.88 () {44 vars in 844 bytes} [Wed Aug 22 13:30:28 2018] GET /chart/show_map/ => generated 3733 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 33/143] 172.16.20.88 () {44 vars in 846 bytes} [Wed Aug 22 13:30:33 2018] GET /city_total/ => generated 3987 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 103/144] 172.16.20.88 () {44 vars in 836 bytes} [Wed Aug 22 13:30:40 2018] GET /other/test/ => generated 30 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 104/145] 172.16.20.88 () {44 vars in 846 bytes} [Wed Aug 22 13:30:43 2018] GET /city_total/ => generated 3987 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 105/146] 172.16.20.150 () {44 vars in 857 bytes} [Wed Aug 22 13:31:57 2018] GET /handle_sqlt/ => generated 5795 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 106/147] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 13:33:31 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 107/148] 172.16.10.49 () {52 vars in 1029 bytes} [Wed Aug 22 13:33:37 2018] POST /inner_index/ => generated 5671 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 108/149] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 13:34:12 2018] GET /look_reward/ => generated 5616 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 109/150] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug 22 13:34:25 2018] POST /look_reward/ => generated 11914 bytes in 133 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 110/151] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 13:45:40 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 111/152] 172.16.10.49 () {44 vars in 854 bytes} [Wed Aug 22 13:45:43 2018] GET /user_account/ => generated 729 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 112/153] 172.16.10.49 () {52 vars in 1046 bytes} [Wed Aug 22 13:46:05 2018] POST /user_account/ => generated 24 bytes in 7 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 113/154] 172.16.10.49 () {44 vars in 854 bytes} [Wed Aug 22 13:47:27 2018] GET /user_account/ => generated 729 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165154|app: 0|req: 34/155] 172.16.10.49 () {44 vars in 862 bytes} [Wed Aug 22 13:47:46 2018] GET /auto_check/ => generated 6498 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 35/156] 172.16.10.49 () {44 vars in 863 bytes} [Wed Aug 22 13:47:49 2018] GET /look_reward/ => generated 5616 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 114/157] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 13:50:24 2018] GET /look_reward/ => generated 5616 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 115/158] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 13:50:33 2018] GET /look_reward/ => generated 5616 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 116/159] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 13:50:36 2018] GET /handle_sqlt/ => generated 7389 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165156|app: 0|req: 117/160] 172.16.10.49 () {44 vars in 862 bytes} [Wed Aug 22 13:50:40 2018] GET /auto_check/ => generated 6498 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 165156|app: 0|req: 118/161] 172.16.10.49 () {44 vars in 863 bytes} [Wed Aug 22 13:50:42 2018] GET /look_reward/ => generated 5616 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 165154|app: 0|req: 36/162] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 13:50:45 2018] GET /handle_sqlt/ => generated 7389 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+Wed Aug 22 13:54:44 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:54:44 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:54:44 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:54:44 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:54:44 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:54:44 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:54:44 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:54:44 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Aug 22 13:54:52 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x2118d80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2118d80 pid: 151183 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 151183)
+spawned uWSGI worker 1 (pid: 151187, cores: 2)
+spawned uWSGI worker 2 (pid: 151188, cores: 2)
+spawned uWSGI worker 3 (pid: 151189, cores: 2)
+spawned uWSGI worker 4 (pid: 151191, cores: 2)
+[pid: 151187|app: 0|req: 1/1] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 13:54:58 2018] GET /handle_sqlt/ => generated 76826 bytes in 140 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 151189|app: 0|req: 1/2] 172.16.10.49 () {46 vars in 895 bytes} [Wed Aug 22 13:55:00 2018] GET /handle_sqlt/ => generated 77028 bytes in 144 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 151191|app: 0|req: 1/3] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 13:55:07 2018] GET / => generated 76428 bytes in 141 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+Wed Aug 22 13:58:33 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:58:33 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:58:33 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:58:33 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:58:33 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:58:33 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:58:33 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Aug 22 13:58:33 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Aug 22 13:58:43 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0x25d1d80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x25d1d80 pid: 151712 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 151712)
+spawned uWSGI worker 1 (pid: 151716, cores: 2)
+spawned uWSGI worker 2 (pid: 151717, cores: 2)
+spawned uWSGI worker 3 (pid: 151718, cores: 2)
+spawned uWSGI worker 4 (pid: 151720, cores: 2)
+[pid: 151717|app: 0|req: 1/1] 172.16.10.49 () {44 vars in 820 bytes} [Wed Aug 22 13:58:48 2018] GET / => generated 3892 bytes in 527 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 1/2] 172.16.10.49 () {52 vars in 1029 bytes} [Wed Aug 22 13:58:52 2018] POST /inner_index/ => generated 5671 bytes in 557 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 1/3] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 13:58:55 2018] GET /handle_sqlt/ => generated 7389 bytes in 552 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 2/4] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 13:59:06 2018] GET /look_reward/ => generated 5616 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 2/5] 172.16.10.49 () {52 vars in 1043 bytes} [Wed Aug 22 14:01:16 2018] POST /look_reward/ => generated 10818 bytes in 1286 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 3/6] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 14:03:39 2018] GET /handle_sqlt/ => generated 7389 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 4/7] 172.16.10.49 () {44 vars in 870 bytes} [Wed Aug 22 14:04:32 2018] GET /chart/show_map/ => generated 3733 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 5/8] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 14:05:02 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151716|app: 0|req: 1/9] 172.16.10.49 () {52 vars in 1029 bytes} [Wed Aug 22 14:05:10 2018] POST /inner_index/ => generated 3809 bytes in 569 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 6/10] 172.16.10.49 () {52 vars in 1029 bytes} [Wed Aug 22 14:05:33 2018] POST /inner_index/ => generated 5671 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 7/11] 172.16.10.49 () {44 vars in 864 bytes} [Wed Aug 22 14:06:00 2018] GET /handle_sqlt/ => generated 7389 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 8/12] 172.16.20.150 () {44 vars in 863 bytes} [Wed Aug 22 14:06:34 2018] GET /chart/show_map/ => generated 3733 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 9/13] 172.16.20.150 () {42 vars in 782 bytes} [Wed Aug 22 14:06:41 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 10/14] 172.16.20.150 () {52 vars in 1028 bytes} [Wed Aug 22 14:06:47 2018] POST /inner_index/ => generated 3809 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 11/15] 172.16.10.49 () {44 vars in 862 bytes} [Wed Aug 22 14:15:58 2018] GET /auto_check/ => generated 6498 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 12/16] 172.16.10.49 () {52 vars in 1038 bytes} [Wed Aug 22 14:16:14 2018] POST /auto_check/ => generated 7176 bytes in 3079 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 3/17] 172.16.10.49 () {52 vars in 1038 bytes} [Wed Aug 22 14:16:14 2018] POST /auto_check/ => generated 7176 bytes in 3170 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 13/18] 172.16.10.49 () {52 vars in 1038 bytes} [Wed Aug 22 14:16:30 2018] POST /auto_check/ => generated 7176 bytes in 3174 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 14/19] 172.16.10.49 () {42 vars in 789 bytes} [Wed Aug 22 14:25:46 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 15/20] 172.16.20.88 () {44 vars in 844 bytes} [Wed Aug 22 14:28:56 2018] GET /Company_day_fr/ => generated 4099 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 4/21] 172.16.20.88 () {44 vars in 860 bytes} [Wed Aug 22 14:28:58 2018] GET /company_day_total_fr/ => generated 4035 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 16/22] 172.16.10.49 () {52 vars in 1046 bytes} [Wed Aug 22 14:43:31 2018] POST /cust_id_random/ => generated 7080 bytes in 37 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 17/23] 172.16.10.49 () {44 vars in 883 bytes} [Wed Aug 22 14:44:09 2018] GET /order_driver_num_fr/ => generated 5878 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 18/24] 172.16.10.49 () {44 vars in 1079 bytes} [Wed Aug 22 14:44:10 2018] GET /order_driver_num/1/?t_date=&city_input=%E5%8C%97%E4%BA%AC&pro_status=%E5%AE%8C%E5%8D%95&sub_buton=%E6%9F%A5%E8%AF%A2 => generated 17025 bytes in 49 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 19/25] 172.16.10.49 () {44 vars in 1175 bytes} [Wed Aug 22 14:44:15 2018] GET /order_driver_num/1/?t_date=&city_input=%E5%8C%97%E4%BA%AC&pro_status=%E6%8E%A5%E5%8D%95&sub_buton=%E6%9F%A5%E8%AF%A2 => generated 17033 bytes in 50 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 20/26] 172.16.10.49 () {44 vars in 1077 bytes} [Wed Aug 22 14:44:18 2018] GET /order_driver_num/2/?recmd_status=None&pro_status=%E6%8E%A5%E5%8D%95 => generated 17117 bytes in 50 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 5/27] 172.16.10.49 () {44 vars in 1028 bytes} [Wed Aug 22 14:44:19 2018] GET /order_driver_num/3/?recmd_status=None&pro_status=%E6%8E%A5%E5%8D%95 => generated 17151 bytes in 50 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 21/28] 172.16.10.49 () {44 vars in 1028 bytes} [Wed Aug 22 14:44:21 2018] GET /order_driver_num/4/?recmd_status=None&pro_status=%E6%8E%A5%E5%8D%95 => generated 17143 bytes in 48 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 22/29] 172.16.10.49 () {44 vars in 1028 bytes} [Wed Aug 22 14:44:23 2018] GET /order_driver_num/5/?recmd_status=None&pro_status=%E6%8E%A5%E5%8D%95 => generated 17145 bytes in 47 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151717|app: 0|req: 2/30] 172.16.10.49 () {44 vars in 1028 bytes} [Wed Aug 22 14:44:25 2018] GET /order_driver_num/1/?recmd_status=None&pro_status=%E6%8E%A5%E5%8D%95 => generated 17033 bytes in 58 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 6/31] 172.16.10.49 () {44 vars in 917 bytes} [Wed Aug 22 15:08:11 2018] GET /other/test/ => generated 30 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 23/32] 172.16.10.49 () {44 vars in 919 bytes} [Wed Aug 22 15:08:16 2018] GET /handle_sqlt/ => generated 7389 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 24/33] 172.16.10.49 () {40 vars in 712 bytes} [Wed Aug 22 17:26:12 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 7/34] 172.16.10.49 () {48 vars in 922 bytes} [Wed Aug 22 17:26:16 2018] POST /inner_index/ => generated 5671 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 8/35] 172.16.10.49 () {42 vars in 787 bytes} [Wed Aug 22 17:26:53 2018] GET /look_reward/ => generated 5616 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 25/36] 172.16.10.49 () {48 vars in 934 bytes} [Wed Aug 22 17:27:42 2018] POST /look_reward/ => generated 89879 bytes in 230 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 26/37] 172.16.10.49 () {42 vars in 787 bytes} [Wed Aug 22 17:28:00 2018] GET /look_reward/ => generated 5616 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 27/38] 172.16.10.49 () {48 vars in 934 bytes} [Wed Aug 22 17:28:13 2018] POST /look_reward/ => generated 28 bytes in 375 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 9/39] 172.16.10.49 () {42 vars in 787 bytes} [Wed Aug 22 17:28:15 2018] GET /look_reward/ => generated 5616 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 10/40] 172.16.10.49 () {44 vars in 862 bytes} [Wed Aug 22 18:49:30 2018] GET /other/test/ => generated 30 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 11/41] 172.16.10.49 () {44 vars in 862 bytes} [Wed Aug 22 18:49:37 2018] GET /other/test/ => generated 30 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 28/42] 172.16.10.49 () {44 vars in 880 bytes} [Wed Aug 22 18:49:39 2018] GET /order_driver_num_fr/ => generated 5878 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 12/43] 172.16.10.49 () {44 vars in 1079 bytes} [Wed Aug 22 18:49:41 2018] GET /order_driver_num/1/?t_date=&city_input=%E5%8C%97%E4%BA%AC&pro_status=%E5%AE%8C%E5%8D%95&sub_buton=%E6%9F%A5%E8%AF%A2 => generated 17025 bytes in 48 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 29/44] 172.16.10.49 () {44 vars in 1195 bytes} [Wed Aug 22 18:49:46 2018] GET /order_driver_num/1/?t_date=2018-08-01&city_input=%E5%8C%97%E4%BA%AC&pro_status=%E5%AE%8C%E5%8D%95&sub_buton=%E6%9F%A5%E8%AF%A2 => generated 17025 bytes in 52 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 13/45] 172.16.10.49 () {44 vars in 976 bytes} [Wed Aug 22 18:50:03 2018] GET /other/test/ => generated 30 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 30/46] 172.16.10.49 () {44 vars in 978 bytes} [Wed Aug 22 18:50:25 2018] GET /handle_sqlt/ => generated 7389 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 14/47] 172.16.10.49 () {40 vars in 688 bytes} [Thu Aug 23 10:05:16 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 31/48] 172.16.10.49 () {52 vars in 985 bytes} [Thu Aug 23 10:05:17 2018] POST /inner_index/ => generated 5671 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 151717|app: 0|req: 3/49] 172.16.10.49 () {42 vars in 799 bytes} [Thu Aug 23 10:06:01 2018] GET /admin => generated 0 bytes in 3 msecs (HTTP/1.1 301) 3 headers in 144 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 32/50] 172.16.10.49 () {42 vars in 801 bytes} [Thu Aug 23 10:06:01 2018] GET /admin/ => generated 0 bytes in 83 msecs (HTTP/1.1 302) 7 headers in 277 bytes (1 switches on core 1)
+[pid: 151717|app: 0|req: 4/51] 172.16.10.49 () {42 vars in 838 bytes} [Thu Aug 23 10:06:01 2018] GET /admin/login/?next=/admin/ => generated 1917 bytes in 99 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 33/52] 172.16.10.49 () {52 vars in 1081 bytes} [Thu Aug 23 10:06:09 2018] POST /admin/login/?next=/admin/ => generated 0 bytes in 102 msecs (HTTP/1.1 302) 9 headers in 511 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 15/53] 172.16.10.49 () {46 vars in 896 bytes} [Thu Aug 23 10:06:09 2018] GET /admin/ => generated 8005 bytes in 120 msecs (HTTP/1.1 200) 6 headers in 214 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 34/54] 172.16.10.49 () {44 vars in 894 bytes} [Thu Aug 23 10:06:12 2018] GET /admin/bi_echarts/func_comment/ => generated 7689 bytes in 89 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 35/55] 172.16.10.49 () {42 vars in 778 bytes} [Thu Aug 23 10:06:12 2018] GET /admin/jsi18n/ => generated 6776 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 16/56] 172.16.10.49 () {44 vars in 922 bytes} [Thu Aug 23 10:06:27 2018] GET /admin/bi_echarts/func_comment/5/ => generated 5360 bytes in 88 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 1)
+[pid: 151717|app: 0|req: 5/57] 172.16.10.49 () {42 vars in 780 bytes} [Thu Aug 23 10:06:27 2018] GET /admin/jsi18n/ => generated 6776 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 36/58] 172.16.10.49 () {52 vars in 1173 bytes} [Thu Aug 23 10:06:37 2018] POST /admin/bi_echarts/func_comment/5/ => generated 0 bytes in 66 msecs (HTTP/1.1 302) 8 headers in 484 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 17/59] 172.16.10.49 () {46 vars in 1122 bytes} [Thu Aug 23 10:06:37 2018] GET /admin/bi_echarts/func_comment/ => generated 7910 bytes in 88 msecs (HTTP/1.1 200) 8 headers in 420 bytes (1 switches on core 0)
+[pid: 151717|app: 0|req: 6/60] 172.16.10.49 () {42 vars in 778 bytes} [Thu Aug 23 10:06:37 2018] GET /admin/jsi18n/ => generated 6776 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 37/61] 172.16.10.49 () {44 vars in 892 bytes} [Thu Aug 23 10:06:42 2018] GET /admin/bi_echarts/ => generated 2502 bytes in 42 msecs (HTTP/1.1 200) 6 headers in 214 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 38/62] 172.16.10.49 () {46 vars in 912 bytes} [Thu Aug 23 10:06:42 2018] GET /admin/ => generated 8005 bytes in 58 msecs (HTTP/1.1 200) 6 headers in 214 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 39/63] 172.16.10.49 () {44 vars in 894 bytes} [Thu Aug 23 10:06:55 2018] GET /admin/bi_echarts/func_comment/ => generated 7758 bytes in 88 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 40/64] 172.16.10.49 () {44 vars in 894 bytes} [Thu Aug 23 10:06:56 2018] GET /admin/bi_echarts/func_comment/ => generated 7758 bytes in 115 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 18/65] 172.16.10.49 () {42 vars in 778 bytes} [Thu Aug 23 10:06:56 2018] GET /admin/jsi18n/ => generated 6776 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 41/66] 172.16.10.49 () {44 vars in 884 bytes} [Thu Aug 23 10:06:59 2018] GET /admin/sqyc_bi/sqyc_table/ => generated 3835 bytes in 72 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 19/67] 172.16.10.49 () {42 vars in 773 bytes} [Thu Aug 23 10:06:59 2018] GET /admin/jsi18n/ => generated 6776 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 42/68] 172.16.10.49 () {44 vars in 888 bytes} [Thu Aug 23 10:07:02 2018] GET /admin/sqyc_bi/user_account/ => generated 8795 bytes in 87 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 20/69] 172.16.10.49 () {42 vars in 775 bytes} [Thu Aug 23 10:07:02 2018] GET /admin/jsi18n/ => generated 6776 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 43/70] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 10:34:16 2018] GET /handle_sqlt/ => generated 7390 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 44/71] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 10:41:25 2018] POST /handle_sqlt/ => generated 136 bytes in 219 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 151720|app: 0|req: 45/72] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 10:41:27 2018] GET /handle_sqlt/ => generated 7390 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+[pid: 151720|app: 0|req: 46/73] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 10:41:46 2018] POST /handle_sqlt/ => generated 136 bytes in 233 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+send success!
+[pid: 151720|app: 0|req: 47/74] 172.16.10.166 () {40 vars in 652 bytes} [Thu Aug 23 10:42:34 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 21/75] 172.16.10.166 () {42 vars in 675 bytes} [Thu Aug 23 10:42:35 2018] GET /favicon.ico => generated 5007 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 22/76] 172.16.10.166 () {50 vars in 924 bytes} [Thu Aug 23 10:42:59 2018] POST /inner_index/ => generated 27 bytes in 14 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 48/77] 172.16.10.166 () {50 vars in 924 bytes} [Thu Aug 23 10:43:28 2018] POST /inner_index/ => generated 27 bytes in 14 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 49/78] 172.16.10.166 () {50 vars in 924 bytes} [Thu Aug 23 10:43:52 2018] POST /inner_index/ => generated 27 bytes in 14 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 50/79] 172.16.10.166 () {50 vars in 924 bytes} [Thu Aug 23 10:44:01 2018] POST /inner_index/ => generated 4077 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 23/80] 172.16.10.166 () {44 vars in 826 bytes} [Thu Aug 23 10:44:14 2018] GET /auto_check/ => generated 4904 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 151720|app: 0|req: 51/81] 172.16.10.166 () {44 vars in 833 bytes} [Thu Aug 23 10:44:23 2018] GET /chart/show_map/ => generated 3733 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 52/82] 172.16.10.166 () {44 vars in 826 bytes} [Thu Aug 23 10:44:29 2018] GET /other/test/ => generated 30 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151717|app: 0|req: 7/83] 172.16.10.166 () {44 vars in 827 bytes} [Thu Aug 23 10:44:51 2018] GET /look_reward/ => generated 4022 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 24/84] 172.16.10.166 () {44 vars in 827 bytes} [Thu Aug 23 10:44:51 2018] GET /handle_sqlt/ => generated 5796 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 53/85] 172.16.10.166 () {44 vars in 828 bytes} [Thu Aug 23 10:46:27 2018] GET /look_reward/ => generated 4022 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 54/86] 172.16.10.166 () {42 vars in 718 bytes} [Thu Aug 23 10:47:03 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 55/87] 172.16.10.166 () {42 vars in 724 bytes} [Thu Aug 23 10:47:03 2018] GET /favicon.ico => generated 5007 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 56/88] 172.16.10.166 () {52 vars in 990 bytes} [Thu Aug 23 10:47:16 2018] POST /inner_index/ => generated 4077 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 57/89] 172.16.10.166 () {44 vars in 861 bytes} [Thu Aug 23 10:47:44 2018] GET /auto_check/ => generated 4904 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 58/90] 172.16.10.166 () {44 vars in 862 bytes} [Thu Aug 23 10:48:02 2018] GET /look_reward/ => generated 4022 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 59/91] 172.16.10.166 () {52 vars in 1048 bytes} [Thu Aug 23 10:48:09 2018] POST /look_reward/ => generated 90740 bytes in 207 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 60/92] 172.16.10.166 () {52 vars in 1048 bytes} [Thu Aug 23 10:48:28 2018] POST /look_reward/ => generated 42 bytes in 110 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 61/93] 172.16.10.166 () {44 vars in 862 bytes} [Thu Aug 23 10:50:21 2018] GET /look_reward/ => generated 4022 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151717|app: 0|req: 8/94] 172.16.10.166 () {44 vars in 862 bytes} [Thu Aug 23 10:50:21 2018] GET /look_reward/ => generated 4022 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 25/95] 172.16.10.166 () {44 vars in 862 bytes} [Thu Aug 23 10:50:21 2018] GET /look_reward/ => generated 4022 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151717|app: 0|req: 9/96] 172.16.10.166 () {52 vars in 1048 bytes} [Thu Aug 23 10:58:58 2018] POST /look_reward/ => generated 90740 bytes in 210 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 62/97] 172.16.10.166 () {52 vars in 1048 bytes} [Thu Aug 23 10:59:02 2018] POST /look_reward/ => generated 90739 bytes in 208 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 63/98] 172.16.10.166 () {46 vars in 893 bytes} [Thu Aug 23 10:59:08 2018] GET /look_reward/ => generated 4022 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 26/99] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 10:59:08 2018] GET /handle_sqlt/ => generated 7390 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151718|app: 0|req: 27/100] 172.16.10.166 () {52 vars in 1048 bytes} [Thu Aug 23 10:59:13 2018] POST /look_reward/ => generated 90739 bytes in 209 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 151718|app: 0|req: 28/101] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 10:59:14 2018] POST /handle_sqlt/ => generated 136 bytes in 217 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 64/102] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 10:59:15 2018] GET /handle_sqlt/ => generated 7390 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+[pid: 151720|app: 0|req: 65/103] 172.16.10.166 () {52 vars in 1048 bytes} [Thu Aug 23 10:59:34 2018] POST /look_reward/ => generated 90890 bytes in 208 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+[pid: 151720|app: 0|req: 66/104] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 10:59:35 2018] POST /handle_sqlt/ => generated 136 bytes in 233 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+send success!
+[pid: 151720|app: 0|req: 67/105] 172.16.10.166 () {52 vars in 1048 bytes} [Thu Aug 23 10:59:40 2018] POST /look_reward/ => generated 15092 bytes in 2068 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 151720|app: 0|req: 68/106] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 11:00:35 2018] GET /handle_sqlt/ => generated 7390 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 69/107] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 11:03:06 2018] GET /look_reward/ => generated 5616 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 151718|app: 0|req: 29/108] 172.16.10.166 () {44 vars in 863 bytes} [Thu Aug 23 11:03:09 2018] GET /handle_sqlt/ => generated 5796 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151716|app: 0|req: 2/109] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 11:07:54 2018] POST /look_reward/ => generated 15502 bytes in 1564 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 151720|app: 0|req: 70/110] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 11:08:08 2018] GET /handle_sqlt/ => generated 7390 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 151720|app: 0|req: 71/111] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 11:15:49 2018] GET /look_reward/ => generated 5616 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+Thu Aug 23 11:17:48 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Aug 23 11:17:48 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Aug 23 11:17:48 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Aug 23 11:17:48 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Aug 23 11:17:48 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Aug 23 11:17:48 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Aug 23 11:17:48 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Aug 23 11:17:48 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17 (64bit) on [Thu Aug 23 11:18:01 2018] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-18) on 21 May 2018 03:16:47
+os: Linux-2.6.32-696.23.1.el6.x86_64 #1 SMP Tue Mar 13 22:44:18 UTC 2018
+nodename: 10-0-30-61
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+writing pidfile to uwsgi.pid
+detected binary path: /home/dev/virtualenv_files/new_demo/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/dev/demo_yu/git_sqyc/new_demo_yu/sqyc_taxi01
+your processes number limit is 65536
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+Python main interpreter initialized at 0xd23d70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xd23d70 pid: 145703 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 145703)
+spawned uWSGI worker 1 (pid: 145707, cores: 2)
+spawned uWSGI worker 2 (pid: 145708, cores: 2)
+spawned uWSGI worker 3 (pid: 145709, cores: 2)
+spawned uWSGI worker 4 (pid: 145711, cores: 2)
+[pid: 145711|app: 0|req: 1/1] 172.16.10.49 () {42 vars in 789 bytes} [Thu Aug 23 11:18:07 2018] GET / => generated 3892 bytes in 518 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 2/2] 172.16.10.49 () {52 vars in 1029 bytes} [Thu Aug 23 11:18:09 2018] POST /inner_index/ => generated 5671 bytes in 39 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 3/3] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 11:18:11 2018] GET /look_reward/ => generated 5652 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 4/4] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 11:18:36 2018] POST /look_reward/ => generated 16141 bytes in 473 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 5/5] 172.16.10.49 () {42 vars in 789 bytes} [Thu Aug 23 11:19:18 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 6/6] 172.16.10.49 () {52 vars in 1029 bytes} [Thu Aug 23 11:19:29 2018] POST /inner_index/ => generated 3626 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 145708|app: 0|req: 1/7] 172.16.10.49 () {52 vars in 1029 bytes} [Thu Aug 23 11:21:27 2018] POST /inner_index/ => generated 3792 bytes in 539 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 7/8] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 11:21:31 2018] GET /look_reward/ => generated 3773 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145708|app: 0|req: 2/9] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 11:21:32 2018] GET /handle_sqlt/ => generated 5511 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 8/10] 172.16.10.49 () {44 vars in 862 bytes} [Thu Aug 23 11:21:35 2018] GET /auto_check/ => generated 4619 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 1/11] 172.16.10.49 () {44 vars in 863 bytes} [Thu Aug 23 11:21:48 2018] GET /handle_sqlt/ => generated 5511 bytes in 583 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 2/12] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 11:21:55 2018] GET /look_reward/ => generated 3773 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 3/13] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 11:22:17 2018] POST /look_reward/ => generated 42 bytes in 112 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 4/14] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 11:22:19 2018] GET /look_reward/ => generated 3773 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 9/15] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 11:22:31 2018] POST /look_reward/ => generated 14262 bytes in 138 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 10/16] 172.16.10.49 () {44 vars in 870 bytes} [Thu Aug 23 11:28:22 2018] GET /chart/show_map/ => generated 3733 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 11/17] 172.16.10.49 () {52 vars in 1042 bytes} [Thu Aug 23 11:28:45 2018] POST /chart/map/ => generated 171508 bytes in 5393 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 12/18] 172.16.10.49 () {44 vars in 862 bytes} [Thu Aug 23 11:44:09 2018] GET /auto_check/ => generated 4619 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 13/19] 172.16.10.49 () {44 vars in 863 bytes} [Thu Aug 23 11:44:13 2018] GET /handle_sqlt/ => generated 5511 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 14/20] 172.16.10.49 () {44 vars in 862 bytes} [Thu Aug 23 11:49:12 2018] GET /auto_check/ => generated 4619 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 15/21] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 11:50:10 2018] POST /auto_check/ => generated 35 bytes in 3126 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 5/22] 172.16.10.49 () {44 vars in 862 bytes} [Thu Aug 23 11:50:17 2018] GET /auto_check/ => generated 4619 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 16/23] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 11:50:25 2018] POST /auto_check/ => generated 5300 bytes in 3085 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 6/24] 172.16.10.49 () {44 vars in 861 bytes} [Thu Aug 23 13:20:49 2018] GET /auto_check/ => generated 4619 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 17/25] 172.16.10.49 () {44 vars in 863 bytes} [Thu Aug 23 13:20:51 2018] GET /look_reward/ => generated 3773 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 7/26] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 13:20:53 2018] GET /handle_sqlt/ => generated 5511 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 18/27] 172.16.10.49 () {44 vars in 862 bytes} [Thu Aug 23 13:23:15 2018] GET /auto_check/ => generated 4619 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 19/28] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 13:23:28 2018] POST /auto_check/ => generated 5300 bytes in 3114 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 20/29] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 13:45:07 2018] POST /auto_check/ => generated 5290 bytes in 3097 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 22/30] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 13:48:35 2018] POST /auto_check/ => generated 5299 bytes in 3152 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 23/31] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 13:48:39 2018] POST /auto_check/ => generated 5299 bytes in 3099 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 23/32] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 13:48:39 2018] POST /auto_check/ => generated 5299 bytes in 3152 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145708|app: 0|req: 3/33] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 13:48:39 2018] POST /auto_check/ => generated 5299 bytes in 3143 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 24/34] 172.16.10.49 () {52 vars in 1048 bytes} [Thu Aug 23 13:50:06 2018] POST /cust_id_random/ => generated 5187 bytes in 63 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 25/35] 172.16.10.49 () {42 vars in 789 bytes} [Thu Aug 23 14:14:00 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 26/36] 172.16.10.49 () {52 vars in 1029 bytes} [Thu Aug 23 14:14:01 2018] POST /inner_index/ => generated 5671 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 27/37] 172.16.10.49 () {44 vars in 870 bytes} [Thu Aug 23 14:14:03 2018] GET /chart/show_map/ => generated 3733 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 8/38] 172.16.10.49 () {52 vars in 1042 bytes} [Thu Aug 23 14:14:19 2018] POST /chart/map/ => generated 156217 bytes in 9549 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 9/39] 172.16.10.13 () {38 vars in 602 bytes} [Thu Aug 23 14:17:51 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 10/40] 172.16.10.13 () {48 vars in 869 bytes} [Thu Aug 23 14:18:18 2018] POST /inner_index/ => generated 27 bytes in 15 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 28/41] 172.16.10.49 () {52 vars in 1037 bytes} [Thu Aug 23 14:18:50 2018] POST /chart/map/ => generated 8746 bytes in 419 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 11/42] 172.16.10.13 () {40 vars in 659 bytes} [Thu Aug 23 14:19:38 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 29/43] 172.16.10.13 () {48 vars in 869 bytes} [Thu Aug 23 14:19:50 2018] POST /inner_index/ => generated 27 bytes in 14 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 30/44] 172.16.10.13 () {40 vars in 659 bytes} [Thu Aug 23 14:19:53 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 31/45] 172.16.10.13 () {48 vars in 869 bytes} [Thu Aug 23 14:20:00 2018] POST /inner_index/ => generated 27 bytes in 15 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 32/46] 172.16.10.49 () {42 vars in 789 bytes} [Thu Aug 23 14:21:30 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 33/47] 172.16.10.49 () {44 vars in 854 bytes} [Thu Aug 23 14:21:31 2018] GET /user_account/ => generated 729 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 34/48] 172.16.10.49 () {52 vars in 1046 bytes} [Thu Aug 23 14:21:43 2018] POST /user_account/ => generated 24 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 35/49] 172.16.10.49 () {42 vars in 789 bytes} [Thu Aug 23 14:22:16 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 36/50] 172.16.10.49 () {52 vars in 1029 bytes} [Thu Aug 23 14:22:18 2018] POST /inner_index/ => generated 5671 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 12/51] 172.16.10.13 () {40 vars in 659 bytes} [Thu Aug 23 14:22:20 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 37/52] 172.16.10.13 () {40 vars in 659 bytes} [Thu Aug 23 14:22:23 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 13/53] 172.16.10.49 () {44 vars in 862 bytes} [Thu Aug 23 14:22:30 2018] GET /auto_check/ => generated 6498 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 38/54] 172.16.10.13 () {48 vars in 869 bytes} [Thu Aug 23 14:22:35 2018] POST /inner_index/ => generated 4077 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 145708|app: 0|req: 4/55] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 14:22:38 2018] POST /auto_check/ => generated 7178 bytes in 3062 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 14/56] 172.16.10.13 () {42 vars in 778 bytes} [Thu Aug 23 14:22:47 2018] GET /handle_sqlt/ => generated 5796 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 15/57] 172.16.10.13 () {40 vars in 727 bytes} [Thu Aug 23 14:23:12 2018] GET /inner_index/ => generated 66185 bytes in 113 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 16/58] 172.16.10.13 () {40 vars in 727 bytes} [Thu Aug 23 14:23:14 2018] GET /inner_index/ => generated 66185 bytes in 62 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 17/59] 172.16.10.13 () {40 vars in 727 bytes} [Thu Aug 23 14:23:18 2018] GET /inner_index/ => generated 66185 bytes in 63 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 18/60] 172.16.10.13 () {40 vars in 727 bytes} [Thu Aug 23 14:23:19 2018] GET /inner_index/ => generated 66185 bytes in 62 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 39/61] 172.16.10.13 () {40 vars in 727 bytes} [Thu Aug 23 14:23:23 2018] GET /inner_index/ => generated 66185 bytes in 117 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 40/62] 172.16.10.13 () {40 vars in 703 bytes} [Thu Aug 23 14:23:39 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 41/63] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 14:23:55 2018] POST /auto_check/ => generated 7184 bytes in 3061 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 42/64] 172.16.10.13 () {48 vars in 913 bytes} [Thu Aug 23 14:24:01 2018] POST /inner_index/ => generated 4077 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 43/65] 172.16.10.13 () {42 vars in 778 bytes} [Thu Aug 23 14:24:27 2018] GET /look_reward/ => generated 4058 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 19/66] 172.16.10.13 () {48 vars in 925 bytes} [Thu Aug 23 14:24:50 2018] POST /look_reward/ => generated 11477 bytes in 354 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 44/67] 172.16.10.13 () {48 vars in 925 bytes} [Thu Aug 23 14:27:15 2018] POST /look_reward/ => generated 10856 bytes in 131 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145708|app: 0|req: 5/68] 172.16.10.13 () {48 vars in 925 bytes} [Thu Aug 23 14:29:02 2018] POST /look_reward/ => generated 6530 bytes in 1041 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 45/69] 172.16.10.49 () {44 vars in 863 bytes} [Thu Aug 23 14:30:55 2018] GET /look_reward/ => generated 5652 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 46/70] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 14:31:36 2018] POST /look_reward/ => generated 16141 bytes in 874 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 47/71] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 14:34:12 2018] GET /handle_sqlt/ => generated 7390 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 48/72] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 14:40:29 2018] GET /look_reward/ => generated 5652 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 20/73] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 14:40:46 2018] POST /look_reward/ => generated 16141 bytes in 147 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 49/74] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 14:41:55 2018] POST /look_reward/ => generated 15480 bytes in 136 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 50/75] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 14:41:57 2018] POST /look_reward/ => generated 14268 bytes in 198 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 51/76] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 14:42:02 2018] POST /look_reward/ => generated 13031 bytes in 135 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 21/77] 172.16.10.13 () {48 vars in 925 bytes} [Thu Aug 23 14:43:29 2018] POST /look_reward/ => generated 6530 bytes in 169 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 22/78] 172.16.10.49 () {44 vars in 862 bytes} [Thu Aug 23 14:52:19 2018] GET /auto_check/ => generated 6504 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145708|app: 0|req: 6/79] 172.16.10.49 () {52 vars in 1038 bytes} [Thu Aug 23 14:52:22 2018] POST /auto_check/ => generated 7194 bytes in 3070 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 52/80] 172.16.10.49 () {44 vars in 863 bytes} [Thu Aug 23 14:55:40 2018] GET /look_reward/ => generated 5652 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 23/81] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 14:55:50 2018] POST /look_reward/ => generated 13031 bytes in 135 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 53/82] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 15:29:53 2018] GET /handle_sqlt/ => generated 7390 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 54/83] 172.16.10.49 () {52 vars in 1043 bytes} [Thu Aug 23 15:30:50 2018] POST /handle_sqlt/ => generated 136 bytes in 220 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/pandas/io/excel.py:726: DeprecationWarning: Call to deprecated function remove_sheet (Use wb.remove(worksheet) or del wb[sheetname]).
+  self.book.remove_sheet(self.book.worksheets[0])
+
+send success!
+/home/dev/virtualenv_files/new_demo/lib/python3.5/site-packages/django/template/base.py:689: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  args, varargs, varkw, defaults = getargspec(func)
+
+[pid: 145711|app: 0|req: 55/84] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 15:31:34 2018] GET /handle_sqlt/ => generated 7390 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 24/85] 172.16.10.49 () {42 vars in 789 bytes} [Thu Aug 23 16:03:38 2018] GET / => generated 3892 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145709|app: 0|req: 25/86] 172.16.10.49 () {52 vars in 1029 bytes} [Thu Aug 23 16:03:40 2018] POST /inner_index/ => generated 5671 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 56/87] 172.16.10.49 () {44 vars in 870 bytes} [Thu Aug 23 16:03:42 2018] GET /chart/show_map/ => generated 3733 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145711|app: 0|req: 57/88] 172.16.10.49 () {52 vars in 1042 bytes} [Thu Aug 23 16:04:00 2018] POST /chart/map/ => generated 8746 bytes in 797 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145711|app: 0|req: 58/89] 172.16.10.49 () {46 vars in 895 bytes} [Thu Aug 23 16:47:27 2018] GET /handle_sqlt/ => generated 7390 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 145708|app: 0|req: 7/90] 172.16.10.49 () {44 vars in 864 bytes} [Thu Aug 23 16:47:30 2018] GET /handle_sqlt/ => generated 7390 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 145709|app: 0|req: 26/91] 172.16.10.49 () {44 vars in 862 bytes} [Thu Aug 23 16:47:32 2018] GET /auto_check/ => generated 6504 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
