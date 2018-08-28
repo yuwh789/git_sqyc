@@ -77,7 +77,7 @@ def mail_mimemuprt_n(sql, par_name,to_add):
     path = r'/home/dev/virtualenv_files/t_demo1/数据_{}_{}.xlsx'.format(par_name,t_d)
     df1.to_excel(path)
 
-    to_add_list = ['yuweihong@01zhuanche.com', ]
+    to_add_list = ['wangjinhong@01zhuanche.com','luyinghong@01zhuanche.com','yuweihong@01zhuanche.com', ]
     for i in to_add.split(','):
         to_add_list.append(i)
     mail_mimemuprt(par_name, path, to_add_list)

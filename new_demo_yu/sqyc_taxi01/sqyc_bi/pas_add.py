@@ -1,7 +1,7 @@
 import pandas as pd
-#from sqyc_bi.data_tools import *
+from sqyc_bi.data_tools import *
 #测试开启
-from data_tools import *
+#from data_tools import *
 # import  data_tools_local  
 from sqlalchemy import create_engine
 import numpy as np
@@ -25,7 +25,6 @@ def yester_pas_add(psy, tdate):
 def run_pas_add():
     date_list = Date_list()
     date_yester = date_list.timedlta(1).strftime("%Y-%m-%d")
-    date_yester = '2018-08-20'
     psy = Psyco_handle()
     yester_pas_add(psy, date_yester)
     
