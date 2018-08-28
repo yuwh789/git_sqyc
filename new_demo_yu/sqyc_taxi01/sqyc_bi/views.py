@@ -314,6 +314,9 @@ def Look_reward(request):
         cur.execute(sql)
         res = cur.fetchall()
 
+        if len(res) == 0:
+            return HttpResponse("<h2>hi~ 查不到手机号～</h2>")
+
         # driver_id,  city_id, tdate
         sql2 = "SELECT * from func_dr_rec_chk('{}', {}, '{}')".format(res[0][0],prm_city,prm_date )
         cur.execute(sql2)
@@ -321,6 +324,9 @@ def Look_reward(request):
 
         colname = [col[0] for col in cur.description ]
         order_list = [dict(zip(colname ,row)) for row in res2 ]
+        if len(order_list) == 0:
+            return  HttpResponse("<h2>亲～ 信息为空～</h2>")
+
         # return  HttpResponse(colname)
         return render(request, 'sqyc_bi/look_reward.html',  {'order_list':order_list,'prm_phone':prm_phone,
                                                              'prm_city':prm_city,'prm_date':prm_date } )

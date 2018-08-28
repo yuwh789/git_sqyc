@@ -37,7 +37,7 @@
     <div class="middle_head_right">
         <table border="1" >
                   <tr class="s_tr1">
-
+                        <th>id</th>
                         <th>日期</th>
                         <th>订单状态</th>
                         <th>有无拉新</th>
@@ -54,6 +54,7 @@
 
                  {% for order in order_list %}
                     <tr class='s_tr2'>
+                    <td>{{ forloop.counter }}</td>
                         <td>{{ order.create_date }}</td>
                         <td>{{ order.order_status }}</td>
                         <td>{{ order.recmd_status }}</td>

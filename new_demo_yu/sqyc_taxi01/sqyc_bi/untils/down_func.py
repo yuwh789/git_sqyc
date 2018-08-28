@@ -65,7 +65,7 @@ def Down_files_dic2(request, order_list, colname ):
     writer.writerow( colname )
 
     for i in order_list:
-        writer.writerow(  [ i[j] for j in colname ] )
+        writer.writerow( [i[j] for j in colname ] )
 
     return response
 
@@ -80,4 +80,6 @@ def mail_mimemuprt_n(sql, par_name,to_add):
     to_add_list = ['yuweihong@01zhuanche.com', ]
     for i in to_add.split(','):
         to_add_list.append(i)
-    mail_mimemuprt('需求数据整理', path, to_add_list)
+    mail_mimemuprt(par_name, path, to_add_list)
+
+
