@@ -1,6 +1,6 @@
 import pandas as pd
 from sqyc_bi.data_tools import *
-#from data_tools import *
+#from data_tools import *  # test111
 from sqlalchemy import create_engine
 import numpy as np
 import time
@@ -44,10 +44,14 @@ def Test_cany_day(t_date, t_cityId, t_canyName):
 LEFT JOIN ( SELECT DISTINCT driver_id, online_time sum_online \
 from  mysql.driver_duty_2018_{}  where city_id  = {}::NUMERIC  and time = '{}' ) t2  on t1.司机编码  = t2.driver_id  \
 LEFT JOIN ( SELECT *  from fuc_driver_reward('{}','{}', '{}')  )  t3  \
-on t1.司机编码 = t3.driv_id ".format(t_cityId,t_canyName,t_date[5:6], t_cityId, t_date,t_date, t_cityId,t_canyName )
+on t1.司机编码 = t3.driv_id ".format(t_cityId,t_canyName,t_date[5:7], t_cityId, t_date,t_date, t_cityId,t_canyName )
+
+    sql_com = "SELECT driver_id, count(*) com_cnt from mysql.taxi_app_order where city_id  = '{}' \
+and CREATE_time>='{}' and CREATE_time<'{}'::date + INTERVAL '1 day' GROUP BY 1".format(t_cityId, t_date, t_date)
 
     df_company_day = psy.data_r(sql)
-    df_company_day.fillna("0", inplace=True)
+    df_com_cnt = psy.data_r(sql_com)
+
     df_company_day.rename(
         columns={"城市编码": "city_id", "城市": "city", "司机编码": "driver_id", "司机姓名": "driver_name", "司机电话": "driver_phone",
                  "分公司编码": "taxi_company_id", "分公司名称": "taxi_company_name", "车牌号": "plate_number", "证件号": "id_number",
@@ -55,6 +59,12 @@ on t1.司机编码 = t3.driv_id ".format(t_cityId,t_canyName,t_date[5:6], t_city
     df_company_day["t_date"] = t_date
     df_company_day["update_date"] = time.strftime("%Y-%m-%d %H:%M", time.localtime())
     df_company_day["id"] = 1
+
+    df_company_day['driver_id'] = df_company_day['driver_id'].astype(float)
+    df_com_cnt['driver_id'] = df_com_cnt['driver_id'].astype(float)
+
+    df_company_day = pd.merge(df_company_day, df_com_cnt, how='left',on=['driver_id'])
+    df_company_day.fillna(0, inplace=True)
     psy.data_s(df_company_day, "t_company_day_data")
 
     
@@ -280,6 +290,7 @@ def run_company_day():
     date_list = Date_list()
     # time  handle
     t_date = date_list.timedlta(1)
+    t_date = datetime.datetime.strftime(t_date, "%Y-%m-%d")
 
     # === 94哈尔滨数据
     company_list = ["大众", "天鹅", "现代", "飞达"]  # 四家公司   8:30
@@ -323,7 +334,8 @@ def Run_risk():
 
 if __name__ == "__main__":
     # Run_risk()
-    # Run_company_day()
-    Run_driver_num()
-    Run_hb_tb()
-
+    print('start...')
+    run_company_day()
+    #Run_driver_num()
+    #Run_hb_tb()
+    print('over...')

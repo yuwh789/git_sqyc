@@ -17,6 +17,7 @@ from django.db import  connection
 from sqyc_bi.data_tools import  *
 import datetime
 from multiprocessing import Process
+from threading import Thread
 import time
 
 def Index(request):
@@ -52,7 +53,7 @@ def User_account(request):
             user_model.save()
             return HttpResponse("恭喜！注册成功！")
         else:
-            str1= "暗号错误,注册失败！%s" %user_model.adminpasswd
+            str1= "暗号错误,注册失败！如有问题联系:yuweihong@01zhuanche.com %s" %user_model.adminpasswd
             return HttpResponse(str1 )
 
 
@@ -268,7 +269,7 @@ def Other_test(request):
 
 @login_required
 def Connect(request):
-    return  HttpResponse('问题联系方式： YuWeihong')
+    return  HttpResponse('问题联系方式： YuWeihong@01zhuanche.com')
 
     
 @login_required
@@ -288,8 +289,8 @@ def Handle_sqlt(request):
         rec_model.comment = sql
         rec_model.save()
 
-        pro = Process(target=mail_mimemuprt_n, args=(sql,par_name,to_add,) ) # 发邮件的那个函数接口
-        pro.start()
+        th1 = Thread(target=mail_mimemuprt_n, args=(sql,par_name,to_add,) ) # 发邮件的那个函数接口
+        th1.start()
         time.sleep(0.2)
         return HttpResponse("<h2>您的需求已添加任务,请稍后查收邮件!</h2> <h3>(网络>>服务器>>数据量>>均会影响任务进度,请了解!)</h3>")
 
@@ -314,9 +315,8 @@ def Look_reward(request):
         cur.execute(sql)
         res = cur.fetchall()
 
-        if len(res) == 0:
-            return HttpResponse("<h2>hi~ 查不到手机号～</h2>")
-
+        if len(res)==0:
+            return HttpResponse("<h2>亲~ 手机号貌似查不到噢~</h2>" )
         # driver_id,  city_id, tdate
         sql2 = "SELECT * from func_dr_rec_chk('{}', {}, '{}')".format(res[0][0],prm_city,prm_date )
         cur.execute(sql2)
@@ -325,9 +325,8 @@ def Look_reward(request):
         colname = [col[0] for col in cur.description ]
         order_list = [dict(zip(colname ,row)) for row in res2 ]
         if len(order_list) == 0:
-            return  HttpResponse("<h2>亲～ 信息为空～</h2>")
+            return HttpResponse("<h2> 亲~ 查无信息!</h2>")
 
-        # return  HttpResponse(colname)
         return render(request, 'sqyc_bi/look_reward.html',  {'order_list':order_list,'prm_phone':prm_phone,
                                                              'prm_city':prm_city,'prm_date':prm_date } )
 
@@ -343,7 +342,8 @@ def Auto_check(request):
   from public.who_are_you( '{}') ".format(par_custid)
         cur.execute(sql)
         res = cur.fetchall()
-
+        if len(res) == 0:
+            return HttpResponse("hi~ 木有查到此身份证信息~")
         colname = [col[0] for col in cur.description]
         order_list = [ dict(zip(colname, row)) for row in res]
         return render(request, 'sqyc_bi/auto_index.html', {'order_list':order_list,'cust_id':par_custid})

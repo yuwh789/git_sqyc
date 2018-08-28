@@ -7,7 +7,7 @@ import  re
 import datetime
 from sqlalchemy import create_engine
 
-import smtplib  ,time # 邮件使用库
+import smtplib  ,time # smtp使用库
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header  # 给对象进行编码
@@ -29,7 +29,7 @@ class Psyco_handle(object):
             self.user_name, self.pwd, self.connect_ip, self.connect_port, self.database_name)
             self.engine = create_engine(in_engine)
             dtFme.to_sql(t_table, self.engine, index=False, if_exists="append")
-            print("%s---Files save by Postgre !" % (time.strftime("%Y-%m-%d %H:%M", time.localtime())))
+            print("%s---Files save by Pg !" % (time.strftime("%Y-%m-%d %H:%M", time.localtime())))
         except Exception as e:
             print("连接数据库发现异常", e)
             return "Postgre has gone away --- %s " % (time.strftime("%Y-%m-%d %H:%M", time.localtime()))

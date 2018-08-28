@@ -88,12 +88,12 @@ str = 'Yuyx'
 DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.db.backends.mysql',  # mysql; postgresql_psycopg2
-        'NAME': "sqyc_db",   # mysql: sqyc_db, pg: taxidb
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # mysql; postgresql_psycopg2
+        'NAME': "taxidb",   # mysql: sqyc_db, pg: taxidb
         'USER': 'taxiuser',
         'PASSWORD': 'taxiuser',
         'HOST':'localhost',
-        'PORT':3306,     # mysql:3306 ,  pg: 5432
+        'PORT':5432,     # mysql:3306 ,  pg: 5432
     }
 }
 
@@ -152,8 +152,8 @@ STATIC_ROOT = "/var/www/sqyc/c_static2/"
 
 CRONJOBS = [
     ('00 05 * * *', 'sqyc_bi.tests.demo1'),
-    ('30 12 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
-    ('00 13 * * *', 'sqyc_bi.tests.demo3' ) ,
+    ('50 12 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
+    ('00 03 * * 1', 'sqyc_bi.tests.demo3' ) ,
 
 ]
 
