@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import  re
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -73,6 +75,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sqyc_taxi01.wsgi.application'
 
+ehp = 'kl52jwer11ifj68kf06nrew'
+
+str = 'Yuyx'
+
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -82,13 +88,12 @@ WSGI_APPLICATION = 'sqyc_taxi01.wsgi.application'
 DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.db.backends.mysql',  # mysql; postgresql_psycopg2
-
-        'NAME': "sqyc_db",   # mysql: sqyc_db, pg: taxidb
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # mysql; postgresql_psycopg2
+        'NAME': "taxidb",   # mysql: sqyc_db, pg: taxidb
         'USER': 'taxiuser',
         'PASSWORD': 'taxiuser',
         'HOST':'localhost',
-        'PORT':3306,     # mysql:3306 ,  pg: 5432
+        'PORT':5432,     # mysql:3306 ,  pg: 5432
     }
 }
 
@@ -123,18 +128,35 @@ USE_L10N = True
 USE_TZ = True
 
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.01zhuanche.com'
+
+EMAIL_PORT = 25
+
+EMAIL_HOST_USER = 'yuweihong@01zhuanche.com'
+
+EMAIL_HOST_PASSWORD = ''.join(re.findall('\d+', ehp) )+str
+
+EMAIL_FROM = 'yuweihong'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static'), ] # 设置静态文件物理目录
 
-STATIC_ROOT = "var/www/sqyc/c_static/"
+STATIC_ROOT = "/var/www/sqyc/c_static2/"
 
 CRONJOBS = [
-    ('00 08 * * *', 'sqyc_bi.tests.demo1'),
-    ('08 11 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
+    ('00 05 * * *', 'sqyc_bi.tests.demo1'),
+    ('50 12 * * *', 'sqyc_bi.tests.R_driver_num' ) ,
+    ('00 03 * * 1', 'sqyc_bi.tests.demo3' ) ,
+
 ]
+
 
 
 

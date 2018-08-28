@@ -1,47 +1,57 @@
 {% extends 'sqyc_bi/base_in_company_day.html' %}
 
+{% block page_title %}
+<title>数据组SQL解析</title>
+{% endblock %}
+
 {% block middle_head_right_up %}
         <!--条件侧栏上部-->
         <div class="middle_head_right_up">
-            SQL代码解析窗口（请规范输入语句,系统将自动解析并返回数据结果,返回csv格式）：
+            &nbsp;SQL代码解析窗口（请规范输入语句,系统将自动解析并返回数据结果,返回csv格式）：
         </div>
 {% endblock middle_head_right_up %}
-
 
 
 {% block middle_head_right %}
 
     <div class="middle_head_right">
-
         <form method="post" action="/handle_sqlt/">
-
-            {% csrf_token %}
-            <textarea style="width:800px;height:150px;" value="hello" name="para1">  </textarea>
-             &nbsp &nbsp &nbsp &nbsp
-             <input type="submit" value="查询"  name="sub_buton">  &nbsp
-
+           {% csrf_token %}
+            解析语句：
+            <br>
+            &nbsp;<textarea style="width:600px;height:40px;" value="hello" name="para1">  </textarea>
+            <br>
+            <br>
+            标题：
+            <br>
+            &nbsp;<input type="text" style="width: 600px; height: 20px" name="par_name" >
+            <br>
+            <br>
+            收件人地址：
+            <br>
+            &nbsp;<input style="width: 600px; height: 20px" type="text"  value="" name="recevi_person">
+            <br>
+            <br>
+            &nbsp;<input style="width:80px; height:28px" type="submit" value="发送邮件"  name="sub_buton">
         </form>
-
     </div>
 
     <div class="middle_head_right">
-        <h1>备忘条目：</h1>
+        <h2>备忘条目：</h2>
 {#        <li style="font-size: 20px">标题---函数名---备注  &nbsp;#}
 {#            <a href="">新增</a>#}
 {#            <a href="/delete{{ order_list.id }}/">删除</a>#}
 {#            <a href="">修改</a>#}
 {#        </li>#}
-    <ul>
-        {% for i in order_list %}
-            <li> {{ i.title }} --- {{ i.func_name }} --- {{ i.comment }} </li>
-        {% endfor %}
-    </ul>
-        &nbsp; &nbsp;
+        <ol>
+            {% for i in order_list %}
+                <li class="li_list">
+                    <span> {{ i.title }} >> {{ i.func_name }} >> {{ i.comment }}</span>
+                    <a href="/handle_del/{{ i.id }}/" class = 'new_a'> delete </a>
+                </li>
+            {% endfor %}
+        </ol> &nbsp; &nbsp;
         <a href="/chart/func_add/" style="font-size: 20px">增加条目</a>
     </div>
-
-
-
-
 
 {% endblock middle_head_right %}

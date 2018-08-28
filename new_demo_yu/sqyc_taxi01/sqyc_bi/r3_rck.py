@@ -1,7 +1,6 @@
 import pandas as pd
-#from sqyc_bi.data_tools import *
 #测试开启
-from data_tools import *
+from sqyc_bi.data_tools import *
 from sqlalchemy import create_engine
 import numpy as np
 import time
@@ -43,15 +42,16 @@ def Df_drInfo(t_d,psy):
     df_dfInfo_pay = psy.data_r(sql_num_pay)
     
     
+    driver_exception_value = 0.35   # 司机异常系数
     df_drInfo = pd.merge(df_drInfo_total,df_dfInfo_pay, how='left', on=['driver_id','city_id'])
     df_drInfo['司机异常'] = ( df_drInfo['多次握手订单']/df_drInfo['完单总量'])* driver_exception_value
     return df_drInfo
 
 
-def Df_lx(t_d,psy1):
+def Df_lx(t_d,psy):
     # 处理司机拉新
     print('---  拉新数据指标 --- ')
-    sql_lx= "SELECT  * from car_biz_driver_recommend where expires_date  >= '{}' ".format(t_d)  
+    sql_lx= "SELECT  * from mysql.car_biz_driver_recommend where expires_date  >= '{}' ".format(t_d)
     df_lx = psy.data_r(sql_lx)
     return df_lx
 
@@ -66,7 +66,7 @@ def Fk_seven_data(t_d,psy):
 
     # 设备握手频次处理
     df1['device_id_f'] = df1['device_id']
-    df1['device_id_f'].replace('null',  np.nan, inplace=True)
+    df1['device_id_f'].replace('null', 'np.nan' , inplace=True)
     d_device = df1.groupby(['driver_id', 'device_id_f']).size().reset_index()
     d_device.rename(columns={0:'d_device_num'}, inplace=True )
     res= pd.merge(df1, d_device ,how = 'left', on = [ 'driver_id','device_id_f'] )
@@ -97,11 +97,12 @@ def Passenger_info(t_d,psy):
     (SELECT distinct  booking_user_id  from  mysql.risk_order   where   pay_card_no is not null  and (fact_start_date  >='{}'  and fact_start_date< '{}'::date + INTERVAL '1 day' )  )   t2   \
     on t1.booking_user_id = t2.booking_user_id  GROUP BY 1   HAVING COUNT(*) >2 ".format(t_d,t_d,t_d)
     df_ck_num = psy.data_r(sql_ck_num)
+
     # 乘客异常
+    passenger_value = 0.15   # 乘客异常数值
     df_ck_num['乘客异常'] =( 1-  (df_ck_num['对接司机数']/df_ck_num['乘客完单数'] ) )*passenger_value
+
     return df_ck_num
-
-
 
 
 def Order_online(t_d,psy,fk_s_d):
@@ -126,6 +127,11 @@ def Order_online(t_d,psy,fk_s_d):
     df_onDay['接驾里程'] = df_onDay.apply( Distance2,axis=1)
     df_onDay2['fact_end_point'] = df_onDay2['上一单服务结束位置']
     df_onDay2['间隔里程'] = df_onDay2.apply(Distance,axis=1)
+
+    take_driver_num = 0.2  # 订单异常之 接驾异常参数  
+    service_num = 0.2  # 订单异常之 服务常参数  
+    order_interval_num = 0.2  # 订单异常之 两单间隔参数
+    args_value = 0.5    # 订单异常数值一级
 
     #print("")
     print('--- 订单异常: 接驾异常,服务异常, 间隔异常, 金额异常 ---')
@@ -158,8 +164,6 @@ def Order_online(t_d,psy,fk_s_d):
     return ret_xs
 
 
-
-
 def Online_order_handle(order_online,df_drInfo, passenger_info, df_lx):
     # 整合司机异常
     order_online = pd.merge(order_online ,df_drInfo[['driver_id','司机异常']], how = 'left',on = ['driver_id'] )
@@ -182,7 +186,6 @@ def Online_order_handle(order_online,df_drInfo, passenger_info, df_lx):
     return order_online
 
 
-
 def Func_new(ol_handle):
     # 调整风险评分, 根据金额异常等数据， 调整最终线上订单结果
     print('--- 调整风险评分 ---')
@@ -190,8 +193,6 @@ def Func_new(ol_handle):
     ol_handle['调整评分'] = ol_handle.apply(ret_newScore, axis =1) 
     ol_handle.drop(['passenger_id'],axis=1, inplace=True)
     return ol_handle
-
-
 
 
 def Ret_table(ret_xs,df_fkDr):
@@ -220,7 +221,74 @@ def Ret_table(ret_xs,df_fkDr):
     return ret_fr
 
 
+def Run_risk_info():
+    # 设置保存路径
+    print("===风控新规则处理===")
+    psy = Psyco_handle()  # 风控库
+    # 加载参数(数据指标)
+    take_driver_num = 0.2  # 订单异常之 接驾异常参数  
+    service_num = 0.2  # 订单异常之 服务常参数  
+    order_interval_num = 0.2  # 订单异常之 两单间隔参数
+    driver_exception_value = 0.35   # 司机异常系数
+    args_value = 0.5    # 订单异常数值一级
+    passenger_value = 0.15   # 乘客异常数值
 
+    # 加载时间列表
+    t_d = Date_list().timedlta(1)
+    t_d = datetime.datetime.strftime(t_d, '%Y-%m-%d')
+    t1= time.time()
+    # 司机--乘客异常分析
+    df_fkDr = Risk_record(t_d, psy )  # 1风控司机记录
+    t101= time.time()
+    
+    df_drInfo = Df_drInfo(t_d, psy)    # 2司机信息表，司机异常计算
+    t102= time.time()
+
+    df_lx = Df_lx(t_d, psy)      # 3司机拉新
+    t103= time.time()
+    
+    passenger_info= Passenger_info(t_d, psy)     # 4乘客异常
+    t104= time.time()
+
+    # 订单异常分析
+    fk_s_d = Fk_seven_data(t_d,psy )    # 5风控七日订单数据
+    t105= time.time()
+    
+    order_online = Order_online(t_d, psy ,fk_s_d ) # 线上订单数据
+    t106= time.time()
+
+    online_order_handle = Online_order_handle(order_online,df_drInfo,passenger_info,df_lx)  # 线上订单整合
+    func_new = Func_new(online_order_handle)  # 评分调整
+
+    ret_table = Ret_table(func_new,df_fkDr)  # 6结果表生成
+    print("司机信息--%.2f; 司机拉新--%.2f; 乘客异常--%.2f;  风控七日--%.2f; 线上订单--%.2f; "   %( (t102-t101) , (t103-t102),(t104-t103),(t105-t104),(t106-t105))  )
+    
+    # 保存数据
+    print("开始保存所有文件,请稍候...")
+    path = r'/home/dev/virtualenv_files/t_demo1/风控数据{}.xlsx'.format(t_d)
+    writer = pd.ExcelWriter(path)
+
+    df_drInfo['t_date'] = t_d 
+    psy.data_s(df_drInfo, 't_risk_driver_info' )  # 1 司机信息表
+    
+    passenger_info['t_date'] = t_d
+    psy.data_s(passenger_info, 't_risk_passenger_info') # 2   乘客信息表
+    
+    # psy.data_s(fk_s_d, 't_risk_seven_order')  3.0   七天风控
+    func_new['t_date'] = t_d
+    psy.data_s(func_new, 't_risk_online_order')  # 3 线上订单表
+
+    ret_table['t_date'] = t_d
+    psy.data_s(ret_table, 't_risk_result')  # 4  风控结果表
+    
+    t2 = time.time()
+    print("fk--->: %.2f!" %(t2-t1))
+
+    func_new.to_excel(writer,'当日线上订单')
+    ret_table.to_excel(writer, '结果表')
+    writer.save()
+    to_address_list = ["likangnan@01zhuanche.com","yuweihong@01zhuanche.com","luyinghong@01zhuanche.com","wangjinhong@01zhuanche.com","huangsiwei@01zhuanche.com","xudan@01zhuanche.com","zhangzhenhong@01zhuanche.com"]
+    mail_mimemuprt('风控数据',path, to_address_list)
 
 if __name__ == '__main__':
     # t_d = '2018-02-28'
@@ -243,58 +311,57 @@ if __name__ == '__main__':
     passenger_value = 0.15   # 乘客异常数值
 
     # 加载时间列表
-    t_d = Date_list().timedlta(1)
-    t_d = datetime.datetime.strftime(t_d, '%Y-%m-%d')
+    t_dlist = ['2018-07-13', '2018-07-17','2018-07-18']
     t1= time.time()
 	
     
-        
+    for  t_d in t_dlist:
     # 司机--乘客异常分析
-    df_fkDr = Risk_record( t_d, psy )  # 1风控司机记录
-    t101= time.time()
-    
-    df_drInfo = Df_drInfo(t_d, psy)    # 2司机信息表，司机异常计算
-    t102= time.time()
+        df_fkDr = Risk_record( t_d, psy )  # 1风控司机记录
+        t101= time.time()
+        
+        df_drInfo = Df_drInfo(t_d, psy)    # 2司机信息表，司机异常计算
+        t102= time.time()
 
-    df_lx = Df_lx(t_d, psy)      # 3司机拉新
-    t103= time.time()
-    
-    passenger_info= Passenger_info(t_d, psy)     # 4乘客异常
-    t104= time.time()
-    
- 
-    
-    # 订单异常分析
-    fk_s_d = Fk_seven_data(t_d,psy )    # 5风控七日订单数据
-    t105= time.time()
-    
+        df_lx = Df_lx(t_d, psy)      # 3司机拉新
+        t103= time.time()
+        
+        passenger_info= Passenger_info(t_d, psy)     # 4乘客异常
+        t104= time.time()
 
-    
-    order_online = Order_online(t_d, psy ,fk_s_d) # 线上订单数据
-    t106= time.time()
-
-    online_order_handle = Online_order_handle(order_online,df_drInfo,passenger_info,df_lx)  # 线上订单整合
-
-    func_new = Func_new(online_order_handle)  # 评分调整
+     
+        
+        # 订单异常分析
+        fk_s_d = Fk_seven_data(t_d,psy )    # 5风控七日订单数据
+        t105= time.time()
         
 
-    ret_table = Ret_table(func_new,df_fkDr)  # 6结果表生成
-    print("司机信息--%.2f; 司机拉新--%.2f; 乘客异常--%.2f;  风控七日--%.2f; 线上订单--%.2f; "   %( (t102-t101) , (t103-t102),(t104-t103),(t105-t104),(t106-t105))  )
-    
-    # 保存数据
-    print("开始保存所有文件,请稍候...")
-    df_drInfo['t_date'] = t_d 
-    psy.data_s(df_drInfo, 't_risk_driver_info' )  # 1 司机信息表
-    
-    passenger_info['t_date'] = t_d
-    psy.data_s(passenger_info, 't_risk_passenger_info') # 2   乘客信息表
-    
-    # psy.data_s(fk_s_d, 't_risk_seven_order')  3.0   七天风控
-    func_new['t_date'] = t_d
-    psy.data_s(func_new, 't_risk_online_order')  # 3 线上订单表
+        
+        order_online = Order_online(t_d, psy ,fk_s_d) # 线上订单数据
+        t106= time.time()
 
-    ret_table['t_date'] = t_d
-    psy.data_s(ret_table, 't_risk_result')  # 4  风控结果表
+        online_order_handle = Online_order_handle(order_online,df_drInfo,passenger_info,df_lx)  # 线上订单整合
+
+        func_new = Func_new(online_order_handle)  # 评分调整
+            
+
+        ret_table = Ret_table(func_new,df_fkDr)  # 6结果表生成
+        print("司机信息--%.2f; 司机拉新--%.2f; 乘客异常--%.2f;  风控七日--%.2f; 线上订单--%.2f; "   %( (t102-t101) , (t103-t102),(t104-t103),(t105-t104),(t106-t105))  )
+        
+        # 保存数据
+        print("开始保存所有文件,请稍候...")
+        df_drInfo['t_date'] = t_d 
+        psy.data_s(df_drInfo, 't_risk_driver_info' )  # 1 司机信息表
+        
+        passenger_info['t_date'] = t_d
+        psy.data_s(passenger_info, 't_risk_passenger_info') # 2   乘客信息表
+        
+        # psy.data_s(fk_s_d, 't_risk_seven_order')  3.0   七天风控
+        func_new['t_date'] = t_d
+        psy.data_s(func_new, 't_risk_online_order')  # 3 线上订单表
+
+        ret_table['t_date'] = t_d
+        psy.data_s(ret_table, 't_risk_result')  # 4  风控结果表
     
     t2 = time.time()
     
